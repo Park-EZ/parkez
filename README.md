@@ -153,15 +153,7 @@ parkez/
 - 📷 Integrate real QR code scanning using `getUserMedia` + `jsQR`.  
 - 🗄️ Add backend with **Fastify + MongoDB** for real sessions & analytics.  
 - 🚦 Show deck-level congestion and estimated time to find parking.
-
----
-
-## 👩‍💻 Authors
-
-**Scrum & Coke Team**
-- [@akhalegh](https://github.com/akhalegh)
-- [@Park-EZ](https://github.com/Park-EZ)
-
+- 
 ---
 
 ## 🪪 License
