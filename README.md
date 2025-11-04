@@ -1,26 +1,26 @@
-# 🅿️ Park-EZ — Campus Parking Spot Availability App
+# Park-EZ — Campus Parking Spot Availability App
 
 **Park-EZ** is a lightweight web application that shows live campus parking availability for students, professors, and staff.  
 It was built by **Scrum & Coke** as part of a university project to make finding parking faster and less stressful.
 
 This version is a fully functional **React + Vite** demo using mock data (no backend required).  
-The app simulates real-time updates, deck/level navigation, and QR check-ins/out — ready to connect to real sensors or APIs later.
+The app simulates real-time updates, deck/level navigation, and QR check-ins/out, ready to connect to real sensors or APIs later.
 
 ---
 
-## 🚗 Features
+## Features
 
-- 🔍 **View all parking decks** and their free/occupied spots.  
-- 🧭 **Drill down** by deck → level → individual spots.  
-- ♿ **Spot types:** Standard, EV, ADA.  
-- ⚡ **Realtime simulation** of occupancy changes (mock “live” feed).  
-- 📱 **QR check-in simulator:** type a spot label to reserve/release.  
-- 💾 **Local persistence:** uses `localStorage` to keep state after refresh.  
-- 🧩 Modular architecture: UI components + mock API layer.
+- **View all parking decks** and their free/occupied spots.  
+- **Drill down** by deck → level → individual spots.  
+- **Spot types:** Standard, EV, ADA.  
+- **Realtime simulation** of occupancy changes (mock “live” feed).  
+- **QR check-in simulator:** type a spot label to reserve/release.  
+- **Local persistence:** uses `localStorage` to keep state after refresh.  
+- Modular architecture: UI components + mock API layer.
 
 ---
 
-## 🏗️ Tech Stack
+## Tech Stack
 
 | Layer | Tech | Purpose |
 |-------|------|----------|
@@ -31,15 +31,15 @@ The app simulates real-time updates, deck/level navigation, and QR check-ins/out
 
 ---
 
-## 📦 Installation
+## Installation
 
-### 1️⃣ Clone the repo
+### 1. Clone the repo
 ```bash
 git clone https://github.com/Park-EZ/parkez.git
 cd parkez
 ```
 
-### 2️⃣ Create or activate your Node environment
+### 2. Create or activate your Node environment
 
 If you’re using **Conda (no sudo)**:
 ```bash
@@ -54,14 +54,14 @@ node -v && npm -v
 # If not, install Node LTS (v20+)
 ```
 
-### 3️⃣ Install dependencies
+### 3. Install dependencies
 ```bash
 npm install
 ```
 
 ---
 
-## 🧪 Run the app (Development)
+## 4. Run the app (Development)
 
 Start the Vite dev server:
 ```bash
@@ -82,7 +82,7 @@ You’ll see the **Park-EZ** dashboard with decks, levels, and spots.
 
 ---
 
-## 🧱 Build for Production
+## Build for Production
 
 Generate an optimized build:
 ```bash
@@ -103,7 +103,7 @@ http://YOUR_SERVER_IP:8080/
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 parkez/
@@ -126,7 +126,7 @@ parkez/
 
 ---
 
-## 🧰 Scripts
+## Scripts
 
 | Command | Description |
 |----------|--------------|
@@ -137,26 +137,26 @@ parkez/
 
 ---
 
-## ⚙️ Environment & Deployment Notes
+## Environment & Deployment Notes
 
 - Works entirely client-side (no backend needed).  
-- Data is stored in `localStorage` — every browser session is persistent.  
+- Data is stored in `localStorage`, every browser session is persistent.  
 - The `api.js` layer can be swapped out for real API calls to a **Fastify** backend or a REST service.  
 - To deploy, simply upload the `/dist` folder to any static host (GitHub Pages, Netlify, S3, etc).
 
 ---
 
-## 🧭 Future Enhancements
+## Future Enhancements
 
-- 🧠 Replace mock data with real IoT sensor or camera feeds.  
-- 🔑 Add authentication for staff/student roles.  
-- 📷 Integrate real QR code scanning using `getUserMedia` + `jsQR`.  
-- 🗄️ Add backend with **Fastify + MongoDB** for real sessions & analytics.  
-- 🚦 Show deck-level congestion and estimated time to find parking.
+-  Replace mock data with real IoT sensor or camera feeds.  
+-  Add authentication for staff/student roles.  
+-  Integrate real QR code scanning using `getUserMedia` + `jsQR`.  
+-  Add backend with **Fastify + MongoDB** for real sessions & analytics.  
+-  Show deck-level congestion and estimated time to find parking.
 - 
 ---
 
-## 🪪 License
+## License
 This project is open-source for educational use.  
 Feel free to fork, adapt, and extend with attribution.
 
