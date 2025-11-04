@@ -1,21 +1,31 @@
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+
 export default function DeckList({ summary, onJumpLevel }) {
   if (!summary) return null
+  
   return (
-    <section className="deck-summary">
-      <div className="summary-card">
-        <div className="summary-row">
-          <strong>Total Free:</strong> <span>{summary.free}</span>
-          <strong> / Total Spots:</strong> <span>{summary.total}</span>
-        </div>
-        <div className="levels">
+    <Card>
+      <CardHeader>
+        <CardTitle>Deck Summary</CardTitle>
+        <CardDescription>
+          Total Free: {summary.free} / Total Spots: {summary.total}
+        </CardDescription>
+      </CardHeader>
+      <CardContent>
+        <div className="flex flex-wrap gap-2">
           {summary.byLevel.map(({ level, free, total }) => (
-            <button key={level._id} className="level-chip" onClick={() => onJumpLevel(level._id)}>
-              <span>{level.name}</span>
-              <span className="badge">{free}/{total} free</span>
-            </button>
+            <Button
+              key={level._id}
+              variant="outline"
+              size="sm"
+              onClick={() => onJumpLevel?.(level._id)}
+            >
+              {level.name}: {free}/{total} free
+            </Button>
           ))}
         </div>
-      </div>
-    </section>
+      </CardContent>
+    </Card>
   )
 }
