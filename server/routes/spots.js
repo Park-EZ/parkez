@@ -8,7 +8,7 @@ export default async function spotRoutes(fastify, options) {
     const spotId = request.params.id
     const userId = request.user?.id || null // Get from auth middleware
 
-    const spot = await db.collection('spots').findOne({ _id: new ObjectId(spotId) })
+    const spot = await db.collection('spots').findOne({ _id: spotId })
     
     if (!spot) {
       return reply.code(404).send({ error: 'Spot not found' })
@@ -20,13 +20,13 @@ export default async function spotRoutes(fastify, options) {
 
     // Update spot status
     await db.collection('spots').updateOne(
-      { _id: new ObjectId(spotId) },
+      { _id: spotId },
       { $set: { status: 'occupied' } }
     )
 
     // Create spot session
     const session = {
-      spotId: new ObjectId(spotId),
+      _id: spotId,
       userId: userId,
       startedAt: new Date(),
       endedAt: null,
@@ -36,7 +36,7 @@ export default async function spotRoutes(fastify, options) {
 
     // Record state history
     await db.collection('spotStateHistory').insertOne({
-      spotId: new ObjectId(spotId),
+      _id: spotId,
       at: new Date(),
       state: 'occupied',
       reason: 'check-in'
@@ -51,7 +51,7 @@ export default async function spotRoutes(fastify, options) {
     const spotId = request.params.id
     const userId = request.user?.id || null
 
-    const spot = await db.collection('spots').findOne({ _id: new ObjectId(spotId) })
+    const spot = await db.collection('spots').findOne({ _id: spotId })
     
     if (!spot) {
       return reply.code(404).send({ error: 'Spot not found' })
@@ -59,7 +59,7 @@ export default async function spotRoutes(fastify, options) {
 
     // Find active session
     const session = await db.collection('spotSessions').findOne({
-      spotId: new ObjectId(spotId),
+      _id: spotId,
       endedAt: null
     })
 
@@ -69,7 +69,7 @@ export default async function spotRoutes(fastify, options) {
 
     // Update spot status
     await db.collection('spots').updateOne(
-      { _id: new ObjectId(spotId) },
+      { _id: spotId },
       { $set: { status: 'free' } }
     )
 
@@ -81,7 +81,7 @@ export default async function spotRoutes(fastify, options) {
 
     // Record state history
     await db.collection('spotStateHistory').insertOne({
-      spotId: new ObjectId(spotId),
+      _id: spotId,
       at: new Date(),
       state: 'free',
       reason: 'check-out'
@@ -95,7 +95,7 @@ export default async function spotRoutes(fastify, options) {
     const db = getDB()
     const spotId = request.params.id
 
-    const spot = await db.collection('spots').findOne({ _id: new ObjectId(spotId) })
+    const spot = await db.collection('spots').findOne({ _id: spotId })
     
     if (!spot) {
       return reply.code(404).send({ error: 'Spot not found' })
@@ -104,13 +104,13 @@ export default async function spotRoutes(fastify, options) {
     const newStatus = spot.status === 'free' ? 'occupied' : 'free'
 
     await db.collection('spots').updateOne(
-      { _id: new ObjectId(spotId) },
+      { _id: spotId },
       { $set: { status: newStatus } }
     )
 
     // Record state history
     await db.collection('spotStateHistory').insertOne({
-      spotId: new ObjectId(spotId),
+      _id: spotId,
       at: new Date(),
       state: newStatus,
       reason: 'manual-toggle'

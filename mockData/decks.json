@@ -1,0 +1,20 @@
+[
+  {
+    "_id": "deckA",
+    "name": "North Deck",
+    "address": "100 University Way",
+    "geo": [
+      0,
+      0
+    ]
+  },
+  {
+    "_id": "deckB",
+    "name": "South Deck",
+    "address": "900 Research Dr",
+    "geo": [
+      0,
+      0
+    ]
+  }
+]

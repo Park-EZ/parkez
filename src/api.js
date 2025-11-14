@@ -5,6 +5,7 @@ const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000'
 
 // Use API if enabled in environment or if explicitly set
 const USE_API = import.meta.env.VITE_USE_API === 'true' || import.meta.env.VITE_USE_API === true
+// const USE_API = false
 const K = { decks: 'pk_decks', levels: 'pk_levels', spots: 'pk_spots' }
 const read = k => JSON.parse(localStorage.getItem(k) || 'null')
 const write = (k, v) => localStorage.setItem(k, JSON.stringify(v))
@@ -94,6 +95,7 @@ export async function toggleSpotOccupancy(spotId) {
       const response = await fetch(`${API_BASE_URL}/api/spots/${spotId}/toggle`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({})
       })
       if (!response.ok) throw new Error('Failed to toggle spot')
       const result = await response.json()
@@ -120,6 +122,7 @@ export async function applySpotSession(spotId) {
       const response = await fetch(`${API_BASE_URL}/api/spots/${spotId}/check-in`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({})
       })
       if (!response.ok) throw new Error('Failed to check in')
       const result = await response.json()
@@ -140,6 +143,7 @@ export async function checkOutSpot(spotId) {
       const response = await fetch(`${API_BASE_URL}/api/spots/${spotId}/check-out`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({})
       })
       if (!response.ok) throw new Error('Failed to check out')
       const result = await response.json()

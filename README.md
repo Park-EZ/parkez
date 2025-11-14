@@ -53,10 +53,10 @@ Or plain Node:
 node -v && npm -v
 # If not, install Node LTS (v20+)
 ```
-### 3. Ensure MongoDB is running on machine
+### 3. Install Local MongoDB (recommended method)
 ```bash
 Install MongoDB if not already on machine at https://www.mongodb.com/try/download/community
-Ensure that MongoDB Compass is installed and open it
+Ensure that MongoDB Compass is installed -- Launch it
 Create a new connection at mongodb://localhost:27017
 ```
 
@@ -85,6 +85,22 @@ npm run dev
 If you’re running on a **remote Linux server**, make it visible to your network:
 ```bash
 npx vite --host 0.0.0.0 --port 5173
+```
+## 7. Import starting mock data
+
+There are 3 .json files in \parkez\mockData which we will import using MongoDB Compass
+In Compass, select the connection we made earlier and navigate into ezpark
+Here select Deck, click 'Add Data', and Import JSON or CSV file. Then select the corresponding .json file from the mockData folder
+Please do the same for levels and spots
+
+(If this is confusing [which it might be], please refer to the User Manual where we explain the startup process in more detail with supporting screenshots.)
+
+## 6. Restart the app (Development)
+
+Start the Vite dev server:
+```bash
+Ctrl + C
+npm run dev
 ```
 
 Then open:

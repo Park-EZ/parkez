@@ -1,0 +1,2018 @@
+[
+  {
+    "_id": "A_L0_A01",
+    "levelId": "A_L0",
+    "label": "A01",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L0_A02",
+    "levelId": "A_L0",
+    "label": "A02",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L0_A03",
+    "levelId": "A_L0",
+    "label": "A03",
+    "type": "standard",
+    "status": "occupied"
+  },
+  {
+    "_id": "A_L0_A04",
+    "levelId": "A_L0",
+    "label": "A04",
+    "type": "standard",
+    "status": "occupied"
+  },
+  {
+    "_id": "A_L0_A05",
+    "levelId": "A_L0",
+    "label": "A05",
+    "type": "standard",
+    "status": "occupied"
+  },
+  {
+    "_id": "A_L0_A06",
+    "levelId": "A_L0",
+    "label": "A06",
+    "type": "standard",
+    "status": "occupied"
+  },
+  {
+    "_id": "A_L0_A07",
+    "levelId": "A_L0",
+    "label": "A07",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L0_A08",
+    "levelId": "A_L0",
+    "label": "A08",
+    "type": "EV",
+    "status": "occupied"
+  },
+  {
+    "_id": "A_L0_A09",
+    "levelId": "A_L0",
+    "label": "A09",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L0_A10",
+    "levelId": "A_L0",
+    "label": "A10",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L0_A11",
+    "levelId": "A_L0",
+    "label": "A11",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L0_A12",
+    "levelId": "A_L0",
+    "label": "A12",
+    "type": "ADA",
+    "status": "free"
+  },
+  {
+    "_id": "A_L0_A13",
+    "levelId": "A_L0",
+    "label": "A13",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L0_A14",
+    "levelId": "A_L0",
+    "label": "A14",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L0_A15",
+    "levelId": "A_L0",
+    "label": "A15",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L0_A16",
+    "levelId": "A_L0",
+    "label": "A16",
+    "type": "EV",
+    "status": "free"
+  },
+  {
+    "_id": "A_L0_A17",
+    "levelId": "A_L0",
+    "label": "A17",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L0_A18",
+    "levelId": "A_L0",
+    "label": "A18",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L0_A19",
+    "levelId": "A_L0",
+    "label": "A19",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L0_A20",
+    "levelId": "A_L0",
+    "label": "A20",
+    "type": "standard",
+    "status": "occupied"
+  },
+  {
+    "_id": "A_L0_A21",
+    "levelId": "A_L0",
+    "label": "A21",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L0_A22",
+    "levelId": "A_L0",
+    "label": "A22",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L0_A23",
+    "levelId": "A_L0",
+    "label": "A23",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L0_A24",
+    "levelId": "A_L0",
+    "label": "A24",
+    "type": "ADA",
+    "status": "free"
+  },
+  {
+    "_id": "A_L0_B01",
+    "levelId": "A_L0",
+    "label": "B01",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L0_B02",
+    "levelId": "A_L0",
+    "label": "B02",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L0_B03",
+    "levelId": "A_L0",
+    "label": "B03",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L0_B04",
+    "levelId": "A_L0",
+    "label": "B04",
+    "type": "standard",
+    "status": "occupied"
+  },
+  {
+    "_id": "A_L0_B05",
+    "levelId": "A_L0",
+    "label": "B05",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L0_B06",
+    "levelId": "A_L0",
+    "label": "B06",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L0_B07",
+    "levelId": "A_L0",
+    "label": "B07",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L0_B08",
+    "levelId": "A_L0",
+    "label": "B08",
+    "type": "EV",
+    "status": "occupied"
+  },
+  {
+    "_id": "A_L0_B09",
+    "levelId": "A_L0",
+    "label": "B09",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L0_B10",
+    "levelId": "A_L0",
+    "label": "B10",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L0_B11",
+    "levelId": "A_L0",
+    "label": "B11",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L0_B12",
+    "levelId": "A_L0",
+    "label": "B12",
+    "type": "ADA",
+    "status": "free"
+  },
+  {
+    "_id": "A_L0_B13",
+    "levelId": "A_L0",
+    "label": "B13",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L0_B14",
+    "levelId": "A_L0",
+    "label": "B14",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L0_B15",
+    "levelId": "A_L0",
+    "label": "B15",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L0_B16",
+    "levelId": "A_L0",
+    "label": "B16",
+    "type": "EV",
+    "status": "free"
+  },
+  {
+    "_id": "A_L0_B17",
+    "levelId": "A_L0",
+    "label": "B17",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L0_B18",
+    "levelId": "A_L0",
+    "label": "B18",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L0_B19",
+    "levelId": "A_L0",
+    "label": "B19",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L0_B20",
+    "levelId": "A_L0",
+    "label": "B20",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L0_B21",
+    "levelId": "A_L0",
+    "label": "B21",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L0_B22",
+    "levelId": "A_L0",
+    "label": "B22",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L0_B23",
+    "levelId": "A_L0",
+    "label": "B23",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L0_B24",
+    "levelId": "A_L0",
+    "label": "B24",
+    "type": "ADA",
+    "status": "occupied"
+  },
+  {
+    "_id": "A_L1_A01",
+    "levelId": "A_L1",
+    "label": "A01",
+    "type": "standard",
+    "status": "occupied"
+  },
+  {
+    "_id": "A_L1_A02",
+    "levelId": "A_L1",
+    "label": "A02",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L1_A03",
+    "levelId": "A_L1",
+    "label": "A03",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L1_A04",
+    "levelId": "A_L1",
+    "label": "A04",
+    "type": "standard",
+    "status": "occupied"
+  },
+  {
+    "_id": "A_L1_A05",
+    "levelId": "A_L1",
+    "label": "A05",
+    "type": "standard",
+    "status": "occupied"
+  },
+  {
+    "_id": "A_L1_A06",
+    "levelId": "A_L1",
+    "label": "A06",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L1_A07",
+    "levelId": "A_L1",
+    "label": "A07",
+    "type": "standard",
+    "status": "occupied"
+  },
+  {
+    "_id": "A_L1_A08",
+    "levelId": "A_L1",
+    "label": "A08",
+    "type": "EV",
+    "status": "free"
+  },
+  {
+    "_id": "A_L1_A09",
+    "levelId": "A_L1",
+    "label": "A09",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L1_A10",
+    "levelId": "A_L1",
+    "label": "A10",
+    "type": "standard",
+    "status": "occupied"
+  },
+  {
+    "_id": "A_L1_A11",
+    "levelId": "A_L1",
+    "label": "A11",
+    "type": "standard",
+    "status": "occupied"
+  },
+  {
+    "_id": "A_L1_A12",
+    "levelId": "A_L1",
+    "label": "A12",
+    "type": "ADA",
+    "status": "free"
+  },
+  {
+    "_id": "A_L1_A13",
+    "levelId": "A_L1",
+    "label": "A13",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L1_A14",
+    "levelId": "A_L1",
+    "label": "A14",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L1_A15",
+    "levelId": "A_L1",
+    "label": "A15",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L1_A16",
+    "levelId": "A_L1",
+    "label": "A16",
+    "type": "EV",
+    "status": "free"
+  },
+  {
+    "_id": "A_L1_A17",
+    "levelId": "A_L1",
+    "label": "A17",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L1_A18",
+    "levelId": "A_L1",
+    "label": "A18",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L1_A19",
+    "levelId": "A_L1",
+    "label": "A19",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L1_A20",
+    "levelId": "A_L1",
+    "label": "A20",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L1_A21",
+    "levelId": "A_L1",
+    "label": "A21",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L1_A22",
+    "levelId": "A_L1",
+    "label": "A22",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L1_A23",
+    "levelId": "A_L1",
+    "label": "A23",
+    "type": "standard",
+    "status": "occupied"
+  },
+  {
+    "_id": "A_L1_A24",
+    "levelId": "A_L1",
+    "label": "A24",
+    "type": "ADA",
+    "status": "occupied"
+  },
+  {
+    "_id": "A_L1_B01",
+    "levelId": "A_L1",
+    "label": "B01",
+    "type": "standard",
+    "status": "occupied"
+  },
+  {
+    "_id": "A_L1_B02",
+    "levelId": "A_L1",
+    "label": "B02",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L1_B03",
+    "levelId": "A_L1",
+    "label": "B03",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L1_B04",
+    "levelId": "A_L1",
+    "label": "B04",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L1_B05",
+    "levelId": "A_L1",
+    "label": "B05",
+    "type": "standard",
+    "status": "occupied"
+  },
+  {
+    "_id": "A_L1_B06",
+    "levelId": "A_L1",
+    "label": "B06",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L1_B07",
+    "levelId": "A_L1",
+    "label": "B07",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L1_B08",
+    "levelId": "A_L1",
+    "label": "B08",
+    "type": "EV",
+    "status": "occupied"
+  },
+  {
+    "_id": "A_L1_B09",
+    "levelId": "A_L1",
+    "label": "B09",
+    "type": "standard",
+    "status": "occupied"
+  },
+  {
+    "_id": "A_L1_B10",
+    "levelId": "A_L1",
+    "label": "B10",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L1_B11",
+    "levelId": "A_L1",
+    "label": "B11",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L1_B12",
+    "levelId": "A_L1",
+    "label": "B12",
+    "type": "ADA",
+    "status": "free"
+  },
+  {
+    "_id": "A_L1_B13",
+    "levelId": "A_L1",
+    "label": "B13",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L1_B14",
+    "levelId": "A_L1",
+    "label": "B14",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L1_B15",
+    "levelId": "A_L1",
+    "label": "B15",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L1_B16",
+    "levelId": "A_L1",
+    "label": "B16",
+    "type": "EV",
+    "status": "free"
+  },
+  {
+    "_id": "A_L1_B17",
+    "levelId": "A_L1",
+    "label": "B17",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L1_B18",
+    "levelId": "A_L1",
+    "label": "B18",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L1_B19",
+    "levelId": "A_L1",
+    "label": "B19",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L1_B20",
+    "levelId": "A_L1",
+    "label": "B20",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L1_B21",
+    "levelId": "A_L1",
+    "label": "B21",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L1_B22",
+    "levelId": "A_L1",
+    "label": "B22",
+    "type": "standard",
+    "status": "occupied"
+  },
+  {
+    "_id": "A_L1_B23",
+    "levelId": "A_L1",
+    "label": "B23",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L1_B24",
+    "levelId": "A_L1",
+    "label": "B24",
+    "type": "ADA",
+    "status": "occupied"
+  },
+  {
+    "_id": "A_L2_A01",
+    "levelId": "A_L2",
+    "label": "A01",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L2_A02",
+    "levelId": "A_L2",
+    "label": "A02",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L2_A03",
+    "levelId": "A_L2",
+    "label": "A03",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L2_A04",
+    "levelId": "A_L2",
+    "label": "A04",
+    "type": "standard",
+    "status": "occupied"
+  },
+  {
+    "_id": "A_L2_A05",
+    "levelId": "A_L2",
+    "label": "A05",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L2_A06",
+    "levelId": "A_L2",
+    "label": "A06",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L2_A07",
+    "levelId": "A_L2",
+    "label": "A07",
+    "type": "standard",
+    "status": "occupied"
+  },
+  {
+    "_id": "A_L2_A08",
+    "levelId": "A_L2",
+    "label": "A08",
+    "type": "EV",
+    "status": "free"
+  },
+  {
+    "_id": "A_L2_A09",
+    "levelId": "A_L2",
+    "label": "A09",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L2_A10",
+    "levelId": "A_L2",
+    "label": "A10",
+    "type": "standard",
+    "status": "occupied"
+  },
+  {
+    "_id": "A_L2_A11",
+    "levelId": "A_L2",
+    "label": "A11",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L2_A12",
+    "levelId": "A_L2",
+    "label": "A12",
+    "type": "ADA",
+    "status": "free"
+  },
+  {
+    "_id": "A_L2_A13",
+    "levelId": "A_L2",
+    "label": "A13",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L2_A14",
+    "levelId": "A_L2",
+    "label": "A14",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L2_A15",
+    "levelId": "A_L2",
+    "label": "A15",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L2_A16",
+    "levelId": "A_L2",
+    "label": "A16",
+    "type": "EV",
+    "status": "free"
+  },
+  {
+    "_id": "A_L2_A17",
+    "levelId": "A_L2",
+    "label": "A17",
+    "type": "standard",
+    "status": "occupied"
+  },
+  {
+    "_id": "A_L2_A18",
+    "levelId": "A_L2",
+    "label": "A18",
+    "type": "standard",
+    "status": "occupied"
+  },
+  {
+    "_id": "A_L2_A19",
+    "levelId": "A_L2",
+    "label": "A19",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L2_A20",
+    "levelId": "A_L2",
+    "label": "A20",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L2_A21",
+    "levelId": "A_L2",
+    "label": "A21",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L2_A22",
+    "levelId": "A_L2",
+    "label": "A22",
+    "type": "standard",
+    "status": "occupied"
+  },
+  {
+    "_id": "A_L2_A23",
+    "levelId": "A_L2",
+    "label": "A23",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L2_A24",
+    "levelId": "A_L2",
+    "label": "A24",
+    "type": "ADA",
+    "status": "free"
+  },
+  {
+    "_id": "A_L2_B01",
+    "levelId": "A_L2",
+    "label": "B01",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L2_B02",
+    "levelId": "A_L2",
+    "label": "B02",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L2_B03",
+    "levelId": "A_L2",
+    "label": "B03",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L2_B04",
+    "levelId": "A_L2",
+    "label": "B04",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L2_B05",
+    "levelId": "A_L2",
+    "label": "B05",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L2_B06",
+    "levelId": "A_L2",
+    "label": "B06",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L2_B07",
+    "levelId": "A_L2",
+    "label": "B07",
+    "type": "standard",
+    "status": "occupied"
+  },
+  {
+    "_id": "A_L2_B08",
+    "levelId": "A_L2",
+    "label": "B08",
+    "type": "EV",
+    "status": "free"
+  },
+  {
+    "_id": "A_L2_B09",
+    "levelId": "A_L2",
+    "label": "B09",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L2_B10",
+    "levelId": "A_L2",
+    "label": "B10",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L2_B11",
+    "levelId": "A_L2",
+    "label": "B11",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L2_B12",
+    "levelId": "A_L2",
+    "label": "B12",
+    "type": "ADA",
+    "status": "free"
+  },
+  {
+    "_id": "A_L2_B13",
+    "levelId": "A_L2",
+    "label": "B13",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L2_B14",
+    "levelId": "A_L2",
+    "label": "B14",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L2_B15",
+    "levelId": "A_L2",
+    "label": "B15",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L2_B16",
+    "levelId": "A_L2",
+    "label": "B16",
+    "type": "EV",
+    "status": "free"
+  },
+  {
+    "_id": "A_L2_B17",
+    "levelId": "A_L2",
+    "label": "B17",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L2_B18",
+    "levelId": "A_L2",
+    "label": "B18",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L2_B19",
+    "levelId": "A_L2",
+    "label": "B19",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L2_B20",
+    "levelId": "A_L2",
+    "label": "B20",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L2_B21",
+    "levelId": "A_L2",
+    "label": "B21",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L2_B22",
+    "levelId": "A_L2",
+    "label": "B22",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L2_B23",
+    "levelId": "A_L2",
+    "label": "B23",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "A_L2_B24",
+    "levelId": "A_L2",
+    "label": "B24",
+    "type": "ADA",
+    "status": "free"
+  },
+  {
+    "_id": "B_L0_A01",
+    "levelId": "B_L0",
+    "label": "A01",
+    "type": "standard",
+    "status": "occupied"
+  },
+  {
+    "_id": "B_L0_A02",
+    "levelId": "B_L0",
+    "label": "A02",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L0_A03",
+    "levelId": "B_L0",
+    "label": "A03",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L0_A04",
+    "levelId": "B_L0",
+    "label": "A04",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L0_A05",
+    "levelId": "B_L0",
+    "label": "A05",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L0_A06",
+    "levelId": "B_L0",
+    "label": "A06",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L0_A07",
+    "levelId": "B_L0",
+    "label": "A07",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L0_A08",
+    "levelId": "B_L0",
+    "label": "A08",
+    "type": "EV",
+    "status": "free"
+  },
+  {
+    "_id": "B_L0_A09",
+    "levelId": "B_L0",
+    "label": "A09",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L0_A10",
+    "levelId": "B_L0",
+    "label": "A10",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L0_A11",
+    "levelId": "B_L0",
+    "label": "A11",
+    "type": "standard",
+    "status": "occupied"
+  },
+  {
+    "_id": "B_L0_A12",
+    "levelId": "B_L0",
+    "label": "A12",
+    "type": "ADA",
+    "status": "free"
+  },
+  {
+    "_id": "B_L0_A13",
+    "levelId": "B_L0",
+    "label": "A13",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L0_A14",
+    "levelId": "B_L0",
+    "label": "A14",
+    "type": "standard",
+    "status": "occupied"
+  },
+  {
+    "_id": "B_L0_A15",
+    "levelId": "B_L0",
+    "label": "A15",
+    "type": "standard",
+    "status": "occupied"
+  },
+  {
+    "_id": "B_L0_A16",
+    "levelId": "B_L0",
+    "label": "A16",
+    "type": "EV",
+    "status": "occupied"
+  },
+  {
+    "_id": "B_L0_A17",
+    "levelId": "B_L0",
+    "label": "A17",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L0_A18",
+    "levelId": "B_L0",
+    "label": "A18",
+    "type": "standard",
+    "status": "occupied"
+  },
+  {
+    "_id": "B_L0_A19",
+    "levelId": "B_L0",
+    "label": "A19",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L0_A20",
+    "levelId": "B_L0",
+    "label": "A20",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L0_A21",
+    "levelId": "B_L0",
+    "label": "A21",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L0_A22",
+    "levelId": "B_L0",
+    "label": "A22",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L0_A23",
+    "levelId": "B_L0",
+    "label": "A23",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L0_A24",
+    "levelId": "B_L0",
+    "label": "A24",
+    "type": "ADA",
+    "status": "free"
+  },
+  {
+    "_id": "B_L0_B01",
+    "levelId": "B_L0",
+    "label": "B01",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L0_B02",
+    "levelId": "B_L0",
+    "label": "B02",
+    "type": "standard",
+    "status": "occupied"
+  },
+  {
+    "_id": "B_L0_B03",
+    "levelId": "B_L0",
+    "label": "B03",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L0_B04",
+    "levelId": "B_L0",
+    "label": "B04",
+    "type": "standard",
+    "status": "occupied"
+  },
+  {
+    "_id": "B_L0_B05",
+    "levelId": "B_L0",
+    "label": "B05",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L0_B06",
+    "levelId": "B_L0",
+    "label": "B06",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L0_B07",
+    "levelId": "B_L0",
+    "label": "B07",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L0_B08",
+    "levelId": "B_L0",
+    "label": "B08",
+    "type": "EV",
+    "status": "occupied"
+  },
+  {
+    "_id": "B_L0_B09",
+    "levelId": "B_L0",
+    "label": "B09",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L0_B10",
+    "levelId": "B_L0",
+    "label": "B10",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L0_B11",
+    "levelId": "B_L0",
+    "label": "B11",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L0_B12",
+    "levelId": "B_L0",
+    "label": "B12",
+    "type": "ADA",
+    "status": "free"
+  },
+  {
+    "_id": "B_L0_B13",
+    "levelId": "B_L0",
+    "label": "B13",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L0_B14",
+    "levelId": "B_L0",
+    "label": "B14",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L0_B15",
+    "levelId": "B_L0",
+    "label": "B15",
+    "type": "standard",
+    "status": "occupied"
+  },
+  {
+    "_id": "B_L0_B16",
+    "levelId": "B_L0",
+    "label": "B16",
+    "type": "EV",
+    "status": "free"
+  },
+  {
+    "_id": "B_L0_B17",
+    "levelId": "B_L0",
+    "label": "B17",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L0_B18",
+    "levelId": "B_L0",
+    "label": "B18",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L0_B19",
+    "levelId": "B_L0",
+    "label": "B19",
+    "type": "standard",
+    "status": "occupied"
+  },
+  {
+    "_id": "B_L0_B20",
+    "levelId": "B_L0",
+    "label": "B20",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L0_B21",
+    "levelId": "B_L0",
+    "label": "B21",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L0_B22",
+    "levelId": "B_L0",
+    "label": "B22",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L0_B23",
+    "levelId": "B_L0",
+    "label": "B23",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L0_B24",
+    "levelId": "B_L0",
+    "label": "B24",
+    "type": "ADA",
+    "status": "free"
+  },
+  {
+    "_id": "B_L1_A01",
+    "levelId": "B_L1",
+    "label": "A01",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L1_A02",
+    "levelId": "B_L1",
+    "label": "A02",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L1_A03",
+    "levelId": "B_L1",
+    "label": "A03",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L1_A04",
+    "levelId": "B_L1",
+    "label": "A04",
+    "type": "standard",
+    "status": "occupied"
+  },
+  {
+    "_id": "B_L1_A05",
+    "levelId": "B_L1",
+    "label": "A05",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L1_A06",
+    "levelId": "B_L1",
+    "label": "A06",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L1_A07",
+    "levelId": "B_L1",
+    "label": "A07",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L1_A08",
+    "levelId": "B_L1",
+    "label": "A08",
+    "type": "EV",
+    "status": "occupied"
+  },
+  {
+    "_id": "B_L1_A09",
+    "levelId": "B_L1",
+    "label": "A09",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L1_A10",
+    "levelId": "B_L1",
+    "label": "A10",
+    "type": "standard",
+    "status": "occupied"
+  },
+  {
+    "_id": "B_L1_A11",
+    "levelId": "B_L1",
+    "label": "A11",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L1_A12",
+    "levelId": "B_L1",
+    "label": "A12",
+    "type": "ADA",
+    "status": "free"
+  },
+  {
+    "_id": "B_L1_A13",
+    "levelId": "B_L1",
+    "label": "A13",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L1_A14",
+    "levelId": "B_L1",
+    "label": "A14",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L1_A15",
+    "levelId": "B_L1",
+    "label": "A15",
+    "type": "standard",
+    "status": "occupied"
+  },
+  {
+    "_id": "B_L1_A16",
+    "levelId": "B_L1",
+    "label": "A16",
+    "type": "EV",
+    "status": "free"
+  },
+  {
+    "_id": "B_L1_A17",
+    "levelId": "B_L1",
+    "label": "A17",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L1_A18",
+    "levelId": "B_L1",
+    "label": "A18",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L1_A19",
+    "levelId": "B_L1",
+    "label": "A19",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L1_A20",
+    "levelId": "B_L1",
+    "label": "A20",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L1_A21",
+    "levelId": "B_L1",
+    "label": "A21",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L1_A22",
+    "levelId": "B_L1",
+    "label": "A22",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L1_A23",
+    "levelId": "B_L1",
+    "label": "A23",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L1_A24",
+    "levelId": "B_L1",
+    "label": "A24",
+    "type": "ADA",
+    "status": "free"
+  },
+  {
+    "_id": "B_L1_B01",
+    "levelId": "B_L1",
+    "label": "B01",
+    "type": "standard",
+    "status": "occupied"
+  },
+  {
+    "_id": "B_L1_B02",
+    "levelId": "B_L1",
+    "label": "B02",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L1_B03",
+    "levelId": "B_L1",
+    "label": "B03",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L1_B04",
+    "levelId": "B_L1",
+    "label": "B04",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L1_B05",
+    "levelId": "B_L1",
+    "label": "B05",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L1_B06",
+    "levelId": "B_L1",
+    "label": "B06",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L1_B07",
+    "levelId": "B_L1",
+    "label": "B07",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L1_B08",
+    "levelId": "B_L1",
+    "label": "B08",
+    "type": "EV",
+    "status": "occupied"
+  },
+  {
+    "_id": "B_L1_B09",
+    "levelId": "B_L1",
+    "label": "B09",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L1_B10",
+    "levelId": "B_L1",
+    "label": "B10",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L1_B11",
+    "levelId": "B_L1",
+    "label": "B11",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L1_B12",
+    "levelId": "B_L1",
+    "label": "B12",
+    "type": "ADA",
+    "status": "free"
+  },
+  {
+    "_id": "B_L1_B13",
+    "levelId": "B_L1",
+    "label": "B13",
+    "type": "standard",
+    "status": "occupied"
+  },
+  {
+    "_id": "B_L1_B14",
+    "levelId": "B_L1",
+    "label": "B14",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L1_B15",
+    "levelId": "B_L1",
+    "label": "B15",
+    "type": "standard",
+    "status": "occupied"
+  },
+  {
+    "_id": "B_L1_B16",
+    "levelId": "B_L1",
+    "label": "B16",
+    "type": "EV",
+    "status": "free"
+  },
+  {
+    "_id": "B_L1_B17",
+    "levelId": "B_L1",
+    "label": "B17",
+    "type": "standard",
+    "status": "occupied"
+  },
+  {
+    "_id": "B_L1_B18",
+    "levelId": "B_L1",
+    "label": "B18",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L1_B19",
+    "levelId": "B_L1",
+    "label": "B19",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L1_B20",
+    "levelId": "B_L1",
+    "label": "B20",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L1_B21",
+    "levelId": "B_L1",
+    "label": "B21",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L1_B22",
+    "levelId": "B_L1",
+    "label": "B22",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L1_B23",
+    "levelId": "B_L1",
+    "label": "B23",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L1_B24",
+    "levelId": "B_L1",
+    "label": "B24",
+    "type": "ADA",
+    "status": "free"
+  },
+  {
+    "_id": "B_L2_A01",
+    "levelId": "B_L2",
+    "label": "A01",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L2_A02",
+    "levelId": "B_L2",
+    "label": "A02",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L2_A03",
+    "levelId": "B_L2",
+    "label": "A03",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L2_A04",
+    "levelId": "B_L2",
+    "label": "A04",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L2_A05",
+    "levelId": "B_L2",
+    "label": "A05",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L2_A06",
+    "levelId": "B_L2",
+    "label": "A06",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L2_A07",
+    "levelId": "B_L2",
+    "label": "A07",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L2_A08",
+    "levelId": "B_L2",
+    "label": "A08",
+    "type": "EV",
+    "status": "free"
+  },
+  {
+    "_id": "B_L2_A09",
+    "levelId": "B_L2",
+    "label": "A09",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L2_A10",
+    "levelId": "B_L2",
+    "label": "A10",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L2_A11",
+    "levelId": "B_L2",
+    "label": "A11",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L2_A12",
+    "levelId": "B_L2",
+    "label": "A12",
+    "type": "ADA",
+    "status": "occupied"
+  },
+  {
+    "_id": "B_L2_A13",
+    "levelId": "B_L2",
+    "label": "A13",
+    "type": "standard",
+    "status": "occupied"
+  },
+  {
+    "_id": "B_L2_A14",
+    "levelId": "B_L2",
+    "label": "A14",
+    "type": "standard",
+    "status": "occupied"
+  },
+  {
+    "_id": "B_L2_A15",
+    "levelId": "B_L2",
+    "label": "A15",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L2_A16",
+    "levelId": "B_L2",
+    "label": "A16",
+    "type": "EV",
+    "status": "free"
+  },
+  {
+    "_id": "B_L2_A17",
+    "levelId": "B_L2",
+    "label": "A17",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L2_A18",
+    "levelId": "B_L2",
+    "label": "A18",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L2_A19",
+    "levelId": "B_L2",
+    "label": "A19",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L2_A20",
+    "levelId": "B_L2",
+    "label": "A20",
+    "type": "standard",
+    "status": "occupied"
+  },
+  {
+    "_id": "B_L2_A21",
+    "levelId": "B_L2",
+    "label": "A21",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L2_A22",
+    "levelId": "B_L2",
+    "label": "A22",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L2_A23",
+    "levelId": "B_L2",
+    "label": "A23",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L2_A24",
+    "levelId": "B_L2",
+    "label": "A24",
+    "type": "ADA",
+    "status": "free"
+  },
+  {
+    "_id": "B_L2_B01",
+    "levelId": "B_L2",
+    "label": "B01",
+    "type": "standard",
+    "status": "occupied"
+  },
+  {
+    "_id": "B_L2_B02",
+    "levelId": "B_L2",
+    "label": "B02",
+    "type": "standard",
+    "status": "occupied"
+  },
+  {
+    "_id": "B_L2_B03",
+    "levelId": "B_L2",
+    "label": "B03",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L2_B04",
+    "levelId": "B_L2",
+    "label": "B04",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L2_B05",
+    "levelId": "B_L2",
+    "label": "B05",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L2_B06",
+    "levelId": "B_L2",
+    "label": "B06",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L2_B07",
+    "levelId": "B_L2",
+    "label": "B07",
+    "type": "standard",
+    "status": "occupied"
+  },
+  {
+    "_id": "B_L2_B08",
+    "levelId": "B_L2",
+    "label": "B08",
+    "type": "EV",
+    "status": "free"
+  },
+  {
+    "_id": "B_L2_B09",
+    "levelId": "B_L2",
+    "label": "B09",
+    "type": "standard",
+    "status": "occupied"
+  },
+  {
+    "_id": "B_L2_B10",
+    "levelId": "B_L2",
+    "label": "B10",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L2_B11",
+    "levelId": "B_L2",
+    "label": "B11",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L2_B12",
+    "levelId": "B_L2",
+    "label": "B12",
+    "type": "ADA",
+    "status": "free"
+  },
+  {
+    "_id": "B_L2_B13",
+    "levelId": "B_L2",
+    "label": "B13",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L2_B14",
+    "levelId": "B_L2",
+    "label": "B14",
+    "type": "standard",
+    "status": "occupied"
+  },
+  {
+    "_id": "B_L2_B15",
+    "levelId": "B_L2",
+    "label": "B15",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L2_B16",
+    "levelId": "B_L2",
+    "label": "B16",
+    "type": "EV",
+    "status": "free"
+  },
+  {
+    "_id": "B_L2_B17",
+    "levelId": "B_L2",
+    "label": "B17",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L2_B18",
+    "levelId": "B_L2",
+    "label": "B18",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L2_B19",
+    "levelId": "B_L2",
+    "label": "B19",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L2_B20",
+    "levelId": "B_L2",
+    "label": "B20",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L2_B21",
+    "levelId": "B_L2",
+    "label": "B21",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L2_B22",
+    "levelId": "B_L2",
+    "label": "B22",
+    "type": "standard",
+    "status": "occupied"
+  },
+  {
+    "_id": "B_L2_B23",
+    "levelId": "B_L2",
+    "label": "B23",
+    "type": "standard",
+    "status": "free"
+  },
+  {
+    "_id": "B_L2_B24",
+    "levelId": "B_L2",
+    "label": "B24",
+    "type": "ADA",
+    "status": "free"
+  }
+]

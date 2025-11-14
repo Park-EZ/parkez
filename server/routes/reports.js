@@ -8,19 +8,31 @@ export default async function reportRoutes(fastify, options) {
     const spotId = request.params.id
     const { reportType, notes } = request.body
     const userId = request.user?.id || null
-
     if (!reportType) {
       return reply.code(400).send({ error: 'Missing reportType' })
     }
 
-    const spot = await db.collection('spots').findOne({ _id: new ObjectId(spotId) })
+    // Accept either string IDs (from mock data) or ObjectId strings.
+    // Try to build an ObjectId for lookup/storage; fall back to using the raw string.
+    let lookupQuery
+    let storedSpotId
+    try {
+      storedSpotId = new ObjectId(spotId)
+      lookupQuery = { _id: storedSpotId }
+    } catch (err) {
+      // Not a valid ObjectId -> use string id (mock data)
+      storedSpotId = spotId
+      lookupQuery = { _id: spotId }
+    }
+
+    const spot = await db.collection('spots').findOne(lookupQuery)
     
     if (!spot) {
       return reply.code(404).send({ error: 'Spot not found' })
     }
 
     const report = {
-      spotId: new ObjectId(spotId),
+      spotId: storedSpotId,
       userId: userId,
       reportType,
       notes: notes || '',

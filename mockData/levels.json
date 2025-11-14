@@ -1,0 +1,38 @@
+[
+  {
+    "_id": "A_L0",
+    "deckId": "deckA",
+    "index": 0,
+    "name": "A • Level 1"
+  },
+  {
+    "_id": "A_L1",
+    "deckId": "deckA",
+    "index": 1,
+    "name": "A • Level 2"
+  },
+  {
+    "_id": "A_L2",
+    "deckId": "deckA",
+    "index": 2,
+    "name": "A • Level 3"
+  },
+  {
+    "_id": "B_L0",
+    "deckId": "deckB",
+    "index": 0,
+    "name": "B • Level 1"
+  },
+  {
+    "_id": "B_L1",
+    "deckId": "deckB",
+    "index": 1,
+    "name": "B • Level 2"
+  },
+  {
+    "_id": "B_L2",
+    "deckId": "deckB",
+    "index": 2,
+    "name": "B • Level 3"
+  }
+]

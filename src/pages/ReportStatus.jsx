@@ -4,6 +4,10 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { getSpotsByLevel, getLevelsByDeck, getDecks } from "@/api"
+
+// API base url (reports route lives under /api/reports/spots/:id)
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000'
+const USE_API = import.meta.env.VITE_USE_API === 'true' || import.meta.env.VITE_USE_API === true
 import { useToast } from "@/hooks/use-toast"
 import { AlertCircle, CheckCircle2 } from "lucide-react"
 
@@ -32,9 +36,38 @@ export default function ReportStatus() {
           
           if (spot) {
             found = true
-            // TODO: Replace with actual API call to report status
-            // await reportSpotStatus(spot._id, reportType, notes)
-            
+
+            // Submit report to backend reports route
+            if (USE_API) {
+              try {
+                const res = await fetch(`${API_BASE_URL}/api/reports/spots/${spot._id}`, {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({ reportType, notes }),
+                })
+
+                if (!res.ok) {
+                  let msg = `Failed to submit report (${res.status})`
+                  try {
+                    const body = await res.json()
+                    msg = body.error || body.message || msg
+                  } catch (e) {}
+                  throw new Error(msg)
+                }
+              } catch (err) {
+                toast({
+                  title: "Report failed",
+                  description: err.message || 'Failed to submit report',
+                  variant: 'destructive',
+                })
+                setLoading(false)
+                return
+              }
+            } else {
+              // Local fallback: just log the report (UI still shows a confirmation)
+              console.log('Report (local):', { spotId: spot._id, reportType, notes })
+            }
+
             toast({
               title: "Report submitted",
               description: `Your report for spot ${spot.label} has been submitted and will be reviewed.`,
