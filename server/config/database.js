@@ -8,11 +8,11 @@ const DB_NAME = process.env.DB_NAME || 'ezpark'
 
 export async function connectDB() {
   if (client && db) {
-    console.log('✅ MongoDB: Already connected')
+    console.log('MongoDB: Already connected')
     return db
   }
 
-  console.log('🔄 MongoDB: Attempting to connect...')
+  console.log('MongoDB: Attempting to connect...')
   console.log(`   URI: ${MONGODB_URI.replace(/\/\/[^:]+:[^@]+@/, '//***:***@')}`) // Hide password
   console.log(`   Database: ${DB_NAME}`)
 
@@ -38,29 +38,29 @@ export async function connectDB() {
     // Verify database is accessible by listing collections
     await db.listCollections().toArray()
     
-    console.log(`✅ MongoDB: Connected successfully (${connectionTime}ms)`)
+    console.log(`MongoDB: Connected successfully (${connectionTime}ms)`)
     console.log(`   Database: ${DB_NAME} (verified/created)`)
     
     // Initialize database schema (collections, indexes, validators)
-    console.log('🔄 MongoDB: Initializing database schema...')
+    console.log('MongoDB: Initializing database schema...')
     await initializeSchema(db)
-    console.log('✅ MongoDB: Database schema initialized')
+    console.log('MongoDB: Database schema initialized')
     
     return db
   } catch (error) {
     console.error('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
-    console.error('❌ MongoDB: Connection failed')
+    console.error('MongoDB: Connection failed')
     console.error(`   Error: ${error.message}`)
     console.error(`   Error Code: ${error.code || 'N/A'}`)
     
     if (error.message.includes('ECONNREFUSED') || error.code === 'ECONNREFUSED') {
-      console.error('   💡 Tip: Make sure MongoDB is running')
-      console.error('   💡 Local: Start MongoDB service or run: docker-compose up -d')
-      console.error('   💡 Remote: Check connection string and network access')
+      console.error('   Tip: Make sure MongoDB is running')
+      console.error('   Local: Start MongoDB service or run: docker-compose up -d')
+      console.error('   Remote: Check connection string and network access')
     } else if (error.message.includes('authentication') || error.code === 18) {
-      console.error('   💡 Tip: Check MongoDB credentials in MONGODB_URI')
+      console.error('   Tip: Check MongoDB credentials in MONGODB_URI')
     } else if (error.message.includes('timeout') || error.code === 'ETIMEDOUT') {
-      console.error('   💡 Tip: Check network connectivity and MongoDB server status')
+      console.error('   Tip: Check network connectivity and MongoDB server status')
     }
     
     console.error('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
@@ -101,7 +101,7 @@ async function initializeSchema(db) {
     // Create validators (optional, for data validation)
     await createValidators(db)
   } catch (error) {
-    console.error('   ❌ Error initializing schema:', error.message)
+    console.error('   Error initializing schema:', error.message)
     throw error
   }
 }
@@ -120,7 +120,7 @@ async function createCollections(db) {
     'spotReports'
   ]
 
-  console.log('   🔄 Creating collections...')
+  console.log('   Creating collections...')
   for (const collectionName of collections) {
     try {
       // Check if collection exists
@@ -129,16 +129,16 @@ async function createCollections(db) {
       if (existingCollections.length === 0) {
         // Create collection
         await db.createCollection(collectionName)
-        console.log(`   ✅ Collection '${collectionName}' created`)
+        console.log(`   Collection '${collectionName}' created`)
       } else {
-        console.log(`   ✅ Collection '${collectionName}' exists`)
+        console.log(`   Collection '${collectionName}' exists`)
       }
     } catch (error) {
       // Collection might already exist (race condition)
       if (error.code !== 48) { // 48 = NamespaceExists
-        console.log(`   ⚠️  Collection '${collectionName}': ${error.message}`)
+        console.log(`   Collection '${collectionName}': ${error.message}`)
       } else {
-        console.log(`   ✅ Collection '${collectionName}' exists`)
+        console.log(`   Collection '${collectionName}' exists`)
       }
     }
   }
@@ -148,7 +148,7 @@ async function createCollections(db) {
  * Create all indexes for optimal query performance
  */
 async function createIndexes(db) {
-  console.log('   🔄 Creating indexes...')
+  console.log('   Creating indexes...')
   
   const indexes = [
     // Decks collection
@@ -187,14 +187,14 @@ async function createIndexes(db) {
   for (const { collection, index, options } of indexes) {
     try {
       await db.collection(collection).createIndex(index, options)
-      console.log(`   ✅ Index '${options.name}' on '${collection}'`)
+      console.log(`   Index '${options.name}' on '${collection}'`)
     } catch (err) {
       // Index might already exist, which is fine
       if (err.code === 85 || err.code === 86) {
         // 85 = IndexOptionsConflict, 86 = IndexKeySpecsConflict (index already exists)
-        console.log(`   ✅ Index '${options.name}' on '${collection}' (already exists)`)
+        console.log(`   Index '${options.name}' on '${collection}' (already exists)`)
       } else if (err.code !== 27) { // 27 = IndexKeySpecsConflict (duplicate key)
-        console.log(`   ⚠️  Index '${options.name}' on '${collection}': ${err.message}`)
+        console.log(`   Index '${options.name}' on '${collection}': ${err.message}`)
       }
     }
   }
@@ -204,7 +204,7 @@ async function createIndexes(db) {
  * Create collection validators for data integrity (optional but recommended)
  */
 async function createValidators(db) {
-  console.log('   🔄 Setting up validators...')
+  console.log('   Setting up validators...')
   
   const validators = [
     {
@@ -278,19 +278,21 @@ async function createValidators(db) {
         try {
           await db.command({
             collMod: collection,
-            validator: validator.$jsonSchema
+              validator: {
+                $jsonSchema: validator.$jsonSchema
+              }
           })
-          console.log(`   ✅ Validator set on '${collection}'`)
+          console.log(`   Validator set on '${collection}'`)
         } catch (err) {
           // Validator might already exist or collection has data - this is acceptable
           if (err.code === 13 || err.code === 66) {
-            console.log(`   ✅ Validator on '${collection}' (already set or has data)`)
+            console.log(`   Validator on '${collection}' (already set or has data)`)
           }
         }
       }
     } catch (error) {
       // Silently skip validator errors - they're optional
-      console.log(`   ⚠️  Validator on '${collection}': ${error.message}`)
+      console.log(`   Validator on '${collection}': ${error.message}`)
     }
   }
 }
