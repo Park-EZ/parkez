@@ -53,15 +53,29 @@ Or plain Node:
 node -v && npm -v
 # If not, install Node LTS (v20+)
 ```
-
-### 3. Install dependencies
+### 3. Ensure MongoDB is running on machine
 ```bash
-npm install
+Install MongoDB if not already on machine at https://www.mongodb.com/try/download/community
+Ensure that MongoDB Compass is installed and open it
+Create a new connection at mongodb://localhost:27017
 ```
 
+### 4. Install dependencies
+```bash
+npm install
+(also for good measure)
+cd server
+npm install
+cd ..
+```
+
+### 5. Copy .env.example as .env
+```bash
+Copy .env.example into root project directory (/parkez/) as .env
+```
 ---
 
-## 4. Run the app (Development)
+## 6. Run the app (Development)
 
 Start the Vite dev server:
 ```bash
