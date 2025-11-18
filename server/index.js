@@ -1,7 +1,14 @@
-import 'dotenv/config'
+import dotenv from 'dotenv'
+import { fileURLToPath } from 'url'
+import { dirname, join } from 'path'
 import Fastify from 'fastify'
 import cors from '@fastify/cors'
 import { connectDB } from './config/database.js'
+
+// Load .env from project root (parent directory)
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
+dotenv.config({ path: join(__dirname, '..', '.env') })
 import deckRoutes from './routes/decks.js'
 import levelRoutes from './routes/levels.js'
 import spotRoutes from './routes/spots.js'

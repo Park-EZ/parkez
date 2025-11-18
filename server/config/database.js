@@ -3,14 +3,15 @@ import { MongoClient } from 'mongodb'
 let client = null
 let db = null
 
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017'
-const DB_NAME = process.env.DB_NAME || 'ezpark'
-
 export async function connectDB() {
   if (client && db) {
     console.log('MongoDB: Already connected')
     return db
   }
+
+  // Read environment variables inside the function to ensure dotenv has loaded them
+  const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017'
+  const DB_NAME = process.env.DB_NAME || 'ezpark'
 
   console.log('MongoDB: Attempting to connect...')
   console.log(`   URI: ${MONGODB_URI.replace(/\/\/[^:]+:[^@]+@/, '//***:***@')}`) // Hide password
@@ -57,8 +58,10 @@ export async function connectDB() {
       console.error('   Tip: Make sure MongoDB is running')
       console.error('   Local: Start MongoDB service or run: docker-compose up -d')
       console.error('   Remote: Check connection string and network access')
-    } else if (error.message.includes('authentication') || error.code === 18) {
+    } else if (error.message.includes('authentication') || error.code === 18 || error.code === 13) {
       console.error('   Tip: Check MongoDB credentials in MONGODB_URI')
+      console.error('   Docker: mongodb://admin:password@localhost:27017/ezpark?authSource=admin')
+      console.error('   Make sure .env file is in project root and contains MONGODB_URI')
     } else if (error.message.includes('timeout') || error.code === 'ETIMEDOUT') {
       console.error('   Tip: Check network connectivity and MongoDB server status')
     }

@@ -210,15 +210,8 @@ const THEMES = {
 }
 
 export function ThemeProvider({ children }) {
-  const [mode, setMode] = useState(() => {
-    const saved = localStorage.getItem("ezpark_theme_mode")
-    return saved || "light"
-  })
-  
-  const [color, setColor] = useState(() => {
-    const saved = localStorage.getItem("ezpark_theme_color")
-    return saved || "blue"
-  })
+  const [mode, setMode] = useState("light")
+  const [color, setColor] = useState("blue")
 
   const currentTheme = THEMES[mode]?.[color] || THEMES.light.blue
 
@@ -232,16 +225,12 @@ export function ThemeProvider({ children }) {
 
   // Apply theme immediately on mount (synchronously to prevent flash)
   useLayoutEffect(() => {
-    const savedMode = localStorage.getItem("ezpark_theme_mode") || "light"
-    const savedColor = localStorage.getItem("ezpark_theme_color") || "blue"
-    const initialTheme = THEMES[savedMode]?.[savedColor] || THEMES.light.blue
-    applyTheme(initialTheme.colors, savedMode)
+    const initialTheme = THEMES[mode]?.[color] || THEMES.light.blue
+    applyTheme(initialTheme.colors, mode)
   }, [])
 
   // Apply theme on mount and when theme changes
   useEffect(() => {
-    localStorage.setItem("ezpark_theme_mode", mode)
-    localStorage.setItem("ezpark_theme_color", color)
     applyTheme(currentTheme.colors, mode)
   }, [mode, color, currentTheme])
 
