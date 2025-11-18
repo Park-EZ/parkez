@@ -53,11 +53,23 @@ Or plain Node:
 node -v && npm -v
 # If not, install Node LTS (v20+)
 ```
-### 3. Install Local MongoDB (recommended method)
+### 3. Setup Backend through Docker
+```bash
+For the persistent backend, please complete the steps highlighted in DOCKER.md
+```
+
+### 3b. Install Local MongoDB (Alternative method)
 ```bash
 Install MongoDB if not already on machine at https://www.mongodb.com/try/download/community
 Ensure that MongoDB Compass is installed -- Launch it
 Create a new connection at mongodb://localhost:27017
+
+## 3c. Import starting mock data
+
+There are 3 .json files in \parkez\mockData which we will import using MongoDB Compass
+In Compass, select the connection we made earlier and navigate into ezpark
+Here select Deck, click 'Add Data', and Import JSON or CSV file. Then select the corresponding .json file from the mockData folder
+Please do the same for levels and spots
 ```
 
 ### 4. Install dependencies
@@ -72,6 +84,7 @@ cd ..
 ### 5. Copy .env.example as .env
 ```bash
 Copy .env.example into root project directory (/parkez/) as .env
+To see how to configure the newly copied .env file, please follow the steps highlighted in ENV_SETUP.md
 ```
 ---
 
@@ -86,16 +99,8 @@ If you’re running on a **remote Linux server**, make it visible to your networ
 ```bash
 npx vite --host 0.0.0.0 --port 5173
 ```
-## 7. Import starting mock data
 
-There are 3 .json files in \parkez\mockData which we will import using MongoDB Compass
-In Compass, select the connection we made earlier and navigate into ezpark
-Here select Deck, click 'Add Data', and Import JSON or CSV file. Then select the corresponding .json file from the mockData folder
-Please do the same for levels and spots
-
-(If this is confusing [which it might be], please refer to the User Manual where we explain the startup process in more detail with supporting screenshots.)
-
-## 6. Restart the app (Development)
+## 7. Restart the app (Development)
 
 Start the Vite dev server:
 ```bash
@@ -183,7 +188,6 @@ parkez/
 -  Integrate real QR code scanning using `getUserMedia` + `jsQR`.  
 -  Add backend with **Fastify + MongoDB** for real sessions & analytics.  
 -  Show deck-level congestion and estimated time to find parking.
-- 
 ---
 
 ## License
