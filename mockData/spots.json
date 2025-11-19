@@ -1,2018 +1,10094 @@
 [
   {
-    "_id": "A_L0_A01",
-    "levelId": "A_L0",
-    "label": "A01",
-    "type": "standard",
-    "status": "free"
+    "id": 1,
+    "levelId": 1,
+    "handicap": true,
+    "label": "L1-001"
   },
   {
-    "_id": "A_L0_A02",
-    "levelId": "A_L0",
-    "label": "A02",
-    "type": "standard",
-    "status": "free"
+    "id": 2,
+    "levelId": 1,
+    "handicap": true,
+    "label": "L1-002"
   },
   {
-    "_id": "A_L0_A03",
-    "levelId": "A_L0",
-    "label": "A03",
-    "type": "standard",
-    "status": "occupied"
+    "id": 3,
+    "levelId": 1,
+    "handicap": true,
+    "label": "L1-003"
   },
   {
-    "_id": "A_L0_A04",
-    "levelId": "A_L0",
-    "label": "A04",
-    "type": "standard",
-    "status": "occupied"
+    "id": 4,
+    "levelId": 1,
+    "handicap": true,
+    "label": "L1-004"
   },
   {
-    "_id": "A_L0_A05",
-    "levelId": "A_L0",
-    "label": "A05",
-    "type": "standard",
-    "status": "occupied"
+    "id": 5,
+    "levelId": 1,
+    "handicap": true,
+    "label": "L1-005"
   },
   {
-    "_id": "A_L0_A06",
-    "levelId": "A_L0",
-    "label": "A06",
-    "type": "standard",
-    "status": "occupied"
+    "id": 6,
+    "levelId": 1,
+    "handicap": true,
+    "label": "L1-006"
   },
   {
-    "_id": "A_L0_A07",
-    "levelId": "A_L0",
-    "label": "A07",
-    "type": "standard",
-    "status": "free"
+    "id": 7,
+    "levelId": 1,
+    "handicap": true,
+    "label": "L1-007"
   },
   {
-    "_id": "A_L0_A08",
-    "levelId": "A_L0",
-    "label": "A08",
-    "type": "EV",
-    "status": "occupied"
+    "id": 8,
+    "levelId": 1,
+    "handicap": true,
+    "label": "L1-008"
   },
   {
-    "_id": "A_L0_A09",
-    "levelId": "A_L0",
-    "label": "A09",
-    "type": "standard",
-    "status": "free"
+    "id": 9,
+    "levelId": 1,
+    "handicap": true,
+    "label": "L1-009"
   },
   {
-    "_id": "A_L0_A10",
-    "levelId": "A_L0",
-    "label": "A10",
-    "type": "standard",
-    "status": "free"
+    "id": 10,
+    "levelId": 1,
+    "handicap": true,
+    "label": "L1-010"
   },
   {
-    "_id": "A_L0_A11",
-    "levelId": "A_L0",
-    "label": "A11",
-    "type": "standard",
-    "status": "free"
+    "id": 11,
+    "levelId": 1,
+    "handicap": true,
+    "label": "L1-011"
   },
   {
-    "_id": "A_L0_A12",
-    "levelId": "A_L0",
-    "label": "A12",
-    "type": "ADA",
-    "status": "free"
+    "id": 12,
+    "levelId": 1,
+    "handicap": true,
+    "label": "L1-012"
   },
   {
-    "_id": "A_L0_A13",
-    "levelId": "A_L0",
-    "label": "A13",
-    "type": "standard",
-    "status": "free"
+    "id": 13,
+    "levelId": 1,
+    "handicap": true,
+    "label": "L1-013"
   },
   {
-    "_id": "A_L0_A14",
-    "levelId": "A_L0",
-    "label": "A14",
-    "type": "standard",
-    "status": "free"
+    "id": 14,
+    "levelId": 1,
+    "handicap": true,
+    "label": "L1-014"
   },
   {
-    "_id": "A_L0_A15",
-    "levelId": "A_L0",
-    "label": "A15",
-    "type": "standard",
-    "status": "free"
+    "id": 15,
+    "levelId": 1,
+    "handicap": true,
+    "label": "L1-015"
   },
   {
-    "_id": "A_L0_A16",
-    "levelId": "A_L0",
-    "label": "A16",
-    "type": "EV",
-    "status": "free"
+    "id": 16,
+    "levelId": 1,
+    "handicap": true,
+    "label": "L1-016"
   },
   {
-    "_id": "A_L0_A17",
-    "levelId": "A_L0",
-    "label": "A17",
-    "type": "standard",
-    "status": "free"
+    "id": 17,
+    "levelId": 1,
+    "handicap": true,
+    "label": "L1-017"
   },
   {
-    "_id": "A_L0_A18",
-    "levelId": "A_L0",
-    "label": "A18",
-    "type": "standard",
-    "status": "free"
+    "id": 18,
+    "levelId": 1,
+    "handicap": true,
+    "label": "L1-018"
   },
   {
-    "_id": "A_L0_A19",
-    "levelId": "A_L0",
-    "label": "A19",
-    "type": "standard",
-    "status": "free"
+    "id": 19,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-019"
   },
   {
-    "_id": "A_L0_A20",
-    "levelId": "A_L0",
-    "label": "A20",
-    "type": "standard",
-    "status": "occupied"
+    "id": 20,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-020"
   },
   {
-    "_id": "A_L0_A21",
-    "levelId": "A_L0",
-    "label": "A21",
-    "type": "standard",
-    "status": "free"
+    "id": 21,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-021"
   },
   {
-    "_id": "A_L0_A22",
-    "levelId": "A_L0",
-    "label": "A22",
-    "type": "standard",
-    "status": "free"
+    "id": 22,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-022"
   },
   {
-    "_id": "A_L0_A23",
-    "levelId": "A_L0",
-    "label": "A23",
-    "type": "standard",
-    "status": "free"
+    "id": 23,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-023"
   },
   {
-    "_id": "A_L0_A24",
-    "levelId": "A_L0",
-    "label": "A24",
-    "type": "ADA",
-    "status": "free"
+    "id": 24,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-024"
   },
   {
-    "_id": "A_L0_B01",
-    "levelId": "A_L0",
-    "label": "B01",
-    "type": "standard",
-    "status": "free"
+    "id": 25,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-025"
   },
   {
-    "_id": "A_L0_B02",
-    "levelId": "A_L0",
-    "label": "B02",
-    "type": "standard",
-    "status": "free"
+    "id": 26,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-026"
   },
   {
-    "_id": "A_L0_B03",
-    "levelId": "A_L0",
-    "label": "B03",
-    "type": "standard",
-    "status": "free"
+    "id": 27,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-027"
   },
   {
-    "_id": "A_L0_B04",
-    "levelId": "A_L0",
-    "label": "B04",
-    "type": "standard",
-    "status": "occupied"
+    "id": 28,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-028"
   },
   {
-    "_id": "A_L0_B05",
-    "levelId": "A_L0",
-    "label": "B05",
-    "type": "standard",
-    "status": "free"
+    "id": 29,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-029"
   },
   {
-    "_id": "A_L0_B06",
-    "levelId": "A_L0",
-    "label": "B06",
-    "type": "standard",
-    "status": "free"
+    "id": 30,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-030"
   },
   {
-    "_id": "A_L0_B07",
-    "levelId": "A_L0",
-    "label": "B07",
-    "type": "standard",
-    "status": "free"
+    "id": 31,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-031"
   },
   {
-    "_id": "A_L0_B08",
-    "levelId": "A_L0",
-    "label": "B08",
-    "type": "EV",
-    "status": "occupied"
+    "id": 32,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-032"
   },
   {
-    "_id": "A_L0_B09",
-    "levelId": "A_L0",
-    "label": "B09",
-    "type": "standard",
-    "status": "free"
+    "id": 33,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-033"
   },
   {
-    "_id": "A_L0_B10",
-    "levelId": "A_L0",
-    "label": "B10",
-    "type": "standard",
-    "status": "free"
+    "id": 34,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-034"
   },
   {
-    "_id": "A_L0_B11",
-    "levelId": "A_L0",
-    "label": "B11",
-    "type": "standard",
-    "status": "free"
+    "id": 35,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-035"
   },
   {
-    "_id": "A_L0_B12",
-    "levelId": "A_L0",
-    "label": "B12",
-    "type": "ADA",
-    "status": "free"
+    "id": 36,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-036"
   },
   {
-    "_id": "A_L0_B13",
-    "levelId": "A_L0",
-    "label": "B13",
-    "type": "standard",
-    "status": "free"
+    "id": 37,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-037"
   },
   {
-    "_id": "A_L0_B14",
-    "levelId": "A_L0",
-    "label": "B14",
-    "type": "standard",
-    "status": "free"
+    "id": 38,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-038"
   },
   {
-    "_id": "A_L0_B15",
-    "levelId": "A_L0",
-    "label": "B15",
-    "type": "standard",
-    "status": "free"
+    "id": 39,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-039"
   },
   {
-    "_id": "A_L0_B16",
-    "levelId": "A_L0",
-    "label": "B16",
-    "type": "EV",
-    "status": "free"
+    "id": 40,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-040"
   },
   {
-    "_id": "A_L0_B17",
-    "levelId": "A_L0",
-    "label": "B17",
-    "type": "standard",
-    "status": "free"
+    "id": 41,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-041"
   },
   {
-    "_id": "A_L0_B18",
-    "levelId": "A_L0",
-    "label": "B18",
-    "type": "standard",
-    "status": "free"
+    "id": 42,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-042"
   },
   {
-    "_id": "A_L0_B19",
-    "levelId": "A_L0",
-    "label": "B19",
-    "type": "standard",
-    "status": "free"
+    "id": 43,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-043"
   },
   {
-    "_id": "A_L0_B20",
-    "levelId": "A_L0",
-    "label": "B20",
-    "type": "standard",
-    "status": "free"
+    "id": 44,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-044"
   },
   {
-    "_id": "A_L0_B21",
-    "levelId": "A_L0",
-    "label": "B21",
-    "type": "standard",
-    "status": "free"
+    "id": 45,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-045"
   },
   {
-    "_id": "A_L0_B22",
-    "levelId": "A_L0",
-    "label": "B22",
-    "type": "standard",
-    "status": "free"
+    "id": 46,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-046"
   },
   {
-    "_id": "A_L0_B23",
-    "levelId": "A_L0",
-    "label": "B23",
-    "type": "standard",
-    "status": "free"
+    "id": 47,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-047"
   },
   {
-    "_id": "A_L0_B24",
-    "levelId": "A_L0",
-    "label": "B24",
-    "type": "ADA",
-    "status": "occupied"
+    "id": 48,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-048"
   },
   {
-    "_id": "A_L1_A01",
-    "levelId": "A_L1",
-    "label": "A01",
-    "type": "standard",
-    "status": "occupied"
+    "id": 49,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-049"
   },
   {
-    "_id": "A_L1_A02",
-    "levelId": "A_L1",
-    "label": "A02",
-    "type": "standard",
-    "status": "free"
+    "id": 50,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-050"
   },
   {
-    "_id": "A_L1_A03",
-    "levelId": "A_L1",
-    "label": "A03",
-    "type": "standard",
-    "status": "free"
+    "id": 51,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-051"
   },
   {
-    "_id": "A_L1_A04",
-    "levelId": "A_L1",
-    "label": "A04",
-    "type": "standard",
-    "status": "occupied"
+    "id": 52,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-052"
   },
   {
-    "_id": "A_L1_A05",
-    "levelId": "A_L1",
-    "label": "A05",
-    "type": "standard",
-    "status": "occupied"
+    "id": 53,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-053"
   },
   {
-    "_id": "A_L1_A06",
-    "levelId": "A_L1",
-    "label": "A06",
-    "type": "standard",
-    "status": "free"
+    "id": 54,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-054"
   },
   {
-    "_id": "A_L1_A07",
-    "levelId": "A_L1",
-    "label": "A07",
-    "type": "standard",
-    "status": "occupied"
+    "id": 55,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-055"
   },
   {
-    "_id": "A_L1_A08",
-    "levelId": "A_L1",
-    "label": "A08",
-    "type": "EV",
-    "status": "free"
+    "id": 56,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-056"
   },
   {
-    "_id": "A_L1_A09",
-    "levelId": "A_L1",
-    "label": "A09",
-    "type": "standard",
-    "status": "free"
+    "id": 57,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-057"
   },
   {
-    "_id": "A_L1_A10",
-    "levelId": "A_L1",
-    "label": "A10",
-    "type": "standard",
-    "status": "occupied"
+    "id": 58,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-058"
   },
   {
-    "_id": "A_L1_A11",
-    "levelId": "A_L1",
-    "label": "A11",
-    "type": "standard",
-    "status": "occupied"
+    "id": 59,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-059"
   },
   {
-    "_id": "A_L1_A12",
-    "levelId": "A_L1",
-    "label": "A12",
-    "type": "ADA",
-    "status": "free"
+    "id": 60,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-060"
   },
   {
-    "_id": "A_L1_A13",
-    "levelId": "A_L1",
-    "label": "A13",
-    "type": "standard",
-    "status": "free"
+    "id": 61,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-061"
   },
   {
-    "_id": "A_L1_A14",
-    "levelId": "A_L1",
-    "label": "A14",
-    "type": "standard",
-    "status": "free"
+    "id": 62,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-062"
   },
   {
-    "_id": "A_L1_A15",
-    "levelId": "A_L1",
-    "label": "A15",
-    "type": "standard",
-    "status": "free"
+    "id": 63,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-063"
   },
   {
-    "_id": "A_L1_A16",
-    "levelId": "A_L1",
-    "label": "A16",
-    "type": "EV",
-    "status": "free"
+    "id": 64,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-064"
   },
   {
-    "_id": "A_L1_A17",
-    "levelId": "A_L1",
-    "label": "A17",
-    "type": "standard",
-    "status": "free"
+    "id": 65,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-065"
   },
   {
-    "_id": "A_L1_A18",
-    "levelId": "A_L1",
-    "label": "A18",
-    "type": "standard",
-    "status": "free"
+    "id": 66,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-066"
   },
   {
-    "_id": "A_L1_A19",
-    "levelId": "A_L1",
-    "label": "A19",
-    "type": "standard",
-    "status": "free"
+    "id": 67,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-067"
   },
   {
-    "_id": "A_L1_A20",
-    "levelId": "A_L1",
-    "label": "A20",
-    "type": "standard",
-    "status": "free"
+    "id": 68,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-068"
   },
   {
-    "_id": "A_L1_A21",
-    "levelId": "A_L1",
-    "label": "A21",
-    "type": "standard",
-    "status": "free"
+    "id": 69,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-069"
   },
   {
-    "_id": "A_L1_A22",
-    "levelId": "A_L1",
-    "label": "A22",
-    "type": "standard",
-    "status": "free"
+    "id": 70,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-070"
   },
   {
-    "_id": "A_L1_A23",
-    "levelId": "A_L1",
-    "label": "A23",
-    "type": "standard",
-    "status": "occupied"
+    "id": 71,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-071"
   },
   {
-    "_id": "A_L1_A24",
-    "levelId": "A_L1",
-    "label": "A24",
-    "type": "ADA",
-    "status": "occupied"
+    "id": 72,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-072"
   },
   {
-    "_id": "A_L1_B01",
-    "levelId": "A_L1",
-    "label": "B01",
-    "type": "standard",
-    "status": "occupied"
+    "id": 73,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-073"
   },
   {
-    "_id": "A_L1_B02",
-    "levelId": "A_L1",
-    "label": "B02",
-    "type": "standard",
-    "status": "free"
+    "id": 74,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-074"
   },
   {
-    "_id": "A_L1_B03",
-    "levelId": "A_L1",
-    "label": "B03",
-    "type": "standard",
-    "status": "free"
+    "id": 75,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-075"
   },
   {
-    "_id": "A_L1_B04",
-    "levelId": "A_L1",
-    "label": "B04",
-    "type": "standard",
-    "status": "free"
+    "id": 76,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-076"
   },
   {
-    "_id": "A_L1_B05",
-    "levelId": "A_L1",
-    "label": "B05",
-    "type": "standard",
-    "status": "occupied"
+    "id": 77,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-077"
   },
   {
-    "_id": "A_L1_B06",
-    "levelId": "A_L1",
-    "label": "B06",
-    "type": "standard",
-    "status": "free"
+    "id": 78,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-078"
   },
   {
-    "_id": "A_L1_B07",
-    "levelId": "A_L1",
-    "label": "B07",
-    "type": "standard",
-    "status": "free"
+    "id": 79,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-079"
   },
   {
-    "_id": "A_L1_B08",
-    "levelId": "A_L1",
-    "label": "B08",
-    "type": "EV",
-    "status": "occupied"
+    "id": 80,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-080"
   },
   {
-    "_id": "A_L1_B09",
-    "levelId": "A_L1",
-    "label": "B09",
-    "type": "standard",
-    "status": "occupied"
+    "id": 81,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-081"
   },
   {
-    "_id": "A_L1_B10",
-    "levelId": "A_L1",
-    "label": "B10",
-    "type": "standard",
-    "status": "free"
+    "id": 82,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-082"
   },
   {
-    "_id": "A_L1_B11",
-    "levelId": "A_L1",
-    "label": "B11",
-    "type": "standard",
-    "status": "free"
+    "id": 83,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-083"
   },
   {
-    "_id": "A_L1_B12",
-    "levelId": "A_L1",
-    "label": "B12",
-    "type": "ADA",
-    "status": "free"
+    "id": 84,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-084"
   },
   {
-    "_id": "A_L1_B13",
-    "levelId": "A_L1",
-    "label": "B13",
-    "type": "standard",
-    "status": "free"
+    "id": 85,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-085"
   },
   {
-    "_id": "A_L1_B14",
-    "levelId": "A_L1",
-    "label": "B14",
-    "type": "standard",
-    "status": "free"
+    "id": 86,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-086"
   },
   {
-    "_id": "A_L1_B15",
-    "levelId": "A_L1",
-    "label": "B15",
-    "type": "standard",
-    "status": "free"
+    "id": 87,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-087"
   },
   {
-    "_id": "A_L1_B16",
-    "levelId": "A_L1",
-    "label": "B16",
-    "type": "EV",
-    "status": "free"
+    "id": 88,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-088"
   },
   {
-    "_id": "A_L1_B17",
-    "levelId": "A_L1",
-    "label": "B17",
-    "type": "standard",
-    "status": "free"
+    "id": 89,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-089"
   },
   {
-    "_id": "A_L1_B18",
-    "levelId": "A_L1",
-    "label": "B18",
-    "type": "standard",
-    "status": "free"
+    "id": 90,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-090"
   },
   {
-    "_id": "A_L1_B19",
-    "levelId": "A_L1",
-    "label": "B19",
-    "type": "standard",
-    "status": "free"
+    "id": 91,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-091"
   },
   {
-    "_id": "A_L1_B20",
-    "levelId": "A_L1",
-    "label": "B20",
-    "type": "standard",
-    "status": "free"
+    "id": 92,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-092"
   },
   {
-    "_id": "A_L1_B21",
-    "levelId": "A_L1",
-    "label": "B21",
-    "type": "standard",
-    "status": "free"
+    "id": 93,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-093"
   },
   {
-    "_id": "A_L1_B22",
-    "levelId": "A_L1",
-    "label": "B22",
-    "type": "standard",
-    "status": "occupied"
+    "id": 94,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-094"
   },
   {
-    "_id": "A_L1_B23",
-    "levelId": "A_L1",
-    "label": "B23",
-    "type": "standard",
-    "status": "free"
+    "id": 95,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-095"
   },
   {
-    "_id": "A_L1_B24",
-    "levelId": "A_L1",
-    "label": "B24",
-    "type": "ADA",
-    "status": "occupied"
+    "id": 96,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-096"
   },
   {
-    "_id": "A_L2_A01",
-    "levelId": "A_L2",
-    "label": "A01",
-    "type": "standard",
-    "status": "free"
+    "id": 97,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-097"
   },
   {
-    "_id": "A_L2_A02",
-    "levelId": "A_L2",
-    "label": "A02",
-    "type": "standard",
-    "status": "free"
+    "id": 98,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-098"
   },
   {
-    "_id": "A_L2_A03",
-    "levelId": "A_L2",
-    "label": "A03",
-    "type": "standard",
-    "status": "free"
+    "id": 99,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-099"
   },
   {
-    "_id": "A_L2_A04",
-    "levelId": "A_L2",
-    "label": "A04",
-    "type": "standard",
-    "status": "occupied"
+    "id": 100,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-100"
   },
   {
-    "_id": "A_L2_A05",
-    "levelId": "A_L2",
-    "label": "A05",
-    "type": "standard",
-    "status": "free"
+    "id": 101,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-101"
   },
   {
-    "_id": "A_L2_A06",
-    "levelId": "A_L2",
-    "label": "A06",
-    "type": "standard",
-    "status": "free"
+    "id": 102,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-102"
   },
   {
-    "_id": "A_L2_A07",
-    "levelId": "A_L2",
-    "label": "A07",
-    "type": "standard",
-    "status": "occupied"
+    "id": 103,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-103"
   },
   {
-    "_id": "A_L2_A08",
-    "levelId": "A_L2",
-    "label": "A08",
-    "type": "EV",
-    "status": "free"
+    "id": 104,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-104"
   },
   {
-    "_id": "A_L2_A09",
-    "levelId": "A_L2",
-    "label": "A09",
-    "type": "standard",
-    "status": "free"
+    "id": 105,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-105"
   },
   {
-    "_id": "A_L2_A10",
-    "levelId": "A_L2",
-    "label": "A10",
-    "type": "standard",
-    "status": "occupied"
+    "id": 106,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-106"
   },
   {
-    "_id": "A_L2_A11",
-    "levelId": "A_L2",
-    "label": "A11",
-    "type": "standard",
-    "status": "free"
+    "id": 107,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-107"
   },
   {
-    "_id": "A_L2_A12",
-    "levelId": "A_L2",
-    "label": "A12",
-    "type": "ADA",
-    "status": "free"
+    "id": 108,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-108"
   },
   {
-    "_id": "A_L2_A13",
-    "levelId": "A_L2",
-    "label": "A13",
-    "type": "standard",
-    "status": "free"
+    "id": 109,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-109"
   },
   {
-    "_id": "A_L2_A14",
-    "levelId": "A_L2",
-    "label": "A14",
-    "type": "standard",
-    "status": "free"
+    "id": 110,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-110"
   },
   {
-    "_id": "A_L2_A15",
-    "levelId": "A_L2",
-    "label": "A15",
-    "type": "standard",
-    "status": "free"
+    "id": 111,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-111"
   },
   {
-    "_id": "A_L2_A16",
-    "levelId": "A_L2",
-    "label": "A16",
-    "type": "EV",
-    "status": "free"
+    "id": 112,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-112"
   },
   {
-    "_id": "A_L2_A17",
-    "levelId": "A_L2",
-    "label": "A17",
-    "type": "standard",
-    "status": "occupied"
+    "id": 113,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-113"
   },
   {
-    "_id": "A_L2_A18",
-    "levelId": "A_L2",
-    "label": "A18",
-    "type": "standard",
-    "status": "occupied"
+    "id": 114,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-114"
   },
   {
-    "_id": "A_L2_A19",
-    "levelId": "A_L2",
-    "label": "A19",
-    "type": "standard",
-    "status": "free"
+    "id": 115,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-115"
   },
   {
-    "_id": "A_L2_A20",
-    "levelId": "A_L2",
-    "label": "A20",
-    "type": "standard",
-    "status": "free"
+    "id": 116,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-116"
   },
   {
-    "_id": "A_L2_A21",
-    "levelId": "A_L2",
-    "label": "A21",
-    "type": "standard",
-    "status": "free"
+    "id": 117,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-117"
   },
   {
-    "_id": "A_L2_A22",
-    "levelId": "A_L2",
-    "label": "A22",
-    "type": "standard",
-    "status": "occupied"
+    "id": 118,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-118"
   },
   {
-    "_id": "A_L2_A23",
-    "levelId": "A_L2",
-    "label": "A23",
-    "type": "standard",
-    "status": "free"
+    "id": 119,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-119"
   },
   {
-    "_id": "A_L2_A24",
-    "levelId": "A_L2",
-    "label": "A24",
-    "type": "ADA",
-    "status": "free"
+    "id": 120,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-120"
   },
   {
-    "_id": "A_L2_B01",
-    "levelId": "A_L2",
-    "label": "B01",
-    "type": "standard",
-    "status": "free"
+    "id": 121,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-121"
   },
   {
-    "_id": "A_L2_B02",
-    "levelId": "A_L2",
-    "label": "B02",
-    "type": "standard",
-    "status": "free"
+    "id": 122,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-122"
   },
   {
-    "_id": "A_L2_B03",
-    "levelId": "A_L2",
-    "label": "B03",
-    "type": "standard",
-    "status": "free"
+    "id": 123,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-123"
   },
   {
-    "_id": "A_L2_B04",
-    "levelId": "A_L2",
-    "label": "B04",
-    "type": "standard",
-    "status": "free"
+    "id": 124,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-124"
   },
   {
-    "_id": "A_L2_B05",
-    "levelId": "A_L2",
-    "label": "B05",
-    "type": "standard",
-    "status": "free"
+    "id": 125,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-125"
   },
   {
-    "_id": "A_L2_B06",
-    "levelId": "A_L2",
-    "label": "B06",
-    "type": "standard",
-    "status": "free"
+    "id": 126,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-126"
   },
   {
-    "_id": "A_L2_B07",
-    "levelId": "A_L2",
-    "label": "B07",
-    "type": "standard",
-    "status": "occupied"
+    "id": 127,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-127"
   },
   {
-    "_id": "A_L2_B08",
-    "levelId": "A_L2",
-    "label": "B08",
-    "type": "EV",
-    "status": "free"
+    "id": 128,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-128"
   },
   {
-    "_id": "A_L2_B09",
-    "levelId": "A_L2",
-    "label": "B09",
-    "type": "standard",
-    "status": "free"
+    "id": 129,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-129"
   },
   {
-    "_id": "A_L2_B10",
-    "levelId": "A_L2",
-    "label": "B10",
-    "type": "standard",
-    "status": "free"
+    "id": 130,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-130"
   },
   {
-    "_id": "A_L2_B11",
-    "levelId": "A_L2",
-    "label": "B11",
-    "type": "standard",
-    "status": "free"
+    "id": 131,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-131"
   },
   {
-    "_id": "A_L2_B12",
-    "levelId": "A_L2",
-    "label": "B12",
-    "type": "ADA",
-    "status": "free"
+    "id": 132,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-132"
   },
   {
-    "_id": "A_L2_B13",
-    "levelId": "A_L2",
-    "label": "B13",
-    "type": "standard",
-    "status": "free"
+    "id": 133,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-133"
   },
   {
-    "_id": "A_L2_B14",
-    "levelId": "A_L2",
-    "label": "B14",
-    "type": "standard",
-    "status": "free"
+    "id": 134,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-134"
   },
   {
-    "_id": "A_L2_B15",
-    "levelId": "A_L2",
-    "label": "B15",
-    "type": "standard",
-    "status": "free"
+    "id": 135,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-135"
   },
   {
-    "_id": "A_L2_B16",
-    "levelId": "A_L2",
-    "label": "B16",
-    "type": "EV",
-    "status": "free"
+    "id": 136,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-136"
   },
   {
-    "_id": "A_L2_B17",
-    "levelId": "A_L2",
-    "label": "B17",
-    "type": "standard",
-    "status": "free"
+    "id": 137,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-137"
   },
   {
-    "_id": "A_L2_B18",
-    "levelId": "A_L2",
-    "label": "B18",
-    "type": "standard",
-    "status": "free"
+    "id": 138,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-138"
   },
   {
-    "_id": "A_L2_B19",
-    "levelId": "A_L2",
-    "label": "B19",
-    "type": "standard",
-    "status": "free"
+    "id": 139,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-139"
   },
   {
-    "_id": "A_L2_B20",
-    "levelId": "A_L2",
-    "label": "B20",
-    "type": "standard",
-    "status": "free"
+    "id": 140,
+    "levelId": 1,
+    "handicap": false,
+    "label": "L1-140"
   },
   {
-    "_id": "A_L2_B21",
-    "levelId": "A_L2",
-    "label": "B21",
-    "type": "standard",
-    "status": "free"
+    "id": 141,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-001"
   },
   {
-    "_id": "A_L2_B22",
-    "levelId": "A_L2",
-    "label": "B22",
-    "type": "standard",
-    "status": "free"
+    "id": 142,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-002"
   },
   {
-    "_id": "A_L2_B23",
-    "levelId": "A_L2",
-    "label": "B23",
-    "type": "standard",
-    "status": "free"
+    "id": 143,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-003"
   },
   {
-    "_id": "A_L2_B24",
-    "levelId": "A_L2",
-    "label": "B24",
-    "type": "ADA",
-    "status": "free"
+    "id": 144,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-004"
   },
   {
-    "_id": "B_L0_A01",
-    "levelId": "B_L0",
-    "label": "A01",
-    "type": "standard",
-    "status": "occupied"
+    "id": 145,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-005"
   },
   {
-    "_id": "B_L0_A02",
-    "levelId": "B_L0",
-    "label": "A02",
-    "type": "standard",
-    "status": "free"
+    "id": 146,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-006"
   },
   {
-    "_id": "B_L0_A03",
-    "levelId": "B_L0",
-    "label": "A03",
-    "type": "standard",
-    "status": "free"
+    "id": 147,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-007"
   },
   {
-    "_id": "B_L0_A04",
-    "levelId": "B_L0",
-    "label": "A04",
-    "type": "standard",
-    "status": "free"
+    "id": 148,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-008"
   },
   {
-    "_id": "B_L0_A05",
-    "levelId": "B_L0",
-    "label": "A05",
-    "type": "standard",
-    "status": "free"
+    "id": 149,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-009"
   },
   {
-    "_id": "B_L0_A06",
-    "levelId": "B_L0",
-    "label": "A06",
-    "type": "standard",
-    "status": "free"
+    "id": 150,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-010"
   },
   {
-    "_id": "B_L0_A07",
-    "levelId": "B_L0",
-    "label": "A07",
-    "type": "standard",
-    "status": "free"
+    "id": 151,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-011"
   },
   {
-    "_id": "B_L0_A08",
-    "levelId": "B_L0",
-    "label": "A08",
-    "type": "EV",
-    "status": "free"
+    "id": 152,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-012"
   },
   {
-    "_id": "B_L0_A09",
-    "levelId": "B_L0",
-    "label": "A09",
-    "type": "standard",
-    "status": "free"
+    "id": 153,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-013"
   },
   {
-    "_id": "B_L0_A10",
-    "levelId": "B_L0",
-    "label": "A10",
-    "type": "standard",
-    "status": "free"
+    "id": 154,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-014"
   },
   {
-    "_id": "B_L0_A11",
-    "levelId": "B_L0",
-    "label": "A11",
-    "type": "standard",
-    "status": "occupied"
+    "id": 155,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-015"
   },
   {
-    "_id": "B_L0_A12",
-    "levelId": "B_L0",
-    "label": "A12",
-    "type": "ADA",
-    "status": "free"
+    "id": 156,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-016"
   },
   {
-    "_id": "B_L0_A13",
-    "levelId": "B_L0",
-    "label": "A13",
-    "type": "standard",
-    "status": "free"
+    "id": 157,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-017"
   },
   {
-    "_id": "B_L0_A14",
-    "levelId": "B_L0",
-    "label": "A14",
-    "type": "standard",
-    "status": "occupied"
+    "id": 158,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-018"
   },
   {
-    "_id": "B_L0_A15",
-    "levelId": "B_L0",
-    "label": "A15",
-    "type": "standard",
-    "status": "occupied"
+    "id": 159,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-019"
   },
   {
-    "_id": "B_L0_A16",
-    "levelId": "B_L0",
-    "label": "A16",
-    "type": "EV",
-    "status": "occupied"
+    "id": 160,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-020"
   },
   {
-    "_id": "B_L0_A17",
-    "levelId": "B_L0",
-    "label": "A17",
-    "type": "standard",
-    "status": "free"
+    "id": 161,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-021"
   },
   {
-    "_id": "B_L0_A18",
-    "levelId": "B_L0",
-    "label": "A18",
-    "type": "standard",
-    "status": "occupied"
+    "id": 162,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-022"
   },
   {
-    "_id": "B_L0_A19",
-    "levelId": "B_L0",
-    "label": "A19",
-    "type": "standard",
-    "status": "free"
+    "id": 163,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-023"
   },
   {
-    "_id": "B_L0_A20",
-    "levelId": "B_L0",
-    "label": "A20",
-    "type": "standard",
-    "status": "free"
+    "id": 164,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-024"
   },
   {
-    "_id": "B_L0_A21",
-    "levelId": "B_L0",
-    "label": "A21",
-    "type": "standard",
-    "status": "free"
+    "id": 165,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-025"
   },
   {
-    "_id": "B_L0_A22",
-    "levelId": "B_L0",
-    "label": "A22",
-    "type": "standard",
-    "status": "free"
+    "id": 166,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-026"
   },
   {
-    "_id": "B_L0_A23",
-    "levelId": "B_L0",
-    "label": "A23",
-    "type": "standard",
-    "status": "free"
+    "id": 167,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-027"
   },
   {
-    "_id": "B_L0_A24",
-    "levelId": "B_L0",
-    "label": "A24",
-    "type": "ADA",
-    "status": "free"
+    "id": 168,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-028"
   },
   {
-    "_id": "B_L0_B01",
-    "levelId": "B_L0",
-    "label": "B01",
-    "type": "standard",
-    "status": "free"
+    "id": 169,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-029"
   },
   {
-    "_id": "B_L0_B02",
-    "levelId": "B_L0",
-    "label": "B02",
-    "type": "standard",
-    "status": "occupied"
+    "id": 170,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-030"
   },
   {
-    "_id": "B_L0_B03",
-    "levelId": "B_L0",
-    "label": "B03",
-    "type": "standard",
-    "status": "free"
+    "id": 171,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-031"
   },
   {
-    "_id": "B_L0_B04",
-    "levelId": "B_L0",
-    "label": "B04",
-    "type": "standard",
-    "status": "occupied"
+    "id": 172,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-032"
   },
   {
-    "_id": "B_L0_B05",
-    "levelId": "B_L0",
-    "label": "B05",
-    "type": "standard",
-    "status": "free"
+    "id": 173,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-033"
   },
   {
-    "_id": "B_L0_B06",
-    "levelId": "B_L0",
-    "label": "B06",
-    "type": "standard",
-    "status": "free"
+    "id": 174,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-034"
   },
   {
-    "_id": "B_L0_B07",
-    "levelId": "B_L0",
-    "label": "B07",
-    "type": "standard",
-    "status": "free"
+    "id": 175,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-035"
   },
   {
-    "_id": "B_L0_B08",
-    "levelId": "B_L0",
-    "label": "B08",
-    "type": "EV",
-    "status": "occupied"
+    "id": 176,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-036"
   },
   {
-    "_id": "B_L0_B09",
-    "levelId": "B_L0",
-    "label": "B09",
-    "type": "standard",
-    "status": "free"
+    "id": 177,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-037"
   },
   {
-    "_id": "B_L0_B10",
-    "levelId": "B_L0",
-    "label": "B10",
-    "type": "standard",
-    "status": "free"
+    "id": 178,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-038"
   },
   {
-    "_id": "B_L0_B11",
-    "levelId": "B_L0",
-    "label": "B11",
-    "type": "standard",
-    "status": "free"
+    "id": 179,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-039"
   },
   {
-    "_id": "B_L0_B12",
-    "levelId": "B_L0",
-    "label": "B12",
-    "type": "ADA",
-    "status": "free"
+    "id": 180,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-040"
   },
   {
-    "_id": "B_L0_B13",
-    "levelId": "B_L0",
-    "label": "B13",
-    "type": "standard",
-    "status": "free"
+    "id": 181,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-041"
   },
   {
-    "_id": "B_L0_B14",
-    "levelId": "B_L0",
-    "label": "B14",
-    "type": "standard",
-    "status": "free"
+    "id": 182,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-042"
   },
   {
-    "_id": "B_L0_B15",
-    "levelId": "B_L0",
-    "label": "B15",
-    "type": "standard",
-    "status": "occupied"
+    "id": 183,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-043"
   },
   {
-    "_id": "B_L0_B16",
-    "levelId": "B_L0",
-    "label": "B16",
-    "type": "EV",
-    "status": "free"
+    "id": 184,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-044"
   },
   {
-    "_id": "B_L0_B17",
-    "levelId": "B_L0",
-    "label": "B17",
-    "type": "standard",
-    "status": "free"
+    "id": 185,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-045"
   },
   {
-    "_id": "B_L0_B18",
-    "levelId": "B_L0",
-    "label": "B18",
-    "type": "standard",
-    "status": "free"
+    "id": 186,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-046"
   },
   {
-    "_id": "B_L0_B19",
-    "levelId": "B_L0",
-    "label": "B19",
-    "type": "standard",
-    "status": "occupied"
+    "id": 187,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-047"
   },
   {
-    "_id": "B_L0_B20",
-    "levelId": "B_L0",
-    "label": "B20",
-    "type": "standard",
-    "status": "free"
+    "id": 188,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-048"
   },
   {
-    "_id": "B_L0_B21",
-    "levelId": "B_L0",
-    "label": "B21",
-    "type": "standard",
-    "status": "free"
+    "id": 189,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-049"
   },
   {
-    "_id": "B_L0_B22",
-    "levelId": "B_L0",
-    "label": "B22",
-    "type": "standard",
-    "status": "free"
+    "id": 190,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-050"
   },
   {
-    "_id": "B_L0_B23",
-    "levelId": "B_L0",
-    "label": "B23",
-    "type": "standard",
-    "status": "free"
+    "id": 191,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-051"
   },
   {
-    "_id": "B_L0_B24",
-    "levelId": "B_L0",
-    "label": "B24",
-    "type": "ADA",
-    "status": "free"
+    "id": 192,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-052"
   },
   {
-    "_id": "B_L1_A01",
-    "levelId": "B_L1",
-    "label": "A01",
-    "type": "standard",
-    "status": "free"
+    "id": 193,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-053"
   },
   {
-    "_id": "B_L1_A02",
-    "levelId": "B_L1",
-    "label": "A02",
-    "type": "standard",
-    "status": "free"
+    "id": 194,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-054"
   },
   {
-    "_id": "B_L1_A03",
-    "levelId": "B_L1",
-    "label": "A03",
-    "type": "standard",
-    "status": "free"
+    "id": 195,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-055"
   },
   {
-    "_id": "B_L1_A04",
-    "levelId": "B_L1",
-    "label": "A04",
-    "type": "standard",
-    "status": "occupied"
+    "id": 196,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-056"
   },
   {
-    "_id": "B_L1_A05",
-    "levelId": "B_L1",
-    "label": "A05",
-    "type": "standard",
-    "status": "free"
+    "id": 197,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-057"
   },
   {
-    "_id": "B_L1_A06",
-    "levelId": "B_L1",
-    "label": "A06",
-    "type": "standard",
-    "status": "free"
+    "id": 198,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-058"
   },
   {
-    "_id": "B_L1_A07",
-    "levelId": "B_L1",
-    "label": "A07",
-    "type": "standard",
-    "status": "free"
+    "id": 199,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-059"
   },
   {
-    "_id": "B_L1_A08",
-    "levelId": "B_L1",
-    "label": "A08",
-    "type": "EV",
-    "status": "occupied"
+    "id": 200,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-060"
   },
   {
-    "_id": "B_L1_A09",
-    "levelId": "B_L1",
-    "label": "A09",
-    "type": "standard",
-    "status": "free"
+    "id": 201,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-061"
   },
   {
-    "_id": "B_L1_A10",
-    "levelId": "B_L1",
-    "label": "A10",
-    "type": "standard",
-    "status": "occupied"
+    "id": 202,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-062"
   },
   {
-    "_id": "B_L1_A11",
-    "levelId": "B_L1",
-    "label": "A11",
-    "type": "standard",
-    "status": "free"
+    "id": 203,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-063"
   },
   {
-    "_id": "B_L1_A12",
-    "levelId": "B_L1",
-    "label": "A12",
-    "type": "ADA",
-    "status": "free"
+    "id": 204,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-064"
   },
   {
-    "_id": "B_L1_A13",
-    "levelId": "B_L1",
-    "label": "A13",
-    "type": "standard",
-    "status": "free"
+    "id": 205,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-065"
   },
   {
-    "_id": "B_L1_A14",
-    "levelId": "B_L1",
-    "label": "A14",
-    "type": "standard",
-    "status": "free"
+    "id": 206,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-066"
   },
   {
-    "_id": "B_L1_A15",
-    "levelId": "B_L1",
-    "label": "A15",
-    "type": "standard",
-    "status": "occupied"
+    "id": 207,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-067"
   },
   {
-    "_id": "B_L1_A16",
-    "levelId": "B_L1",
-    "label": "A16",
-    "type": "EV",
-    "status": "free"
+    "id": 208,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-068"
   },
   {
-    "_id": "B_L1_A17",
-    "levelId": "B_L1",
-    "label": "A17",
-    "type": "standard",
-    "status": "free"
+    "id": 209,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-069"
   },
   {
-    "_id": "B_L1_A18",
-    "levelId": "B_L1",
-    "label": "A18",
-    "type": "standard",
-    "status": "free"
+    "id": 210,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-070"
   },
   {
-    "_id": "B_L1_A19",
-    "levelId": "B_L1",
-    "label": "A19",
-    "type": "standard",
-    "status": "free"
+    "id": 211,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-071"
   },
   {
-    "_id": "B_L1_A20",
-    "levelId": "B_L1",
-    "label": "A20",
-    "type": "standard",
-    "status": "free"
+    "id": 212,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-072"
   },
   {
-    "_id": "B_L1_A21",
-    "levelId": "B_L1",
-    "label": "A21",
-    "type": "standard",
-    "status": "free"
+    "id": 213,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-073"
   },
   {
-    "_id": "B_L1_A22",
-    "levelId": "B_L1",
-    "label": "A22",
-    "type": "standard",
-    "status": "free"
+    "id": 214,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-074"
   },
   {
-    "_id": "B_L1_A23",
-    "levelId": "B_L1",
-    "label": "A23",
-    "type": "standard",
-    "status": "free"
+    "id": 215,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-075"
   },
   {
-    "_id": "B_L1_A24",
-    "levelId": "B_L1",
-    "label": "A24",
-    "type": "ADA",
-    "status": "free"
+    "id": 216,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-076"
   },
   {
-    "_id": "B_L1_B01",
-    "levelId": "B_L1",
-    "label": "B01",
-    "type": "standard",
-    "status": "occupied"
+    "id": 217,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-077"
   },
   {
-    "_id": "B_L1_B02",
-    "levelId": "B_L1",
-    "label": "B02",
-    "type": "standard",
-    "status": "free"
+    "id": 218,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-078"
   },
   {
-    "_id": "B_L1_B03",
-    "levelId": "B_L1",
-    "label": "B03",
-    "type": "standard",
-    "status": "free"
+    "id": 219,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-079"
   },
   {
-    "_id": "B_L1_B04",
-    "levelId": "B_L1",
-    "label": "B04",
-    "type": "standard",
-    "status": "free"
+    "id": 220,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-080"
   },
   {
-    "_id": "B_L1_B05",
-    "levelId": "B_L1",
-    "label": "B05",
-    "type": "standard",
-    "status": "free"
+    "id": 221,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-081"
   },
   {
-    "_id": "B_L1_B06",
-    "levelId": "B_L1",
-    "label": "B06",
-    "type": "standard",
-    "status": "free"
+    "id": 222,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-082"
   },
   {
-    "_id": "B_L1_B07",
-    "levelId": "B_L1",
-    "label": "B07",
-    "type": "standard",
-    "status": "free"
+    "id": 223,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-083"
   },
   {
-    "_id": "B_L1_B08",
-    "levelId": "B_L1",
-    "label": "B08",
-    "type": "EV",
-    "status": "occupied"
+    "id": 224,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-084"
   },
   {
-    "_id": "B_L1_B09",
-    "levelId": "B_L1",
-    "label": "B09",
-    "type": "standard",
-    "status": "free"
+    "id": 225,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-085"
   },
   {
-    "_id": "B_L1_B10",
-    "levelId": "B_L1",
-    "label": "B10",
-    "type": "standard",
-    "status": "free"
+    "id": 226,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-086"
   },
   {
-    "_id": "B_L1_B11",
-    "levelId": "B_L1",
-    "label": "B11",
-    "type": "standard",
-    "status": "free"
+    "id": 227,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-087"
   },
   {
-    "_id": "B_L1_B12",
-    "levelId": "B_L1",
-    "label": "B12",
-    "type": "ADA",
-    "status": "free"
+    "id": 228,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-088"
   },
   {
-    "_id": "B_L1_B13",
-    "levelId": "B_L1",
-    "label": "B13",
-    "type": "standard",
-    "status": "occupied"
+    "id": 229,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-089"
   },
   {
-    "_id": "B_L1_B14",
-    "levelId": "B_L1",
-    "label": "B14",
-    "type": "standard",
-    "status": "free"
+    "id": 230,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-090"
   },
   {
-    "_id": "B_L1_B15",
-    "levelId": "B_L1",
-    "label": "B15",
-    "type": "standard",
-    "status": "occupied"
+    "id": 231,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-091"
   },
   {
-    "_id": "B_L1_B16",
-    "levelId": "B_L1",
-    "label": "B16",
-    "type": "EV",
-    "status": "free"
+    "id": 232,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-092"
   },
   {
-    "_id": "B_L1_B17",
-    "levelId": "B_L1",
-    "label": "B17",
-    "type": "standard",
-    "status": "occupied"
+    "id": 233,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-093"
   },
   {
-    "_id": "B_L1_B18",
-    "levelId": "B_L1",
-    "label": "B18",
-    "type": "standard",
-    "status": "free"
+    "id": 234,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-094"
   },
   {
-    "_id": "B_L1_B19",
-    "levelId": "B_L1",
-    "label": "B19",
-    "type": "standard",
-    "status": "free"
+    "id": 235,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-095"
   },
   {
-    "_id": "B_L1_B20",
-    "levelId": "B_L1",
-    "label": "B20",
-    "type": "standard",
-    "status": "free"
+    "id": 236,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-096"
   },
   {
-    "_id": "B_L1_B21",
-    "levelId": "B_L1",
-    "label": "B21",
-    "type": "standard",
-    "status": "free"
+    "id": 237,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-097"
   },
   {
-    "_id": "B_L1_B22",
-    "levelId": "B_L1",
-    "label": "B22",
-    "type": "standard",
-    "status": "free"
+    "id": 238,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-098"
   },
   {
-    "_id": "B_L1_B23",
-    "levelId": "B_L1",
-    "label": "B23",
-    "type": "standard",
-    "status": "free"
+    "id": 239,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-099"
   },
   {
-    "_id": "B_L1_B24",
-    "levelId": "B_L1",
-    "label": "B24",
-    "type": "ADA",
-    "status": "free"
+    "id": 240,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-100"
   },
   {
-    "_id": "B_L2_A01",
-    "levelId": "B_L2",
-    "label": "A01",
-    "type": "standard",
-    "status": "free"
+    "id": 241,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-101"
   },
   {
-    "_id": "B_L2_A02",
-    "levelId": "B_L2",
-    "label": "A02",
-    "type": "standard",
-    "status": "free"
+    "id": 242,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-102"
   },
   {
-    "_id": "B_L2_A03",
-    "levelId": "B_L2",
-    "label": "A03",
-    "type": "standard",
-    "status": "free"
+    "id": 243,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-103"
   },
   {
-    "_id": "B_L2_A04",
-    "levelId": "B_L2",
-    "label": "A04",
-    "type": "standard",
-    "status": "free"
+    "id": 244,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-104"
   },
   {
-    "_id": "B_L2_A05",
-    "levelId": "B_L2",
-    "label": "A05",
-    "type": "standard",
-    "status": "free"
+    "id": 245,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-105"
   },
   {
-    "_id": "B_L2_A06",
-    "levelId": "B_L2",
-    "label": "A06",
-    "type": "standard",
-    "status": "free"
+    "id": 246,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-106"
   },
   {
-    "_id": "B_L2_A07",
-    "levelId": "B_L2",
-    "label": "A07",
-    "type": "standard",
-    "status": "free"
+    "id": 247,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-107"
   },
   {
-    "_id": "B_L2_A08",
-    "levelId": "B_L2",
-    "label": "A08",
-    "type": "EV",
-    "status": "free"
+    "id": 248,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-108"
   },
   {
-    "_id": "B_L2_A09",
-    "levelId": "B_L2",
-    "label": "A09",
-    "type": "standard",
-    "status": "free"
+    "id": 249,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-109"
   },
   {
-    "_id": "B_L2_A10",
-    "levelId": "B_L2",
-    "label": "A10",
-    "type": "standard",
-    "status": "free"
+    "id": 250,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-110"
   },
   {
-    "_id": "B_L2_A11",
-    "levelId": "B_L2",
-    "label": "A11",
-    "type": "standard",
-    "status": "free"
+    "id": 251,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-111"
   },
   {
-    "_id": "B_L2_A12",
-    "levelId": "B_L2",
-    "label": "A12",
-    "type": "ADA",
-    "status": "occupied"
+    "id": 252,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-112"
   },
   {
-    "_id": "B_L2_A13",
-    "levelId": "B_L2",
-    "label": "A13",
-    "type": "standard",
-    "status": "occupied"
+    "id": 253,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-113"
   },
   {
-    "_id": "B_L2_A14",
-    "levelId": "B_L2",
-    "label": "A14",
-    "type": "standard",
-    "status": "occupied"
+    "id": 254,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-114"
   },
   {
-    "_id": "B_L2_A15",
-    "levelId": "B_L2",
-    "label": "A15",
-    "type": "standard",
-    "status": "free"
+    "id": 255,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-115"
   },
   {
-    "_id": "B_L2_A16",
-    "levelId": "B_L2",
-    "label": "A16",
-    "type": "EV",
-    "status": "free"
+    "id": 256,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-116"
   },
   {
-    "_id": "B_L2_A17",
-    "levelId": "B_L2",
-    "label": "A17",
-    "type": "standard",
-    "status": "free"
+    "id": 257,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-117"
   },
   {
-    "_id": "B_L2_A18",
-    "levelId": "B_L2",
-    "label": "A18",
-    "type": "standard",
-    "status": "free"
+    "id": 258,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-118"
   },
   {
-    "_id": "B_L2_A19",
-    "levelId": "B_L2",
-    "label": "A19",
-    "type": "standard",
-    "status": "free"
+    "id": 259,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-119"
   },
   {
-    "_id": "B_L2_A20",
-    "levelId": "B_L2",
-    "label": "A20",
-    "type": "standard",
-    "status": "occupied"
+    "id": 260,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-120"
   },
   {
-    "_id": "B_L2_A21",
-    "levelId": "B_L2",
-    "label": "A21",
-    "type": "standard",
-    "status": "free"
+    "id": 261,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-121"
   },
   {
-    "_id": "B_L2_A22",
-    "levelId": "B_L2",
-    "label": "A22",
-    "type": "standard",
-    "status": "free"
+    "id": 262,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-122"
   },
   {
-    "_id": "B_L2_A23",
-    "levelId": "B_L2",
-    "label": "A23",
-    "type": "standard",
-    "status": "free"
+    "id": 263,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-123"
   },
   {
-    "_id": "B_L2_A24",
-    "levelId": "B_L2",
-    "label": "A24",
-    "type": "ADA",
-    "status": "free"
+    "id": 264,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-124"
   },
   {
-    "_id": "B_L2_B01",
-    "levelId": "B_L2",
-    "label": "B01",
-    "type": "standard",
-    "status": "occupied"
+    "id": 265,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-125"
   },
   {
-    "_id": "B_L2_B02",
-    "levelId": "B_L2",
-    "label": "B02",
-    "type": "standard",
-    "status": "occupied"
+    "id": 266,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-126"
   },
   {
-    "_id": "B_L2_B03",
-    "levelId": "B_L2",
-    "label": "B03",
-    "type": "standard",
-    "status": "free"
+    "id": 267,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-127"
   },
   {
-    "_id": "B_L2_B04",
-    "levelId": "B_L2",
-    "label": "B04",
-    "type": "standard",
-    "status": "free"
+    "id": 268,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-128"
   },
   {
-    "_id": "B_L2_B05",
-    "levelId": "B_L2",
-    "label": "B05",
-    "type": "standard",
-    "status": "free"
+    "id": 269,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-129"
   },
   {
-    "_id": "B_L2_B06",
-    "levelId": "B_L2",
-    "label": "B06",
-    "type": "standard",
-    "status": "free"
+    "id": 270,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-130"
   },
   {
-    "_id": "B_L2_B07",
-    "levelId": "B_L2",
-    "label": "B07",
-    "type": "standard",
-    "status": "occupied"
+    "id": 271,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-131"
   },
   {
-    "_id": "B_L2_B08",
-    "levelId": "B_L2",
-    "label": "B08",
-    "type": "EV",
-    "status": "free"
+    "id": 272,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-132"
   },
   {
-    "_id": "B_L2_B09",
-    "levelId": "B_L2",
-    "label": "B09",
-    "type": "standard",
-    "status": "occupied"
+    "id": 273,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-133"
   },
   {
-    "_id": "B_L2_B10",
-    "levelId": "B_L2",
-    "label": "B10",
-    "type": "standard",
-    "status": "free"
+    "id": 274,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-134"
   },
   {
-    "_id": "B_L2_B11",
-    "levelId": "B_L2",
-    "label": "B11",
-    "type": "standard",
-    "status": "free"
+    "id": 275,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-135"
   },
   {
-    "_id": "B_L2_B12",
-    "levelId": "B_L2",
-    "label": "B12",
-    "type": "ADA",
-    "status": "free"
+    "id": 276,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-136"
   },
   {
-    "_id": "B_L2_B13",
-    "levelId": "B_L2",
-    "label": "B13",
-    "type": "standard",
-    "status": "free"
+    "id": 277,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-137"
   },
   {
-    "_id": "B_L2_B14",
-    "levelId": "B_L2",
-    "label": "B14",
-    "type": "standard",
-    "status": "occupied"
+    "id": 278,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-138"
   },
   {
-    "_id": "B_L2_B15",
-    "levelId": "B_L2",
-    "label": "B15",
-    "type": "standard",
-    "status": "free"
+    "id": 279,
+    "levelId": 2,
+    "handicap": false,
+    "label": "L2-139"
   },
   {
-    "_id": "B_L2_B16",
-    "levelId": "B_L2",
-    "label": "B16",
-    "type": "EV",
-    "status": "free"
+    "id": 280,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-001"
   },
   {
-    "_id": "B_L2_B17",
-    "levelId": "B_L2",
-    "label": "B17",
-    "type": "standard",
-    "status": "free"
+    "id": 281,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-002"
   },
   {
-    "_id": "B_L2_B18",
-    "levelId": "B_L2",
-    "label": "B18",
-    "type": "standard",
-    "status": "free"
+    "id": 282,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-003"
   },
   {
-    "_id": "B_L2_B19",
-    "levelId": "B_L2",
-    "label": "B19",
-    "type": "standard",
-    "status": "free"
+    "id": 283,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-004"
   },
   {
-    "_id": "B_L2_B20",
-    "levelId": "B_L2",
-    "label": "B20",
-    "type": "standard",
-    "status": "free"
+    "id": 284,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-005"
   },
   {
-    "_id": "B_L2_B21",
-    "levelId": "B_L2",
-    "label": "B21",
-    "type": "standard",
-    "status": "free"
+    "id": 285,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-006"
   },
   {
-    "_id": "B_L2_B22",
-    "levelId": "B_L2",
-    "label": "B22",
-    "type": "standard",
-    "status": "occupied"
+    "id": 286,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-007"
   },
   {
-    "_id": "B_L2_B23",
-    "levelId": "B_L2",
-    "label": "B23",
-    "type": "standard",
-    "status": "free"
+    "id": 287,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-008"
   },
   {
-    "_id": "B_L2_B24",
-    "levelId": "B_L2",
-    "label": "B24",
-    "type": "ADA",
-    "status": "free"
+    "id": 288,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-009"
+  },
+  {
+    "id": 289,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-010"
+  },
+  {
+    "id": 290,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-011"
+  },
+  {
+    "id": 291,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-012"
+  },
+  {
+    "id": 292,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-013"
+  },
+  {
+    "id": 293,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-014"
+  },
+  {
+    "id": 294,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-015"
+  },
+  {
+    "id": 295,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-016"
+  },
+  {
+    "id": 296,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-017"
+  },
+  {
+    "id": 297,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-018"
+  },
+  {
+    "id": 298,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-019"
+  },
+  {
+    "id": 299,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-020"
+  },
+  {
+    "id": 300,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-021"
+  },
+  {
+    "id": 301,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-022"
+  },
+  {
+    "id": 302,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-023"
+  },
+  {
+    "id": 303,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-024"
+  },
+  {
+    "id": 304,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-025"
+  },
+  {
+    "id": 305,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-026"
+  },
+  {
+    "id": 306,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-027"
+  },
+  {
+    "id": 307,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-028"
+  },
+  {
+    "id": 308,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-029"
+  },
+  {
+    "id": 309,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-030"
+  },
+  {
+    "id": 310,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-031"
+  },
+  {
+    "id": 311,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-032"
+  },
+  {
+    "id": 312,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-033"
+  },
+  {
+    "id": 313,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-034"
+  },
+  {
+    "id": 314,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-035"
+  },
+  {
+    "id": 315,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-036"
+  },
+  {
+    "id": 316,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-037"
+  },
+  {
+    "id": 317,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-038"
+  },
+  {
+    "id": 318,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-039"
+  },
+  {
+    "id": 319,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-040"
+  },
+  {
+    "id": 320,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-041"
+  },
+  {
+    "id": 321,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-042"
+  },
+  {
+    "id": 322,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-043"
+  },
+  {
+    "id": 323,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-044"
+  },
+  {
+    "id": 324,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-045"
+  },
+  {
+    "id": 325,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-046"
+  },
+  {
+    "id": 326,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-047"
+  },
+  {
+    "id": 327,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-048"
+  },
+  {
+    "id": 328,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-049"
+  },
+  {
+    "id": 329,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-050"
+  },
+  {
+    "id": 330,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-051"
+  },
+  {
+    "id": 331,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-052"
+  },
+  {
+    "id": 332,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-053"
+  },
+  {
+    "id": 333,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-054"
+  },
+  {
+    "id": 334,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-055"
+  },
+  {
+    "id": 335,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-056"
+  },
+  {
+    "id": 336,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-057"
+  },
+  {
+    "id": 337,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-058"
+  },
+  {
+    "id": 338,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-059"
+  },
+  {
+    "id": 339,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-060"
+  },
+  {
+    "id": 340,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-061"
+  },
+  {
+    "id": 341,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-062"
+  },
+  {
+    "id": 342,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-063"
+  },
+  {
+    "id": 343,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-064"
+  },
+  {
+    "id": 344,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-065"
+  },
+  {
+    "id": 345,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-066"
+  },
+  {
+    "id": 346,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-067"
+  },
+  {
+    "id": 347,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-068"
+  },
+  {
+    "id": 348,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-069"
+  },
+  {
+    "id": 349,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-070"
+  },
+  {
+    "id": 350,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-071"
+  },
+  {
+    "id": 351,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-072"
+  },
+  {
+    "id": 352,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-073"
+  },
+  {
+    "id": 353,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-074"
+  },
+  {
+    "id": 354,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-075"
+  },
+  {
+    "id": 355,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-076"
+  },
+  {
+    "id": 356,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-077"
+  },
+  {
+    "id": 357,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-078"
+  },
+  {
+    "id": 358,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-079"
+  },
+  {
+    "id": 359,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-080"
+  },
+  {
+    "id": 360,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-081"
+  },
+  {
+    "id": 361,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-082"
+  },
+  {
+    "id": 362,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-083"
+  },
+  {
+    "id": 363,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-084"
+  },
+  {
+    "id": 364,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-085"
+  },
+  {
+    "id": 365,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-086"
+  },
+  {
+    "id": 366,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-087"
+  },
+  {
+    "id": 367,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-088"
+  },
+  {
+    "id": 368,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-089"
+  },
+  {
+    "id": 369,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-090"
+  },
+  {
+    "id": 370,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-091"
+  },
+  {
+    "id": 371,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-092"
+  },
+  {
+    "id": 372,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-093"
+  },
+  {
+    "id": 373,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-094"
+  },
+  {
+    "id": 374,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-095"
+  },
+  {
+    "id": 375,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-096"
+  },
+  {
+    "id": 376,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-097"
+  },
+  {
+    "id": 377,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-098"
+  },
+  {
+    "id": 378,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-099"
+  },
+  {
+    "id": 379,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-100"
+  },
+  {
+    "id": 380,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-101"
+  },
+  {
+    "id": 381,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-102"
+  },
+  {
+    "id": 382,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-103"
+  },
+  {
+    "id": 383,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-104"
+  },
+  {
+    "id": 384,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-105"
+  },
+  {
+    "id": 385,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-106"
+  },
+  {
+    "id": 386,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-107"
+  },
+  {
+    "id": 387,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-108"
+  },
+  {
+    "id": 388,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-109"
+  },
+  {
+    "id": 389,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-110"
+  },
+  {
+    "id": 390,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-111"
+  },
+  {
+    "id": 391,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-112"
+  },
+  {
+    "id": 392,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-113"
+  },
+  {
+    "id": 393,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-114"
+  },
+  {
+    "id": 394,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-115"
+  },
+  {
+    "id": 395,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-116"
+  },
+  {
+    "id": 396,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-117"
+  },
+  {
+    "id": 397,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-118"
+  },
+  {
+    "id": 398,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-119"
+  },
+  {
+    "id": 399,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-120"
+  },
+  {
+    "id": 400,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-121"
+  },
+  {
+    "id": 401,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-122"
+  },
+  {
+    "id": 402,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-123"
+  },
+  {
+    "id": 403,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-124"
+  },
+  {
+    "id": 404,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-125"
+  },
+  {
+    "id": 405,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-126"
+  },
+  {
+    "id": 406,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-127"
+  },
+  {
+    "id": 407,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-128"
+  },
+  {
+    "id": 408,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-129"
+  },
+  {
+    "id": 409,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-130"
+  },
+  {
+    "id": 410,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-131"
+  },
+  {
+    "id": 411,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-132"
+  },
+  {
+    "id": 412,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-133"
+  },
+  {
+    "id": 413,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-134"
+  },
+  {
+    "id": 414,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-135"
+  },
+  {
+    "id": 415,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-136"
+  },
+  {
+    "id": 416,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-137"
+  },
+  {
+    "id": 417,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-138"
+  },
+  {
+    "id": 418,
+    "levelId": 3,
+    "handicap": false,
+    "label": "L3-139"
+  },
+  {
+    "id": 419,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-001"
+  },
+  {
+    "id": 420,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-002"
+  },
+  {
+    "id": 421,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-003"
+  },
+  {
+    "id": 422,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-004"
+  },
+  {
+    "id": 423,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-005"
+  },
+  {
+    "id": 424,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-006"
+  },
+  {
+    "id": 425,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-007"
+  },
+  {
+    "id": 426,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-008"
+  },
+  {
+    "id": 427,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-009"
+  },
+  {
+    "id": 428,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-010"
+  },
+  {
+    "id": 429,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-011"
+  },
+  {
+    "id": 430,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-012"
+  },
+  {
+    "id": 431,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-013"
+  },
+  {
+    "id": 432,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-014"
+  },
+  {
+    "id": 433,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-015"
+  },
+  {
+    "id": 434,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-016"
+  },
+  {
+    "id": 435,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-017"
+  },
+  {
+    "id": 436,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-018"
+  },
+  {
+    "id": 437,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-019"
+  },
+  {
+    "id": 438,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-020"
+  },
+  {
+    "id": 439,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-021"
+  },
+  {
+    "id": 440,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-022"
+  },
+  {
+    "id": 441,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-023"
+  },
+  {
+    "id": 442,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-024"
+  },
+  {
+    "id": 443,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-025"
+  },
+  {
+    "id": 444,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-026"
+  },
+  {
+    "id": 445,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-027"
+  },
+  {
+    "id": 446,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-028"
+  },
+  {
+    "id": 447,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-029"
+  },
+  {
+    "id": 448,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-030"
+  },
+  {
+    "id": 449,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-031"
+  },
+  {
+    "id": 450,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-032"
+  },
+  {
+    "id": 451,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-033"
+  },
+  {
+    "id": 452,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-034"
+  },
+  {
+    "id": 453,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-035"
+  },
+  {
+    "id": 454,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-036"
+  },
+  {
+    "id": 455,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-037"
+  },
+  {
+    "id": 456,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-038"
+  },
+  {
+    "id": 457,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-039"
+  },
+  {
+    "id": 458,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-040"
+  },
+  {
+    "id": 459,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-041"
+  },
+  {
+    "id": 460,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-042"
+  },
+  {
+    "id": 461,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-043"
+  },
+  {
+    "id": 462,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-044"
+  },
+  {
+    "id": 463,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-045"
+  },
+  {
+    "id": 464,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-046"
+  },
+  {
+    "id": 465,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-047"
+  },
+  {
+    "id": 466,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-048"
+  },
+  {
+    "id": 467,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-049"
+  },
+  {
+    "id": 468,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-050"
+  },
+  {
+    "id": 469,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-051"
+  },
+  {
+    "id": 470,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-052"
+  },
+  {
+    "id": 471,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-053"
+  },
+  {
+    "id": 472,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-054"
+  },
+  {
+    "id": 473,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-055"
+  },
+  {
+    "id": 474,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-056"
+  },
+  {
+    "id": 475,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-057"
+  },
+  {
+    "id": 476,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-058"
+  },
+  {
+    "id": 477,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-059"
+  },
+  {
+    "id": 478,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-060"
+  },
+  {
+    "id": 479,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-061"
+  },
+  {
+    "id": 480,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-062"
+  },
+  {
+    "id": 481,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-063"
+  },
+  {
+    "id": 482,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-064"
+  },
+  {
+    "id": 483,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-065"
+  },
+  {
+    "id": 484,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-066"
+  },
+  {
+    "id": 485,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-067"
+  },
+  {
+    "id": 486,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-068"
+  },
+  {
+    "id": 487,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-069"
+  },
+  {
+    "id": 488,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-070"
+  },
+  {
+    "id": 489,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-071"
+  },
+  {
+    "id": 490,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-072"
+  },
+  {
+    "id": 491,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-073"
+  },
+  {
+    "id": 492,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-074"
+  },
+  {
+    "id": 493,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-075"
+  },
+  {
+    "id": 494,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-076"
+  },
+  {
+    "id": 495,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-077"
+  },
+  {
+    "id": 496,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-078"
+  },
+  {
+    "id": 497,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-079"
+  },
+  {
+    "id": 498,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-080"
+  },
+  {
+    "id": 499,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-081"
+  },
+  {
+    "id": 500,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-082"
+  },
+  {
+    "id": 501,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-083"
+  },
+  {
+    "id": 502,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-084"
+  },
+  {
+    "id": 503,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-085"
+  },
+  {
+    "id": 504,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-086"
+  },
+  {
+    "id": 505,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-087"
+  },
+  {
+    "id": 506,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-088"
+  },
+  {
+    "id": 507,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-089"
+  },
+  {
+    "id": 508,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-090"
+  },
+  {
+    "id": 509,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-091"
+  },
+  {
+    "id": 510,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-092"
+  },
+  {
+    "id": 511,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-093"
+  },
+  {
+    "id": 512,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-094"
+  },
+  {
+    "id": 513,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-095"
+  },
+  {
+    "id": 514,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-096"
+  },
+  {
+    "id": 515,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-097"
+  },
+  {
+    "id": 516,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-098"
+  },
+  {
+    "id": 517,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-099"
+  },
+  {
+    "id": 518,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-100"
+  },
+  {
+    "id": 519,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-101"
+  },
+  {
+    "id": 520,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-102"
+  },
+  {
+    "id": 521,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-103"
+  },
+  {
+    "id": 522,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-104"
+  },
+  {
+    "id": 523,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-105"
+  },
+  {
+    "id": 524,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-106"
+  },
+  {
+    "id": 525,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-107"
+  },
+  {
+    "id": 526,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-108"
+  },
+  {
+    "id": 527,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-109"
+  },
+  {
+    "id": 528,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-110"
+  },
+  {
+    "id": 529,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-111"
+  },
+  {
+    "id": 530,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-112"
+  },
+  {
+    "id": 531,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-113"
+  },
+  {
+    "id": 532,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-114"
+  },
+  {
+    "id": 533,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-115"
+  },
+  {
+    "id": 534,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-116"
+  },
+  {
+    "id": 535,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-117"
+  },
+  {
+    "id": 536,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-118"
+  },
+  {
+    "id": 537,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-119"
+  },
+  {
+    "id": 538,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-120"
+  },
+  {
+    "id": 539,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-121"
+  },
+  {
+    "id": 540,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-122"
+  },
+  {
+    "id": 541,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-123"
+  },
+  {
+    "id": 542,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-124"
+  },
+  {
+    "id": 543,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-125"
+  },
+  {
+    "id": 544,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-126"
+  },
+  {
+    "id": 545,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-127"
+  },
+  {
+    "id": 546,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-128"
+  },
+  {
+    "id": 547,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-129"
+  },
+  {
+    "id": 548,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-130"
+  },
+  {
+    "id": 549,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-131"
+  },
+  {
+    "id": 550,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-132"
+  },
+  {
+    "id": 551,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-133"
+  },
+  {
+    "id": 552,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-134"
+  },
+  {
+    "id": 553,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-135"
+  },
+  {
+    "id": 554,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-136"
+  },
+  {
+    "id": 555,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-137"
+  },
+  {
+    "id": 556,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-138"
+  },
+  {
+    "id": 557,
+    "levelId": 4,
+    "handicap": false,
+    "label": "L4-139"
+  },
+  {
+    "id": 558,
+    "levelId": 5,
+    "handicap": true,
+    "label": "L1-001"
+  },
+  {
+    "id": 559,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-002"
+  },
+  {
+    "id": 560,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-003"
+  },
+  {
+    "id": 561,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-004"
+  },
+  {
+    "id": 562,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-005"
+  },
+  {
+    "id": 563,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-006"
+  },
+  {
+    "id": 564,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-007"
+  },
+  {
+    "id": 565,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-008"
+  },
+  {
+    "id": 566,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-009"
+  },
+  {
+    "id": 567,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-010"
+  },
+  {
+    "id": 568,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-011"
+  },
+  {
+    "id": 569,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-012"
+  },
+  {
+    "id": 570,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-013"
+  },
+  {
+    "id": 571,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-014"
+  },
+  {
+    "id": 572,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-015"
+  },
+  {
+    "id": 573,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-016"
+  },
+  {
+    "id": 574,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-017"
+  },
+  {
+    "id": 575,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-018"
+  },
+  {
+    "id": 576,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-019"
+  },
+  {
+    "id": 577,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-020"
+  },
+  {
+    "id": 578,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-021"
+  },
+  {
+    "id": 579,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-022"
+  },
+  {
+    "id": 580,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-023"
+  },
+  {
+    "id": 581,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-024"
+  },
+  {
+    "id": 582,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-025"
+  },
+  {
+    "id": 583,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-026"
+  },
+  {
+    "id": 584,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-027"
+  },
+  {
+    "id": 585,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-028"
+  },
+  {
+    "id": 586,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-029"
+  },
+  {
+    "id": 587,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-030"
+  },
+  {
+    "id": 588,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-031"
+  },
+  {
+    "id": 589,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-032"
+  },
+  {
+    "id": 590,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-033"
+  },
+  {
+    "id": 591,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-034"
+  },
+  {
+    "id": 592,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-035"
+  },
+  {
+    "id": 593,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-036"
+  },
+  {
+    "id": 594,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-037"
+  },
+  {
+    "id": 595,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-038"
+  },
+  {
+    "id": 596,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-039"
+  },
+  {
+    "id": 597,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-040"
+  },
+  {
+    "id": 598,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-041"
+  },
+  {
+    "id": 599,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-042"
+  },
+  {
+    "id": 600,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-043"
+  },
+  {
+    "id": 601,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-044"
+  },
+  {
+    "id": 602,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-045"
+  },
+  {
+    "id": 603,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-046"
+  },
+  {
+    "id": 604,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-047"
+  },
+  {
+    "id": 605,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-048"
+  },
+  {
+    "id": 606,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-049"
+  },
+  {
+    "id": 607,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-050"
+  },
+  {
+    "id": 608,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-051"
+  },
+  {
+    "id": 609,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-052"
+  },
+  {
+    "id": 610,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-053"
+  },
+  {
+    "id": 611,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-054"
+  },
+  {
+    "id": 612,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-055"
+  },
+  {
+    "id": 613,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-056"
+  },
+  {
+    "id": 614,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-057"
+  },
+  {
+    "id": 615,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-058"
+  },
+  {
+    "id": 616,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-059"
+  },
+  {
+    "id": 617,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-060"
+  },
+  {
+    "id": 618,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-061"
+  },
+  {
+    "id": 619,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-062"
+  },
+  {
+    "id": 620,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-063"
+  },
+  {
+    "id": 621,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-064"
+  },
+  {
+    "id": 622,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-065"
+  },
+  {
+    "id": 623,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-066"
+  },
+  {
+    "id": 624,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-067"
+  },
+  {
+    "id": 625,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-068"
+  },
+  {
+    "id": 626,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-069"
+  },
+  {
+    "id": 627,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-070"
+  },
+  {
+    "id": 628,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-071"
+  },
+  {
+    "id": 629,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-072"
+  },
+  {
+    "id": 630,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-073"
+  },
+  {
+    "id": 631,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-074"
+  },
+  {
+    "id": 632,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-075"
+  },
+  {
+    "id": 633,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-076"
+  },
+  {
+    "id": 634,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-077"
+  },
+  {
+    "id": 635,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-078"
+  },
+  {
+    "id": 636,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-079"
+  },
+  {
+    "id": 637,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-080"
+  },
+  {
+    "id": 638,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-081"
+  },
+  {
+    "id": 639,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-082"
+  },
+  {
+    "id": 640,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-083"
+  },
+  {
+    "id": 641,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-084"
+  },
+  {
+    "id": 642,
+    "levelId": 5,
+    "handicap": false,
+    "label": "L1-085"
+  },
+  {
+    "id": 643,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-001"
+  },
+  {
+    "id": 644,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-002"
+  },
+  {
+    "id": 645,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-003"
+  },
+  {
+    "id": 646,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-004"
+  },
+  {
+    "id": 647,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-005"
+  },
+  {
+    "id": 648,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-006"
+  },
+  {
+    "id": 649,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-007"
+  },
+  {
+    "id": 650,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-008"
+  },
+  {
+    "id": 651,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-009"
+  },
+  {
+    "id": 652,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-010"
+  },
+  {
+    "id": 653,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-011"
+  },
+  {
+    "id": 654,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-012"
+  },
+  {
+    "id": 655,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-013"
+  },
+  {
+    "id": 656,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-014"
+  },
+  {
+    "id": 657,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-015"
+  },
+  {
+    "id": 658,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-016"
+  },
+  {
+    "id": 659,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-017"
+  },
+  {
+    "id": 660,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-018"
+  },
+  {
+    "id": 661,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-019"
+  },
+  {
+    "id": 662,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-020"
+  },
+  {
+    "id": 663,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-021"
+  },
+  {
+    "id": 664,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-022"
+  },
+  {
+    "id": 665,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-023"
+  },
+  {
+    "id": 666,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-024"
+  },
+  {
+    "id": 667,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-025"
+  },
+  {
+    "id": 668,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-026"
+  },
+  {
+    "id": 669,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-027"
+  },
+  {
+    "id": 670,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-028"
+  },
+  {
+    "id": 671,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-029"
+  },
+  {
+    "id": 672,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-030"
+  },
+  {
+    "id": 673,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-031"
+  },
+  {
+    "id": 674,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-032"
+  },
+  {
+    "id": 675,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-033"
+  },
+  {
+    "id": 676,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-034"
+  },
+  {
+    "id": 677,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-035"
+  },
+  {
+    "id": 678,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-036"
+  },
+  {
+    "id": 679,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-037"
+  },
+  {
+    "id": 680,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-038"
+  },
+  {
+    "id": 681,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-039"
+  },
+  {
+    "id": 682,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-040"
+  },
+  {
+    "id": 683,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-041"
+  },
+  {
+    "id": 684,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-042"
+  },
+  {
+    "id": 685,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-043"
+  },
+  {
+    "id": 686,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-044"
+  },
+  {
+    "id": 687,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-045"
+  },
+  {
+    "id": 688,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-046"
+  },
+  {
+    "id": 689,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-047"
+  },
+  {
+    "id": 690,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-048"
+  },
+  {
+    "id": 691,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-049"
+  },
+  {
+    "id": 692,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-050"
+  },
+  {
+    "id": 693,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-051"
+  },
+  {
+    "id": 694,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-052"
+  },
+  {
+    "id": 695,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-053"
+  },
+  {
+    "id": 696,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-054"
+  },
+  {
+    "id": 697,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-055"
+  },
+  {
+    "id": 698,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-056"
+  },
+  {
+    "id": 699,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-057"
+  },
+  {
+    "id": 700,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-058"
+  },
+  {
+    "id": 701,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-059"
+  },
+  {
+    "id": 702,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-060"
+  },
+  {
+    "id": 703,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-061"
+  },
+  {
+    "id": 704,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-062"
+  },
+  {
+    "id": 705,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-063"
+  },
+  {
+    "id": 706,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-064"
+  },
+  {
+    "id": 707,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-065"
+  },
+  {
+    "id": 708,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-066"
+  },
+  {
+    "id": 709,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-067"
+  },
+  {
+    "id": 710,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-068"
+  },
+  {
+    "id": 711,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-069"
+  },
+  {
+    "id": 712,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-070"
+  },
+  {
+    "id": 713,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-071"
+  },
+  {
+    "id": 714,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-072"
+  },
+  {
+    "id": 715,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-073"
+  },
+  {
+    "id": 716,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-074"
+  },
+  {
+    "id": 717,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-075"
+  },
+  {
+    "id": 718,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-076"
+  },
+  {
+    "id": 719,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-077"
+  },
+  {
+    "id": 720,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-078"
+  },
+  {
+    "id": 721,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-079"
+  },
+  {
+    "id": 722,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-080"
+  },
+  {
+    "id": 723,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-081"
+  },
+  {
+    "id": 724,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-082"
+  },
+  {
+    "id": 725,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-083"
+  },
+  {
+    "id": 726,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-084"
+  },
+  {
+    "id": 727,
+    "levelId": 6,
+    "handicap": false,
+    "label": "L2-085"
+  },
+  {
+    "id": 728,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-001"
+  },
+  {
+    "id": 729,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-002"
+  },
+  {
+    "id": 730,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-003"
+  },
+  {
+    "id": 731,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-004"
+  },
+  {
+    "id": 732,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-005"
+  },
+  {
+    "id": 733,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-006"
+  },
+  {
+    "id": 734,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-007"
+  },
+  {
+    "id": 735,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-008"
+  },
+  {
+    "id": 736,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-009"
+  },
+  {
+    "id": 737,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-010"
+  },
+  {
+    "id": 738,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-011"
+  },
+  {
+    "id": 739,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-012"
+  },
+  {
+    "id": 740,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-013"
+  },
+  {
+    "id": 741,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-014"
+  },
+  {
+    "id": 742,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-015"
+  },
+  {
+    "id": 743,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-016"
+  },
+  {
+    "id": 744,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-017"
+  },
+  {
+    "id": 745,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-018"
+  },
+  {
+    "id": 746,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-019"
+  },
+  {
+    "id": 747,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-020"
+  },
+  {
+    "id": 748,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-021"
+  },
+  {
+    "id": 749,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-022"
+  },
+  {
+    "id": 750,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-023"
+  },
+  {
+    "id": 751,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-024"
+  },
+  {
+    "id": 752,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-025"
+  },
+  {
+    "id": 753,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-026"
+  },
+  {
+    "id": 754,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-027"
+  },
+  {
+    "id": 755,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-028"
+  },
+  {
+    "id": 756,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-029"
+  },
+  {
+    "id": 757,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-030"
+  },
+  {
+    "id": 758,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-031"
+  },
+  {
+    "id": 759,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-032"
+  },
+  {
+    "id": 760,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-033"
+  },
+  {
+    "id": 761,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-034"
+  },
+  {
+    "id": 762,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-035"
+  },
+  {
+    "id": 763,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-036"
+  },
+  {
+    "id": 764,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-037"
+  },
+  {
+    "id": 765,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-038"
+  },
+  {
+    "id": 766,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-039"
+  },
+  {
+    "id": 767,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-040"
+  },
+  {
+    "id": 768,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-041"
+  },
+  {
+    "id": 769,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-042"
+  },
+  {
+    "id": 770,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-043"
+  },
+  {
+    "id": 771,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-044"
+  },
+  {
+    "id": 772,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-045"
+  },
+  {
+    "id": 773,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-046"
+  },
+  {
+    "id": 774,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-047"
+  },
+  {
+    "id": 775,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-048"
+  },
+  {
+    "id": 776,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-049"
+  },
+  {
+    "id": 777,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-050"
+  },
+  {
+    "id": 778,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-051"
+  },
+  {
+    "id": 779,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-052"
+  },
+  {
+    "id": 780,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-053"
+  },
+  {
+    "id": 781,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-054"
+  },
+  {
+    "id": 782,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-055"
+  },
+  {
+    "id": 783,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-056"
+  },
+  {
+    "id": 784,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-057"
+  },
+  {
+    "id": 785,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-058"
+  },
+  {
+    "id": 786,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-059"
+  },
+  {
+    "id": 787,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-060"
+  },
+  {
+    "id": 788,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-061"
+  },
+  {
+    "id": 789,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-062"
+  },
+  {
+    "id": 790,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-063"
+  },
+  {
+    "id": 791,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-064"
+  },
+  {
+    "id": 792,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-065"
+  },
+  {
+    "id": 793,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-066"
+  },
+  {
+    "id": 794,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-067"
+  },
+  {
+    "id": 795,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-068"
+  },
+  {
+    "id": 796,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-069"
+  },
+  {
+    "id": 797,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-070"
+  },
+  {
+    "id": 798,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-071"
+  },
+  {
+    "id": 799,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-072"
+  },
+  {
+    "id": 800,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-073"
+  },
+  {
+    "id": 801,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-074"
+  },
+  {
+    "id": 802,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-075"
+  },
+  {
+    "id": 803,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-076"
+  },
+  {
+    "id": 804,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-077"
+  },
+  {
+    "id": 805,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-078"
+  },
+  {
+    "id": 806,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-079"
+  },
+  {
+    "id": 807,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-080"
+  },
+  {
+    "id": 808,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-081"
+  },
+  {
+    "id": 809,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-082"
+  },
+  {
+    "id": 810,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-083"
+  },
+  {
+    "id": 811,
+    "levelId": 7,
+    "handicap": false,
+    "label": "L3-084"
+  },
+  {
+    "id": 812,
+    "levelId": 8,
+    "handicap": true,
+    "label": "L1-001"
+  },
+  {
+    "id": 813,
+    "levelId": 8,
+    "handicap": true,
+    "label": "L1-002"
+  },
+  {
+    "id": 814,
+    "levelId": 8,
+    "handicap": true,
+    "label": "L1-003"
+  },
+  {
+    "id": 815,
+    "levelId": 8,
+    "handicap": true,
+    "label": "L1-004"
+  },
+  {
+    "id": 816,
+    "levelId": 8,
+    "handicap": true,
+    "label": "L1-005"
+  },
+  {
+    "id": 817,
+    "levelId": 8,
+    "handicap": true,
+    "label": "L1-006"
+  },
+  {
+    "id": 818,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-007"
+  },
+  {
+    "id": 819,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-008"
+  },
+  {
+    "id": 820,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-009"
+  },
+  {
+    "id": 821,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-010"
+  },
+  {
+    "id": 822,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-011"
+  },
+  {
+    "id": 823,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-012"
+  },
+  {
+    "id": 824,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-013"
+  },
+  {
+    "id": 825,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-014"
+  },
+  {
+    "id": 826,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-015"
+  },
+  {
+    "id": 827,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-016"
+  },
+  {
+    "id": 828,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-017"
+  },
+  {
+    "id": 829,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-018"
+  },
+  {
+    "id": 830,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-019"
+  },
+  {
+    "id": 831,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-020"
+  },
+  {
+    "id": 832,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-021"
+  },
+  {
+    "id": 833,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-022"
+  },
+  {
+    "id": 834,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-023"
+  },
+  {
+    "id": 835,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-024"
+  },
+  {
+    "id": 836,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-025"
+  },
+  {
+    "id": 837,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-026"
+  },
+  {
+    "id": 838,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-027"
+  },
+  {
+    "id": 839,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-028"
+  },
+  {
+    "id": 840,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-029"
+  },
+  {
+    "id": 841,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-030"
+  },
+  {
+    "id": 842,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-031"
+  },
+  {
+    "id": 843,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-032"
+  },
+  {
+    "id": 844,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-033"
+  },
+  {
+    "id": 845,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-034"
+  },
+  {
+    "id": 846,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-035"
+  },
+  {
+    "id": 847,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-036"
+  },
+  {
+    "id": 848,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-037"
+  },
+  {
+    "id": 849,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-038"
+  },
+  {
+    "id": 850,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-039"
+  },
+  {
+    "id": 851,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-040"
+  },
+  {
+    "id": 852,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-041"
+  },
+  {
+    "id": 853,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-042"
+  },
+  {
+    "id": 854,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-043"
+  },
+  {
+    "id": 855,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-044"
+  },
+  {
+    "id": 856,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-045"
+  },
+  {
+    "id": 857,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-046"
+  },
+  {
+    "id": 858,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-047"
+  },
+  {
+    "id": 859,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-048"
+  },
+  {
+    "id": 860,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-049"
+  },
+  {
+    "id": 861,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-050"
+  },
+  {
+    "id": 862,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-051"
+  },
+  {
+    "id": 863,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-052"
+  },
+  {
+    "id": 864,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-053"
+  },
+  {
+    "id": 865,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-054"
+  },
+  {
+    "id": 866,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-055"
+  },
+  {
+    "id": 867,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-056"
+  },
+  {
+    "id": 868,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-057"
+  },
+  {
+    "id": 869,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-058"
+  },
+  {
+    "id": 870,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-059"
+  },
+  {
+    "id": 871,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-060"
+  },
+  {
+    "id": 872,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-061"
+  },
+  {
+    "id": 873,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-062"
+  },
+  {
+    "id": 874,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-063"
+  },
+  {
+    "id": 875,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-064"
+  },
+  {
+    "id": 876,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-065"
+  },
+  {
+    "id": 877,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-066"
+  },
+  {
+    "id": 878,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-067"
+  },
+  {
+    "id": 879,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-068"
+  },
+  {
+    "id": 880,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-069"
+  },
+  {
+    "id": 881,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-070"
+  },
+  {
+    "id": 882,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-071"
+  },
+  {
+    "id": 883,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-072"
+  },
+  {
+    "id": 884,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-073"
+  },
+  {
+    "id": 885,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-074"
+  },
+  {
+    "id": 886,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-075"
+  },
+  {
+    "id": 887,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-076"
+  },
+  {
+    "id": 888,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-077"
+  },
+  {
+    "id": 889,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-078"
+  },
+  {
+    "id": 890,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-079"
+  },
+  {
+    "id": 891,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-080"
+  },
+  {
+    "id": 892,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-081"
+  },
+  {
+    "id": 893,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-082"
+  },
+  {
+    "id": 894,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-083"
+  },
+  {
+    "id": 895,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-084"
+  },
+  {
+    "id": 896,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-085"
+  },
+  {
+    "id": 897,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-086"
+  },
+  {
+    "id": 898,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-087"
+  },
+  {
+    "id": 899,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-088"
+  },
+  {
+    "id": 900,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-089"
+  },
+  {
+    "id": 901,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-090"
+  },
+  {
+    "id": 902,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-091"
+  },
+  {
+    "id": 903,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-092"
+  },
+  {
+    "id": 904,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-093"
+  },
+  {
+    "id": 905,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-094"
+  },
+  {
+    "id": 906,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-095"
+  },
+  {
+    "id": 907,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-096"
+  },
+  {
+    "id": 908,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-097"
+  },
+  {
+    "id": 909,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-098"
+  },
+  {
+    "id": 910,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-099"
+  },
+  {
+    "id": 911,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-100"
+  },
+  {
+    "id": 912,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-101"
+  },
+  {
+    "id": 913,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-102"
+  },
+  {
+    "id": 914,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-103"
+  },
+  {
+    "id": 915,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-104"
+  },
+  {
+    "id": 916,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-105"
+  },
+  {
+    "id": 917,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-106"
+  },
+  {
+    "id": 918,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-107"
+  },
+  {
+    "id": 919,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-108"
+  },
+  {
+    "id": 920,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-109"
+  },
+  {
+    "id": 921,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-110"
+  },
+  {
+    "id": 922,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-111"
+  },
+  {
+    "id": 923,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-112"
+  },
+  {
+    "id": 924,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-113"
+  },
+  {
+    "id": 925,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-114"
+  },
+  {
+    "id": 926,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-115"
+  },
+  {
+    "id": 927,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-116"
+  },
+  {
+    "id": 928,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-117"
+  },
+  {
+    "id": 929,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-118"
+  },
+  {
+    "id": 930,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-119"
+  },
+  {
+    "id": 931,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-120"
+  },
+  {
+    "id": 932,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-121"
+  },
+  {
+    "id": 933,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-122"
+  },
+  {
+    "id": 934,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-123"
+  },
+  {
+    "id": 935,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-124"
+  },
+  {
+    "id": 936,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-125"
+  },
+  {
+    "id": 937,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-126"
+  },
+  {
+    "id": 938,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-127"
+  },
+  {
+    "id": 939,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-128"
+  },
+  {
+    "id": 940,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-129"
+  },
+  {
+    "id": 941,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-130"
+  },
+  {
+    "id": 942,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-131"
+  },
+  {
+    "id": 943,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-132"
+  },
+  {
+    "id": 944,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-133"
+  },
+  {
+    "id": 945,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-134"
+  },
+  {
+    "id": 946,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-135"
+  },
+  {
+    "id": 947,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-136"
+  },
+  {
+    "id": 948,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-137"
+  },
+  {
+    "id": 949,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-138"
+  },
+  {
+    "id": 950,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-139"
+  },
+  {
+    "id": 951,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-140"
+  },
+  {
+    "id": 952,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-141"
+  },
+  {
+    "id": 953,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-142"
+  },
+  {
+    "id": 954,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-143"
+  },
+  {
+    "id": 955,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-144"
+  },
+  {
+    "id": 956,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-145"
+  },
+  {
+    "id": 957,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-146"
+  },
+  {
+    "id": 958,
+    "levelId": 8,
+    "handicap": false,
+    "label": "L1-147"
+  },
+  {
+    "id": 959,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-001"
+  },
+  {
+    "id": 960,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-002"
+  },
+  {
+    "id": 961,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-003"
+  },
+  {
+    "id": 962,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-004"
+  },
+  {
+    "id": 963,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-005"
+  },
+  {
+    "id": 964,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-006"
+  },
+  {
+    "id": 965,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-007"
+  },
+  {
+    "id": 966,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-008"
+  },
+  {
+    "id": 967,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-009"
+  },
+  {
+    "id": 968,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-010"
+  },
+  {
+    "id": 969,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-011"
+  },
+  {
+    "id": 970,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-012"
+  },
+  {
+    "id": 971,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-013"
+  },
+  {
+    "id": 972,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-014"
+  },
+  {
+    "id": 973,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-015"
+  },
+  {
+    "id": 974,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-016"
+  },
+  {
+    "id": 975,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-017"
+  },
+  {
+    "id": 976,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-018"
+  },
+  {
+    "id": 977,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-019"
+  },
+  {
+    "id": 978,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-020"
+  },
+  {
+    "id": 979,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-021"
+  },
+  {
+    "id": 980,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-022"
+  },
+  {
+    "id": 981,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-023"
+  },
+  {
+    "id": 982,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-024"
+  },
+  {
+    "id": 983,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-025"
+  },
+  {
+    "id": 984,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-026"
+  },
+  {
+    "id": 985,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-027"
+  },
+  {
+    "id": 986,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-028"
+  },
+  {
+    "id": 987,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-029"
+  },
+  {
+    "id": 988,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-030"
+  },
+  {
+    "id": 989,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-031"
+  },
+  {
+    "id": 990,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-032"
+  },
+  {
+    "id": 991,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-033"
+  },
+  {
+    "id": 992,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-034"
+  },
+  {
+    "id": 993,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-035"
+  },
+  {
+    "id": 994,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-036"
+  },
+  {
+    "id": 995,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-037"
+  },
+  {
+    "id": 996,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-038"
+  },
+  {
+    "id": 997,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-039"
+  },
+  {
+    "id": 998,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-040"
+  },
+  {
+    "id": 999,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-041"
+  },
+  {
+    "id": 1000,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-042"
+  },
+  {
+    "id": 1001,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-043"
+  },
+  {
+    "id": 1002,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-044"
+  },
+  {
+    "id": 1003,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-045"
+  },
+  {
+    "id": 1004,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-046"
+  },
+  {
+    "id": 1005,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-047"
+  },
+  {
+    "id": 1006,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-048"
+  },
+  {
+    "id": 1007,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-049"
+  },
+  {
+    "id": 1008,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-050"
+  },
+  {
+    "id": 1009,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-051"
+  },
+  {
+    "id": 1010,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-052"
+  },
+  {
+    "id": 1011,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-053"
+  },
+  {
+    "id": 1012,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-054"
+  },
+  {
+    "id": 1013,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-055"
+  },
+  {
+    "id": 1014,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-056"
+  },
+  {
+    "id": 1015,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-057"
+  },
+  {
+    "id": 1016,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-058"
+  },
+  {
+    "id": 1017,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-059"
+  },
+  {
+    "id": 1018,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-060"
+  },
+  {
+    "id": 1019,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-061"
+  },
+  {
+    "id": 1020,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-062"
+  },
+  {
+    "id": 1021,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-063"
+  },
+  {
+    "id": 1022,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-064"
+  },
+  {
+    "id": 1023,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-065"
+  },
+  {
+    "id": 1024,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-066"
+  },
+  {
+    "id": 1025,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-067"
+  },
+  {
+    "id": 1026,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-068"
+  },
+  {
+    "id": 1027,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-069"
+  },
+  {
+    "id": 1028,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-070"
+  },
+  {
+    "id": 1029,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-071"
+  },
+  {
+    "id": 1030,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-072"
+  },
+  {
+    "id": 1031,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-073"
+  },
+  {
+    "id": 1032,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-074"
+  },
+  {
+    "id": 1033,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-075"
+  },
+  {
+    "id": 1034,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-076"
+  },
+  {
+    "id": 1035,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-077"
+  },
+  {
+    "id": 1036,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-078"
+  },
+  {
+    "id": 1037,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-079"
+  },
+  {
+    "id": 1038,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-080"
+  },
+  {
+    "id": 1039,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-081"
+  },
+  {
+    "id": 1040,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-082"
+  },
+  {
+    "id": 1041,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-083"
+  },
+  {
+    "id": 1042,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-084"
+  },
+  {
+    "id": 1043,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-085"
+  },
+  {
+    "id": 1044,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-086"
+  },
+  {
+    "id": 1045,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-087"
+  },
+  {
+    "id": 1046,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-088"
+  },
+  {
+    "id": 1047,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-089"
+  },
+  {
+    "id": 1048,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-090"
+  },
+  {
+    "id": 1049,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-091"
+  },
+  {
+    "id": 1050,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-092"
+  },
+  {
+    "id": 1051,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-093"
+  },
+  {
+    "id": 1052,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-094"
+  },
+  {
+    "id": 1053,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-095"
+  },
+  {
+    "id": 1054,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-096"
+  },
+  {
+    "id": 1055,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-097"
+  },
+  {
+    "id": 1056,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-098"
+  },
+  {
+    "id": 1057,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-099"
+  },
+  {
+    "id": 1058,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-100"
+  },
+  {
+    "id": 1059,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-101"
+  },
+  {
+    "id": 1060,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-102"
+  },
+  {
+    "id": 1061,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-103"
+  },
+  {
+    "id": 1062,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-104"
+  },
+  {
+    "id": 1063,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-105"
+  },
+  {
+    "id": 1064,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-106"
+  },
+  {
+    "id": 1065,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-107"
+  },
+  {
+    "id": 1066,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-108"
+  },
+  {
+    "id": 1067,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-109"
+  },
+  {
+    "id": 1068,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-110"
+  },
+  {
+    "id": 1069,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-111"
+  },
+  {
+    "id": 1070,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-112"
+  },
+  {
+    "id": 1071,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-113"
+  },
+  {
+    "id": 1072,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-114"
+  },
+  {
+    "id": 1073,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-115"
+  },
+  {
+    "id": 1074,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-116"
+  },
+  {
+    "id": 1075,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-117"
+  },
+  {
+    "id": 1076,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-118"
+  },
+  {
+    "id": 1077,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-119"
+  },
+  {
+    "id": 1078,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-120"
+  },
+  {
+    "id": 1079,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-121"
+  },
+  {
+    "id": 1080,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-122"
+  },
+  {
+    "id": 1081,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-123"
+  },
+  {
+    "id": 1082,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-124"
+  },
+  {
+    "id": 1083,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-125"
+  },
+  {
+    "id": 1084,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-126"
+  },
+  {
+    "id": 1085,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-127"
+  },
+  {
+    "id": 1086,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-128"
+  },
+  {
+    "id": 1087,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-129"
+  },
+  {
+    "id": 1088,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-130"
+  },
+  {
+    "id": 1089,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-131"
+  },
+  {
+    "id": 1090,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-132"
+  },
+  {
+    "id": 1091,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-133"
+  },
+  {
+    "id": 1092,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-134"
+  },
+  {
+    "id": 1093,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-135"
+  },
+  {
+    "id": 1094,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-136"
+  },
+  {
+    "id": 1095,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-137"
+  },
+  {
+    "id": 1096,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-138"
+  },
+  {
+    "id": 1097,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-139"
+  },
+  {
+    "id": 1098,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-140"
+  },
+  {
+    "id": 1099,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-141"
+  },
+  {
+    "id": 1100,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-142"
+  },
+  {
+    "id": 1101,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-143"
+  },
+  {
+    "id": 1102,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-144"
+  },
+  {
+    "id": 1103,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-145"
+  },
+  {
+    "id": 1104,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-146"
+  },
+  {
+    "id": 1105,
+    "levelId": 9,
+    "handicap": false,
+    "label": "L2-147"
+  },
+  {
+    "id": 1106,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-001"
+  },
+  {
+    "id": 1107,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-002"
+  },
+  {
+    "id": 1108,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-003"
+  },
+  {
+    "id": 1109,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-004"
+  },
+  {
+    "id": 1110,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-005"
+  },
+  {
+    "id": 1111,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-006"
+  },
+  {
+    "id": 1112,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-007"
+  },
+  {
+    "id": 1113,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-008"
+  },
+  {
+    "id": 1114,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-009"
+  },
+  {
+    "id": 1115,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-010"
+  },
+  {
+    "id": 1116,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-011"
+  },
+  {
+    "id": 1117,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-012"
+  },
+  {
+    "id": 1118,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-013"
+  },
+  {
+    "id": 1119,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-014"
+  },
+  {
+    "id": 1120,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-015"
+  },
+  {
+    "id": 1121,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-016"
+  },
+  {
+    "id": 1122,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-017"
+  },
+  {
+    "id": 1123,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-018"
+  },
+  {
+    "id": 1124,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-019"
+  },
+  {
+    "id": 1125,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-020"
+  },
+  {
+    "id": 1126,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-021"
+  },
+  {
+    "id": 1127,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-022"
+  },
+  {
+    "id": 1128,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-023"
+  },
+  {
+    "id": 1129,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-024"
+  },
+  {
+    "id": 1130,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-025"
+  },
+  {
+    "id": 1131,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-026"
+  },
+  {
+    "id": 1132,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-027"
+  },
+  {
+    "id": 1133,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-028"
+  },
+  {
+    "id": 1134,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-029"
+  },
+  {
+    "id": 1135,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-030"
+  },
+  {
+    "id": 1136,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-031"
+  },
+  {
+    "id": 1137,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-032"
+  },
+  {
+    "id": 1138,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-033"
+  },
+  {
+    "id": 1139,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-034"
+  },
+  {
+    "id": 1140,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-035"
+  },
+  {
+    "id": 1141,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-036"
+  },
+  {
+    "id": 1142,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-037"
+  },
+  {
+    "id": 1143,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-038"
+  },
+  {
+    "id": 1144,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-039"
+  },
+  {
+    "id": 1145,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-040"
+  },
+  {
+    "id": 1146,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-041"
+  },
+  {
+    "id": 1147,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-042"
+  },
+  {
+    "id": 1148,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-043"
+  },
+  {
+    "id": 1149,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-044"
+  },
+  {
+    "id": 1150,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-045"
+  },
+  {
+    "id": 1151,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-046"
+  },
+  {
+    "id": 1152,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-047"
+  },
+  {
+    "id": 1153,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-048"
+  },
+  {
+    "id": 1154,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-049"
+  },
+  {
+    "id": 1155,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-050"
+  },
+  {
+    "id": 1156,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-051"
+  },
+  {
+    "id": 1157,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-052"
+  },
+  {
+    "id": 1158,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-053"
+  },
+  {
+    "id": 1159,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-054"
+  },
+  {
+    "id": 1160,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-055"
+  },
+  {
+    "id": 1161,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-056"
+  },
+  {
+    "id": 1162,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-057"
+  },
+  {
+    "id": 1163,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-058"
+  },
+  {
+    "id": 1164,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-059"
+  },
+  {
+    "id": 1165,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-060"
+  },
+  {
+    "id": 1166,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-061"
+  },
+  {
+    "id": 1167,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-062"
+  },
+  {
+    "id": 1168,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-063"
+  },
+  {
+    "id": 1169,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-064"
+  },
+  {
+    "id": 1170,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-065"
+  },
+  {
+    "id": 1171,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-066"
+  },
+  {
+    "id": 1172,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-067"
+  },
+  {
+    "id": 1173,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-068"
+  },
+  {
+    "id": 1174,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-069"
+  },
+  {
+    "id": 1175,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-070"
+  },
+  {
+    "id": 1176,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-071"
+  },
+  {
+    "id": 1177,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-072"
+  },
+  {
+    "id": 1178,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-073"
+  },
+  {
+    "id": 1179,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-074"
+  },
+  {
+    "id": 1180,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-075"
+  },
+  {
+    "id": 1181,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-076"
+  },
+  {
+    "id": 1182,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-077"
+  },
+  {
+    "id": 1183,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-078"
+  },
+  {
+    "id": 1184,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-079"
+  },
+  {
+    "id": 1185,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-080"
+  },
+  {
+    "id": 1186,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-081"
+  },
+  {
+    "id": 1187,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-082"
+  },
+  {
+    "id": 1188,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-083"
+  },
+  {
+    "id": 1189,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-084"
+  },
+  {
+    "id": 1190,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-085"
+  },
+  {
+    "id": 1191,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-086"
+  },
+  {
+    "id": 1192,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-087"
+  },
+  {
+    "id": 1193,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-088"
+  },
+  {
+    "id": 1194,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-089"
+  },
+  {
+    "id": 1195,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-090"
+  },
+  {
+    "id": 1196,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-091"
+  },
+  {
+    "id": 1197,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-092"
+  },
+  {
+    "id": 1198,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-093"
+  },
+  {
+    "id": 1199,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-094"
+  },
+  {
+    "id": 1200,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-095"
+  },
+  {
+    "id": 1201,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-096"
+  },
+  {
+    "id": 1202,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-097"
+  },
+  {
+    "id": 1203,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-098"
+  },
+  {
+    "id": 1204,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-099"
+  },
+  {
+    "id": 1205,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-100"
+  },
+  {
+    "id": 1206,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-101"
+  },
+  {
+    "id": 1207,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-102"
+  },
+  {
+    "id": 1208,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-103"
+  },
+  {
+    "id": 1209,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-104"
+  },
+  {
+    "id": 1210,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-105"
+  },
+  {
+    "id": 1211,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-106"
+  },
+  {
+    "id": 1212,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-107"
+  },
+  {
+    "id": 1213,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-108"
+  },
+  {
+    "id": 1214,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-109"
+  },
+  {
+    "id": 1215,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-110"
+  },
+  {
+    "id": 1216,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-111"
+  },
+  {
+    "id": 1217,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-112"
+  },
+  {
+    "id": 1218,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-113"
+  },
+  {
+    "id": 1219,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-114"
+  },
+  {
+    "id": 1220,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-115"
+  },
+  {
+    "id": 1221,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-116"
+  },
+  {
+    "id": 1222,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-117"
+  },
+  {
+    "id": 1223,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-118"
+  },
+  {
+    "id": 1224,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-119"
+  },
+  {
+    "id": 1225,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-120"
+  },
+  {
+    "id": 1226,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-121"
+  },
+  {
+    "id": 1227,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-122"
+  },
+  {
+    "id": 1228,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-123"
+  },
+  {
+    "id": 1229,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-124"
+  },
+  {
+    "id": 1230,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-125"
+  },
+  {
+    "id": 1231,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-126"
+  },
+  {
+    "id": 1232,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-127"
+  },
+  {
+    "id": 1233,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-128"
+  },
+  {
+    "id": 1234,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-129"
+  },
+  {
+    "id": 1235,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-130"
+  },
+  {
+    "id": 1236,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-131"
+  },
+  {
+    "id": 1237,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-132"
+  },
+  {
+    "id": 1238,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-133"
+  },
+  {
+    "id": 1239,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-134"
+  },
+  {
+    "id": 1240,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-135"
+  },
+  {
+    "id": 1241,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-136"
+  },
+  {
+    "id": 1242,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-137"
+  },
+  {
+    "id": 1243,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-138"
+  },
+  {
+    "id": 1244,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-139"
+  },
+  {
+    "id": 1245,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-140"
+  },
+  {
+    "id": 1246,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-141"
+  },
+  {
+    "id": 1247,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-142"
+  },
+  {
+    "id": 1248,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-143"
+  },
+  {
+    "id": 1249,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-144"
+  },
+  {
+    "id": 1250,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-145"
+  },
+  {
+    "id": 1251,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-146"
+  },
+  {
+    "id": 1252,
+    "levelId": 10,
+    "handicap": false,
+    "label": "L3-147"
+  },
+  {
+    "id": 1253,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-001"
+  },
+  {
+    "id": 1254,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-002"
+  },
+  {
+    "id": 1255,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-003"
+  },
+  {
+    "id": 1256,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-004"
+  },
+  {
+    "id": 1257,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-005"
+  },
+  {
+    "id": 1258,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-006"
+  },
+  {
+    "id": 1259,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-007"
+  },
+  {
+    "id": 1260,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-008"
+  },
+  {
+    "id": 1261,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-009"
+  },
+  {
+    "id": 1262,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-010"
+  },
+  {
+    "id": 1263,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-011"
+  },
+  {
+    "id": 1264,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-012"
+  },
+  {
+    "id": 1265,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-013"
+  },
+  {
+    "id": 1266,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-014"
+  },
+  {
+    "id": 1267,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-015"
+  },
+  {
+    "id": 1268,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-016"
+  },
+  {
+    "id": 1269,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-017"
+  },
+  {
+    "id": 1270,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-018"
+  },
+  {
+    "id": 1271,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-019"
+  },
+  {
+    "id": 1272,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-020"
+  },
+  {
+    "id": 1273,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-021"
+  },
+  {
+    "id": 1274,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-022"
+  },
+  {
+    "id": 1275,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-023"
+  },
+  {
+    "id": 1276,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-024"
+  },
+  {
+    "id": 1277,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-025"
+  },
+  {
+    "id": 1278,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-026"
+  },
+  {
+    "id": 1279,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-027"
+  },
+  {
+    "id": 1280,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-028"
+  },
+  {
+    "id": 1281,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-029"
+  },
+  {
+    "id": 1282,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-030"
+  },
+  {
+    "id": 1283,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-031"
+  },
+  {
+    "id": 1284,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-032"
+  },
+  {
+    "id": 1285,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-033"
+  },
+  {
+    "id": 1286,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-034"
+  },
+  {
+    "id": 1287,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-035"
+  },
+  {
+    "id": 1288,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-036"
+  },
+  {
+    "id": 1289,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-037"
+  },
+  {
+    "id": 1290,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-038"
+  },
+  {
+    "id": 1291,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-039"
+  },
+  {
+    "id": 1292,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-040"
+  },
+  {
+    "id": 1293,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-041"
+  },
+  {
+    "id": 1294,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-042"
+  },
+  {
+    "id": 1295,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-043"
+  },
+  {
+    "id": 1296,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-044"
+  },
+  {
+    "id": 1297,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-045"
+  },
+  {
+    "id": 1298,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-046"
+  },
+  {
+    "id": 1299,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-047"
+  },
+  {
+    "id": 1300,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-048"
+  },
+  {
+    "id": 1301,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-049"
+  },
+  {
+    "id": 1302,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-050"
+  },
+  {
+    "id": 1303,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-051"
+  },
+  {
+    "id": 1304,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-052"
+  },
+  {
+    "id": 1305,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-053"
+  },
+  {
+    "id": 1306,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-054"
+  },
+  {
+    "id": 1307,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-055"
+  },
+  {
+    "id": 1308,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-056"
+  },
+  {
+    "id": 1309,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-057"
+  },
+  {
+    "id": 1310,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-058"
+  },
+  {
+    "id": 1311,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-059"
+  },
+  {
+    "id": 1312,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-060"
+  },
+  {
+    "id": 1313,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-061"
+  },
+  {
+    "id": 1314,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-062"
+  },
+  {
+    "id": 1315,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-063"
+  },
+  {
+    "id": 1316,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-064"
+  },
+  {
+    "id": 1317,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-065"
+  },
+  {
+    "id": 1318,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-066"
+  },
+  {
+    "id": 1319,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-067"
+  },
+  {
+    "id": 1320,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-068"
+  },
+  {
+    "id": 1321,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-069"
+  },
+  {
+    "id": 1322,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-070"
+  },
+  {
+    "id": 1323,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-071"
+  },
+  {
+    "id": 1324,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-072"
+  },
+  {
+    "id": 1325,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-073"
+  },
+  {
+    "id": 1326,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-074"
+  },
+  {
+    "id": 1327,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-075"
+  },
+  {
+    "id": 1328,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-076"
+  },
+  {
+    "id": 1329,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-077"
+  },
+  {
+    "id": 1330,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-078"
+  },
+  {
+    "id": 1331,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-079"
+  },
+  {
+    "id": 1332,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-080"
+  },
+  {
+    "id": 1333,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-081"
+  },
+  {
+    "id": 1334,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-082"
+  },
+  {
+    "id": 1335,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-083"
+  },
+  {
+    "id": 1336,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-084"
+  },
+  {
+    "id": 1337,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-085"
+  },
+  {
+    "id": 1338,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-086"
+  },
+  {
+    "id": 1339,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-087"
+  },
+  {
+    "id": 1340,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-088"
+  },
+  {
+    "id": 1341,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-089"
+  },
+  {
+    "id": 1342,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-090"
+  },
+  {
+    "id": 1343,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-091"
+  },
+  {
+    "id": 1344,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-092"
+  },
+  {
+    "id": 1345,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-093"
+  },
+  {
+    "id": 1346,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-094"
+  },
+  {
+    "id": 1347,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-095"
+  },
+  {
+    "id": 1348,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-096"
+  },
+  {
+    "id": 1349,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-097"
+  },
+  {
+    "id": 1350,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-098"
+  },
+  {
+    "id": 1351,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-099"
+  },
+  {
+    "id": 1352,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-100"
+  },
+  {
+    "id": 1353,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-101"
+  },
+  {
+    "id": 1354,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-102"
+  },
+  {
+    "id": 1355,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-103"
+  },
+  {
+    "id": 1356,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-104"
+  },
+  {
+    "id": 1357,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-105"
+  },
+  {
+    "id": 1358,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-106"
+  },
+  {
+    "id": 1359,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-107"
+  },
+  {
+    "id": 1360,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-108"
+  },
+  {
+    "id": 1361,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-109"
+  },
+  {
+    "id": 1362,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-110"
+  },
+  {
+    "id": 1363,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-111"
+  },
+  {
+    "id": 1364,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-112"
+  },
+  {
+    "id": 1365,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-113"
+  },
+  {
+    "id": 1366,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-114"
+  },
+  {
+    "id": 1367,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-115"
+  },
+  {
+    "id": 1368,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-116"
+  },
+  {
+    "id": 1369,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-117"
+  },
+  {
+    "id": 1370,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-118"
+  },
+  {
+    "id": 1371,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-119"
+  },
+  {
+    "id": 1372,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-120"
+  },
+  {
+    "id": 1373,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-121"
+  },
+  {
+    "id": 1374,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-122"
+  },
+  {
+    "id": 1375,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-123"
+  },
+  {
+    "id": 1376,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-124"
+  },
+  {
+    "id": 1377,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-125"
+  },
+  {
+    "id": 1378,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-126"
+  },
+  {
+    "id": 1379,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-127"
+  },
+  {
+    "id": 1380,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-128"
+  },
+  {
+    "id": 1381,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-129"
+  },
+  {
+    "id": 1382,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-130"
+  },
+  {
+    "id": 1383,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-131"
+  },
+  {
+    "id": 1384,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-132"
+  },
+  {
+    "id": 1385,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-133"
+  },
+  {
+    "id": 1386,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-134"
+  },
+  {
+    "id": 1387,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-135"
+  },
+  {
+    "id": 1388,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-136"
+  },
+  {
+    "id": 1389,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-137"
+  },
+  {
+    "id": 1390,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-138"
+  },
+  {
+    "id": 1391,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-139"
+  },
+  {
+    "id": 1392,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-140"
+  },
+  {
+    "id": 1393,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-141"
+  },
+  {
+    "id": 1394,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-142"
+  },
+  {
+    "id": 1395,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-143"
+  },
+  {
+    "id": 1396,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-144"
+  },
+  {
+    "id": 1397,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-145"
+  },
+  {
+    "id": 1398,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-146"
+  },
+  {
+    "id": 1399,
+    "levelId": 11,
+    "handicap": false,
+    "label": "L4-147"
+  },
+  {
+    "id": 1400,
+    "levelId": 12,
+    "handicap": true,
+    "label": "L1-001"
+  },
+  {
+    "id": 1401,
+    "levelId": 12,
+    "handicap": true,
+    "label": "L1-002"
+  },
+  {
+    "id": 1402,
+    "levelId": 12,
+    "handicap": false,
+    "label": "L1-003"
+  },
+  {
+    "id": 1403,
+    "levelId": 12,
+    "handicap": false,
+    "label": "L1-004"
+  },
+  {
+    "id": 1404,
+    "levelId": 12,
+    "handicap": false,
+    "label": "L1-005"
+  },
+  {
+    "id": 1405,
+    "levelId": 12,
+    "handicap": false,
+    "label": "L1-006"
+  },
+  {
+    "id": 1406,
+    "levelId": 12,
+    "handicap": false,
+    "label": "L1-007"
+  },
+  {
+    "id": 1407,
+    "levelId": 12,
+    "handicap": false,
+    "label": "L1-008"
+  },
+  {
+    "id": 1408,
+    "levelId": 12,
+    "handicap": false,
+    "label": "L1-009"
+  },
+  {
+    "id": 1409,
+    "levelId": 12,
+    "handicap": false,
+    "label": "L1-010"
+  },
+  {
+    "id": 1410,
+    "levelId": 12,
+    "handicap": false,
+    "label": "L1-011"
+  },
+  {
+    "id": 1411,
+    "levelId": 12,
+    "handicap": false,
+    "label": "L1-012"
+  },
+  {
+    "id": 1412,
+    "levelId": 12,
+    "handicap": false,
+    "label": "L1-013"
+  },
+  {
+    "id": 1413,
+    "levelId": 12,
+    "handicap": false,
+    "label": "L1-014"
+  },
+  {
+    "id": 1414,
+    "levelId": 12,
+    "handicap": false,
+    "label": "L1-015"
+  },
+  {
+    "id": 1415,
+    "levelId": 12,
+    "handicap": false,
+    "label": "L1-016"
+  },
+  {
+    "id": 1416,
+    "levelId": 13,
+    "handicap": true,
+    "label": "L1-001"
+  },
+  {
+    "id": 1417,
+    "levelId": 13,
+    "handicap": true,
+    "label": "L1-002"
+  },
+  {
+    "id": 1418,
+    "levelId": 13,
+    "handicap": true,
+    "label": "L1-003"
+  },
+  {
+    "id": 1419,
+    "levelId": 13,
+    "handicap": true,
+    "label": "L1-004"
+  },
+  {
+    "id": 1420,
+    "levelId": 13,
+    "handicap": true,
+    "label": "L1-005"
+  },
+  {
+    "id": 1421,
+    "levelId": 13,
+    "handicap": true,
+    "label": "L1-006"
+  },
+  {
+    "id": 1422,
+    "levelId": 13,
+    "handicap": true,
+    "label": "L1-007"
+  },
+  {
+    "id": 1423,
+    "levelId": 13,
+    "handicap": true,
+    "label": "L1-008"
+  },
+  {
+    "id": 1424,
+    "levelId": 13,
+    "handicap": true,
+    "label": "L1-009"
+  },
+  {
+    "id": 1425,
+    "levelId": 13,
+    "handicap": true,
+    "label": "L1-010"
+  },
+  {
+    "id": 1426,
+    "levelId": 13,
+    "handicap": true,
+    "label": "L1-011"
+  },
+  {
+    "id": 1427,
+    "levelId": 13,
+    "handicap": true,
+    "label": "L1-012"
+  },
+  {
+    "id": 1428,
+    "levelId": 13,
+    "handicap": true,
+    "label": "L1-013"
+  },
+  {
+    "id": 1429,
+    "levelId": 13,
+    "handicap": true,
+    "label": "L1-014"
+  },
+  {
+    "id": 1430,
+    "levelId": 13,
+    "handicap": true,
+    "label": "L1-015"
+  },
+  {
+    "id": 1431,
+    "levelId": 13,
+    "handicap": true,
+    "label": "L1-016"
+  },
+  {
+    "id": 1432,
+    "levelId": 13,
+    "handicap": true,
+    "label": "L1-017"
+  },
+  {
+    "id": 1433,
+    "levelId": 13,
+    "handicap": true,
+    "label": "L1-018"
+  },
+  {
+    "id": 1434,
+    "levelId": 13,
+    "handicap": true,
+    "label": "L1-019"
+  },
+  {
+    "id": 1435,
+    "levelId": 13,
+    "handicap": true,
+    "label": "L1-020"
+  },
+  {
+    "id": 1436,
+    "levelId": 13,
+    "handicap": true,
+    "label": "L1-021"
+  },
+  {
+    "id": 1437,
+    "levelId": 13,
+    "handicap": false,
+    "label": "L1-022"
+  },
+  {
+    "id": 1438,
+    "levelId": 13,
+    "handicap": false,
+    "label": "L1-023"
+  },
+  {
+    "id": 1439,
+    "levelId": 13,
+    "handicap": false,
+    "label": "L1-024"
+  },
+  {
+    "id": 1440,
+    "levelId": 13,
+    "handicap": false,
+    "label": "L1-025"
+  },
+  {
+    "id": 1441,
+    "levelId": 13,
+    "handicap": false,
+    "label": "L1-026"
+  },
+  {
+    "id": 1442,
+    "levelId": 13,
+    "handicap": false,
+    "label": "L1-027"
+  },
+  {
+    "id": 1443,
+    "levelId": 13,
+    "handicap": false,
+    "label": "L1-028"
+  },
+  {
+    "id": 1444,
+    "levelId": 13,
+    "handicap": false,
+    "label": "L1-029"
+  },
+  {
+    "id": 1445,
+    "levelId": 13,
+    "handicap": false,
+    "label": "L1-030"
+  },
+  {
+    "id": 1446,
+    "levelId": 13,
+    "handicap": false,
+    "label": "L1-031"
+  },
+  {
+    "id": 1447,
+    "levelId": 13,
+    "handicap": false,
+    "label": "L1-032"
+  },
+  {
+    "id": 1448,
+    "levelId": 13,
+    "handicap": false,
+    "label": "L1-033"
+  },
+  {
+    "id": 1449,
+    "levelId": 13,
+    "handicap": false,
+    "label": "L1-034"
+  },
+  {
+    "id": 1450,
+    "levelId": 13,
+    "handicap": false,
+    "label": "L1-035"
+  },
+  {
+    "id": 1451,
+    "levelId": 13,
+    "handicap": false,
+    "label": "L1-036"
+  },
+  {
+    "id": 1452,
+    "levelId": 13,
+    "handicap": false,
+    "label": "L1-037"
+  },
+  {
+    "id": 1453,
+    "levelId": 13,
+    "handicap": false,
+    "label": "L1-038"
+  },
+  {
+    "id": 1454,
+    "levelId": 13,
+    "handicap": false,
+    "label": "L1-039"
+  },
+  {
+    "id": 1455,
+    "levelId": 13,
+    "handicap": false,
+    "label": "L1-040"
+  },
+  {
+    "id": 1456,
+    "levelId": 13,
+    "handicap": false,
+    "label": "L1-041"
+  },
+  {
+    "id": 1457,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-001"
+  },
+  {
+    "id": 1458,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-002"
+  },
+  {
+    "id": 1459,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-003"
+  },
+  {
+    "id": 1460,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-004"
+  },
+  {
+    "id": 1461,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-005"
+  },
+  {
+    "id": 1462,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-006"
+  },
+  {
+    "id": 1463,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-007"
+  },
+  {
+    "id": 1464,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-008"
+  },
+  {
+    "id": 1465,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-009"
+  },
+  {
+    "id": 1466,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-010"
+  },
+  {
+    "id": 1467,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-011"
+  },
+  {
+    "id": 1468,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-012"
+  },
+  {
+    "id": 1469,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-013"
+  },
+  {
+    "id": 1470,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-014"
+  },
+  {
+    "id": 1471,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-015"
+  },
+  {
+    "id": 1472,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-016"
+  },
+  {
+    "id": 1473,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-017"
+  },
+  {
+    "id": 1474,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-018"
+  },
+  {
+    "id": 1475,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-019"
+  },
+  {
+    "id": 1476,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-020"
+  },
+  {
+    "id": 1477,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-021"
+  },
+  {
+    "id": 1478,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-022"
+  },
+  {
+    "id": 1479,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-023"
+  },
+  {
+    "id": 1480,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-024"
+  },
+  {
+    "id": 1481,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-025"
+  },
+  {
+    "id": 1482,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-026"
+  },
+  {
+    "id": 1483,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-027"
+  },
+  {
+    "id": 1484,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-028"
+  },
+  {
+    "id": 1485,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-029"
+  },
+  {
+    "id": 1486,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-030"
+  },
+  {
+    "id": 1487,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-031"
+  },
+  {
+    "id": 1488,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-032"
+  },
+  {
+    "id": 1489,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-033"
+  },
+  {
+    "id": 1490,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-034"
+  },
+  {
+    "id": 1491,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-035"
+  },
+  {
+    "id": 1492,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-036"
+  },
+  {
+    "id": 1493,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-037"
+  },
+  {
+    "id": 1494,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-038"
+  },
+  {
+    "id": 1495,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-039"
+  },
+  {
+    "id": 1496,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-040"
+  },
+  {
+    "id": 1497,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-041"
+  },
+  {
+    "id": 1498,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-042"
+  },
+  {
+    "id": 1499,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-043"
+  },
+  {
+    "id": 1500,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-044"
+  },
+  {
+    "id": 1501,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-045"
+  },
+  {
+    "id": 1502,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-046"
+  },
+  {
+    "id": 1503,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-047"
+  },
+  {
+    "id": 1504,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-048"
+  },
+  {
+    "id": 1505,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-049"
+  },
+  {
+    "id": 1506,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-050"
+  },
+  {
+    "id": 1507,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-051"
+  },
+  {
+    "id": 1508,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-052"
+  },
+  {
+    "id": 1509,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-053"
+  },
+  {
+    "id": 1510,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-054"
+  },
+  {
+    "id": 1511,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-055"
+  },
+  {
+    "id": 1512,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-056"
+  },
+  {
+    "id": 1513,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-057"
+  },
+  {
+    "id": 1514,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-058"
+  },
+  {
+    "id": 1515,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-059"
+  },
+  {
+    "id": 1516,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-060"
+  },
+  {
+    "id": 1517,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-061"
+  },
+  {
+    "id": 1518,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-062"
+  },
+  {
+    "id": 1519,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-063"
+  },
+  {
+    "id": 1520,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-064"
+  },
+  {
+    "id": 1521,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-065"
+  },
+  {
+    "id": 1522,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-066"
+  },
+  {
+    "id": 1523,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-067"
+  },
+  {
+    "id": 1524,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-068"
+  },
+  {
+    "id": 1525,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-069"
+  },
+  {
+    "id": 1526,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-070"
+  },
+  {
+    "id": 1527,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-071"
+  },
+  {
+    "id": 1528,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-072"
+  },
+  {
+    "id": 1529,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-073"
+  },
+  {
+    "id": 1530,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-074"
+  },
+  {
+    "id": 1531,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-075"
+  },
+  {
+    "id": 1532,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-076"
+  },
+  {
+    "id": 1533,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-077"
+  },
+  {
+    "id": 1534,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-078"
+  },
+  {
+    "id": 1535,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-079"
+  },
+  {
+    "id": 1536,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-080"
+  },
+  {
+    "id": 1537,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-081"
+  },
+  {
+    "id": 1538,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-082"
+  },
+  {
+    "id": 1539,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-083"
+  },
+  {
+    "id": 1540,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-084"
+  },
+  {
+    "id": 1541,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-085"
+  },
+  {
+    "id": 1542,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-086"
+  },
+  {
+    "id": 1543,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-087"
+  },
+  {
+    "id": 1544,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-088"
+  },
+  {
+    "id": 1545,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-089"
+  },
+  {
+    "id": 1546,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-090"
+  },
+  {
+    "id": 1547,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-091"
+  },
+  {
+    "id": 1548,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-092"
+  },
+  {
+    "id": 1549,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-093"
+  },
+  {
+    "id": 1550,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-094"
+  },
+  {
+    "id": 1551,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-095"
+  },
+  {
+    "id": 1552,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-096"
+  },
+  {
+    "id": 1553,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-097"
+  },
+  {
+    "id": 1554,
+    "levelId": 14,
+    "handicap": false,
+    "label": "L1-098"
+  },
+  {
+    "id": 1555,
+    "levelId": 15,
+    "handicap": true,
+    "label": "L1-001"
+  },
+  {
+    "id": 1556,
+    "levelId": 15,
+    "handicap": true,
+    "label": "L1-002"
+  },
+  {
+    "id": 1557,
+    "levelId": 15,
+    "handicap": true,
+    "label": "L1-003"
+  },
+  {
+    "id": 1558,
+    "levelId": 15,
+    "handicap": true,
+    "label": "L1-004"
+  },
+  {
+    "id": 1559,
+    "levelId": 15,
+    "handicap": true,
+    "label": "L1-005"
+  },
+  {
+    "id": 1560,
+    "levelId": 15,
+    "handicap": true,
+    "label": "L1-006"
+  },
+  {
+    "id": 1561,
+    "levelId": 15,
+    "handicap": true,
+    "label": "L1-007"
+  },
+  {
+    "id": 1562,
+    "levelId": 15,
+    "handicap": true,
+    "label": "L1-008"
+  },
+  {
+    "id": 1563,
+    "levelId": 15,
+    "handicap": true,
+    "label": "L1-009"
+  },
+  {
+    "id": 1564,
+    "levelId": 15,
+    "handicap": true,
+    "label": "L1-010"
+  },
+  {
+    "id": 1565,
+    "levelId": 15,
+    "handicap": false,
+    "label": "L1-011"
+  },
+  {
+    "id": 1566,
+    "levelId": 15,
+    "handicap": false,
+    "label": "L1-012"
+  },
+  {
+    "id": 1567,
+    "levelId": 15,
+    "handicap": false,
+    "label": "L1-013"
+  },
+  {
+    "id": 1568,
+    "levelId": 15,
+    "handicap": false,
+    "label": "L1-014"
+  },
+  {
+    "id": 1569,
+    "levelId": 15,
+    "handicap": false,
+    "label": "L1-015"
+  },
+  {
+    "id": 1570,
+    "levelId": 15,
+    "handicap": false,
+    "label": "L1-016"
+  },
+  {
+    "id": 1571,
+    "levelId": 15,
+    "handicap": false,
+    "label": "L1-017"
+  },
+  {
+    "id": 1572,
+    "levelId": 15,
+    "handicap": false,
+    "label": "L1-018"
+  },
+  {
+    "id": 1573,
+    "levelId": 15,
+    "handicap": false,
+    "label": "L1-019"
+  },
+  {
+    "id": 1574,
+    "levelId": 15,
+    "handicap": false,
+    "label": "L1-020"
+  },
+  {
+    "id": 1575,
+    "levelId": 15,
+    "handicap": false,
+    "label": "L1-021"
+  },
+  {
+    "id": 1576,
+    "levelId": 15,
+    "handicap": false,
+    "label": "L1-022"
+  },
+  {
+    "id": 1577,
+    "levelId": 15,
+    "handicap": false,
+    "label": "L1-023"
+  },
+  {
+    "id": 1578,
+    "levelId": 15,
+    "handicap": false,
+    "label": "L1-024"
+  },
+  {
+    "id": 1579,
+    "levelId": 15,
+    "handicap": false,
+    "label": "L1-025"
+  },
+  {
+    "id": 1580,
+    "levelId": 15,
+    "handicap": false,
+    "label": "L1-026"
+  },
+  {
+    "id": 1581,
+    "levelId": 15,
+    "handicap": false,
+    "label": "L1-027"
+  },
+  {
+    "id": 1582,
+    "levelId": 15,
+    "handicap": false,
+    "label": "L1-028"
+  },
+  {
+    "id": 1583,
+    "levelId": 15,
+    "handicap": false,
+    "label": "L1-029"
+  },
+  {
+    "id": 1584,
+    "levelId": 15,
+    "handicap": false,
+    "label": "L1-030"
+  },
+  {
+    "id": 1585,
+    "levelId": 15,
+    "handicap": false,
+    "label": "L1-031"
+  },
+  {
+    "id": 1586,
+    "levelId": 16,
+    "handicap": true,
+    "label": "L1-001"
+  },
+  {
+    "id": 1587,
+    "levelId": 16,
+    "handicap": false,
+    "label": "L1-002"
+  },
+  {
+    "id": 1588,
+    "levelId": 16,
+    "handicap": false,
+    "label": "L1-003"
+  },
+  {
+    "id": 1589,
+    "levelId": 16,
+    "handicap": false,
+    "label": "L1-004"
+  },
+  {
+    "id": 1590,
+    "levelId": 16,
+    "handicap": false,
+    "label": "L1-005"
+  },
+  {
+    "id": 1591,
+    "levelId": 16,
+    "handicap": false,
+    "label": "L1-006"
+  },
+  {
+    "id": 1592,
+    "levelId": 16,
+    "handicap": false,
+    "label": "L1-007"
+  },
+  {
+    "id": 1593,
+    "levelId": 16,
+    "handicap": false,
+    "label": "L1-008"
+  },
+  {
+    "id": 1594,
+    "levelId": 16,
+    "handicap": false,
+    "label": "L1-009"
+  },
+  {
+    "id": 1595,
+    "levelId": 16,
+    "handicap": false,
+    "label": "L1-010"
+  },
+  {
+    "id": 1596,
+    "levelId": 16,
+    "handicap": false,
+    "label": "L1-011"
+  },
+  {
+    "id": 1597,
+    "levelId": 16,
+    "handicap": false,
+    "label": "L1-012"
+  },
+  {
+    "id": 1598,
+    "levelId": 16,
+    "handicap": false,
+    "label": "L1-013"
+  },
+  {
+    "id": 1599,
+    "levelId": 16,
+    "handicap": false,
+    "label": "L1-014"
+  },
+  {
+    "id": 1600,
+    "levelId": 16,
+    "handicap": false,
+    "label": "L1-015"
+  },
+  {
+    "id": 1601,
+    "levelId": 16,
+    "handicap": false,
+    "label": "L1-016"
+  },
+  {
+    "id": 1602,
+    "levelId": 16,
+    "handicap": false,
+    "label": "L1-017"
+  },
+  {
+    "id": 1603,
+    "levelId": 16,
+    "handicap": false,
+    "label": "L1-018"
+  },
+  {
+    "id": 1604,
+    "levelId": 16,
+    "handicap": false,
+    "label": "L1-019"
+  },
+  {
+    "id": 1605,
+    "levelId": 16,
+    "handicap": false,
+    "label": "L1-020"
+  },
+  {
+    "id": 1606,
+    "levelId": 16,
+    "handicap": false,
+    "label": "L1-021"
+  },
+  {
+    "id": 1607,
+    "levelId": 17,
+    "handicap": true,
+    "label": "L1-001"
+  },
+  {
+    "id": 1608,
+    "levelId": 17,
+    "handicap": false,
+    "label": "L1-002"
+  },
+  {
+    "id": 1609,
+    "levelId": 17,
+    "handicap": false,
+    "label": "L1-003"
+  },
+  {
+    "id": 1610,
+    "levelId": 17,
+    "handicap": false,
+    "label": "L1-004"
+  },
+  {
+    "id": 1611,
+    "levelId": 17,
+    "handicap": false,
+    "label": "L1-005"
+  },
+  {
+    "id": 1612,
+    "levelId": 17,
+    "handicap": false,
+    "label": "L1-006"
+  },
+  {
+    "id": 1613,
+    "levelId": 17,
+    "handicap": false,
+    "label": "L1-007"
+  },
+  {
+    "id": 1614,
+    "levelId": 17,
+    "handicap": false,
+    "label": "L1-008"
+  },
+  {
+    "id": 1615,
+    "levelId": 17,
+    "handicap": false,
+    "label": "L1-009"
+  },
+  {
+    "id": 1616,
+    "levelId": 17,
+    "handicap": false,
+    "label": "L1-010"
+  },
+  {
+    "id": 1617,
+    "levelId": 17,
+    "handicap": false,
+    "label": "L1-011"
+  },
+  {
+    "id": 1618,
+    "levelId": 17,
+    "handicap": false,
+    "label": "L1-012"
+  },
+  {
+    "id": 1619,
+    "levelId": 17,
+    "handicap": false,
+    "label": "L1-013"
+  },
+  {
+    "id": 1620,
+    "levelId": 17,
+    "handicap": false,
+    "label": "L1-014"
+  },
+  {
+    "id": 1621,
+    "levelId": 17,
+    "handicap": false,
+    "label": "L1-015"
+  },
+  {
+    "id": 1622,
+    "levelId": 17,
+    "handicap": false,
+    "label": "L1-016"
+  },
+  {
+    "id": 1623,
+    "levelId": 17,
+    "handicap": false,
+    "label": "L1-017"
+  },
+  {
+    "id": 1624,
+    "levelId": 17,
+    "handicap": false,
+    "label": "L1-018"
+  },
+  {
+    "id": 1625,
+    "levelId": 17,
+    "handicap": false,
+    "label": "L1-019"
+  },
+  {
+    "id": 1626,
+    "levelId": 17,
+    "handicap": false,
+    "label": "L1-020"
+  },
+  {
+    "id": 1627,
+    "levelId": 17,
+    "handicap": false,
+    "label": "L1-021"
+  },
+  {
+    "id": 1628,
+    "levelId": 17,
+    "handicap": false,
+    "label": "L1-022"
+  },
+  {
+    "id": 1629,
+    "levelId": 17,
+    "handicap": false,
+    "label": "L1-023"
+  },
+  {
+    "id": 1630,
+    "levelId": 17,
+    "handicap": false,
+    "label": "L1-024"
+  },
+  {
+    "id": 1631,
+    "levelId": 17,
+    "handicap": false,
+    "label": "L1-025"
+  },
+  {
+    "id": 1632,
+    "levelId": 17,
+    "handicap": false,
+    "label": "L1-026"
+  },
+  {
+    "id": 1633,
+    "levelId": 17,
+    "handicap": false,
+    "label": "L1-027"
+  },
+  {
+    "id": 1634,
+    "levelId": 17,
+    "handicap": false,
+    "label": "L1-028"
+  },
+  {
+    "id": 1635,
+    "levelId": 17,
+    "handicap": false,
+    "label": "L1-029"
+  },
+  {
+    "id": 1636,
+    "levelId": 17,
+    "handicap": false,
+    "label": "L1-030"
+  },
+  {
+    "id": 1637,
+    "levelId": 17,
+    "handicap": false,
+    "label": "L1-031"
+  },
+  {
+    "id": 1638,
+    "levelId": 17,
+    "handicap": false,
+    "label": "L1-032"
+  },
+  {
+    "id": 1639,
+    "levelId": 17,
+    "handicap": false,
+    "label": "L1-033"
+  },
+  {
+    "id": 1640,
+    "levelId": 17,
+    "handicap": false,
+    "label": "L1-034"
+  },
+  {
+    "id": 1641,
+    "levelId": 17,
+    "handicap": false,
+    "label": "L1-035"
+  },
+  {
+    "id": 1642,
+    "levelId": 17,
+    "handicap": false,
+    "label": "L1-036"
+  },
+  {
+    "id": 1643,
+    "levelId": 17,
+    "handicap": false,
+    "label": "L1-037"
+  },
+  {
+    "id": 1644,
+    "levelId": 17,
+    "handicap": false,
+    "label": "L1-038"
+  },
+  {
+    "id": 1645,
+    "levelId": 17,
+    "handicap": false,
+    "label": "L1-039"
+  },
+  {
+    "id": 1646,
+    "levelId": 17,
+    "handicap": false,
+    "label": "L1-040"
+  },
+  {
+    "id": 1647,
+    "levelId": 17,
+    "handicap": false,
+    "label": "L1-041"
+  },
+  {
+    "id": 1648,
+    "levelId": 17,
+    "handicap": false,
+    "label": "L1-042"
+  },
+  {
+    "id": 1649,
+    "levelId": 17,
+    "handicap": false,
+    "label": "L1-043"
+  },
+  {
+    "id": 1650,
+    "levelId": 17,
+    "handicap": false,
+    "label": "L1-044"
+  },
+  {
+    "id": 1651,
+    "levelId": 17,
+    "handicap": false,
+    "label": "L1-045"
+  },
+  {
+    "id": 1652,
+    "levelId": 17,
+    "handicap": false,
+    "label": "L1-046"
+  },
+  {
+    "id": 1653,
+    "levelId": 17,
+    "handicap": false,
+    "label": "L1-047"
+  },
+  {
+    "id": 1654,
+    "levelId": 17,
+    "handicap": false,
+    "label": "L1-048"
+  },
+  {
+    "id": 1655,
+    "levelId": 17,
+    "handicap": false,
+    "label": "L1-049"
+  },
+  {
+    "id": 1656,
+    "levelId": 17,
+    "handicap": false,
+    "label": "L1-050"
+  },
+  {
+    "id": 1657,
+    "levelId": 17,
+    "handicap": false,
+    "label": "L1-051"
+  },
+  {
+    "id": 1658,
+    "levelId": 17,
+    "handicap": false,
+    "label": "L1-052"
+  },
+  {
+    "id": 1659,
+    "levelId": 17,
+    "handicap": false,
+    "label": "L1-053"
+  },
+  {
+    "id": 1660,
+    "levelId": 17,
+    "handicap": false,
+    "label": "L1-054"
+  },
+  {
+    "id": 1661,
+    "levelId": 17,
+    "handicap": false,
+    "label": "L1-055"
+  },
+  {
+    "id": 1662,
+    "levelId": 17,
+    "handicap": false,
+    "label": "L1-056"
+  },
+  {
+    "id": 1663,
+    "levelId": 17,
+    "handicap": false,
+    "label": "L1-057"
+  },
+  {
+    "id": 1664,
+    "levelId": 18,
+    "handicap": true,
+    "label": "L1-001"
+  },
+  {
+    "id": 1665,
+    "levelId": 18,
+    "handicap": true,
+    "label": "L1-002"
+  },
+  {
+    "id": 1666,
+    "levelId": 18,
+    "handicap": false,
+    "label": "L1-003"
+  },
+  {
+    "id": 1667,
+    "levelId": 18,
+    "handicap": false,
+    "label": "L1-004"
+  },
+  {
+    "id": 1668,
+    "levelId": 18,
+    "handicap": false,
+    "label": "L1-005"
+  },
+  {
+    "id": 1669,
+    "levelId": 18,
+    "handicap": false,
+    "label": "L1-006"
+  },
+  {
+    "id": 1670,
+    "levelId": 18,
+    "handicap": false,
+    "label": "L1-007"
+  },
+  {
+    "id": 1671,
+    "levelId": 18,
+    "handicap": false,
+    "label": "L1-008"
+  },
+  {
+    "id": 1672,
+    "levelId": 18,
+    "handicap": false,
+    "label": "L1-009"
+  },
+  {
+    "id": 1673,
+    "levelId": 18,
+    "handicap": false,
+    "label": "L1-010"
+  },
+  {
+    "id": 1674,
+    "levelId": 18,
+    "handicap": false,
+    "label": "L1-011"
+  },
+  {
+    "id": 1675,
+    "levelId": 18,
+    "handicap": false,
+    "label": "L1-012"
+  },
+  {
+    "id": 1676,
+    "levelId": 18,
+    "handicap": false,
+    "label": "L1-013"
+  },
+  {
+    "id": 1677,
+    "levelId": 18,
+    "handicap": false,
+    "label": "L1-014"
+  },
+  {
+    "id": 1678,
+    "levelId": 18,
+    "handicap": false,
+    "label": "L1-015"
+  },
+  {
+    "id": 1679,
+    "levelId": 18,
+    "handicap": false,
+    "label": "L1-016"
+  },
+  {
+    "id": 1680,
+    "levelId": 18,
+    "handicap": false,
+    "label": "L1-017"
+  },
+  {
+    "id": 1681,
+    "levelId": 18,
+    "handicap": false,
+    "label": "L1-018"
+  },
+  {
+    "id": 1682,
+    "levelId": 18,
+    "handicap": false,
+    "label": "L1-019"
   }
 ]

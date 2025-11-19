@@ -1,32 +1,92 @@
 [
-  { "id": 1, "deckId": "1001", "name": "Level 1" },
-  { "id": 2, "deckId": "1001", "name": "Level 2" },
-  { "id": 3, "deckId": "1001", "name": "Level 3" },
-  { "id": 4, "deckId": "1001", "name": "Level 4" },
-
-  { "id": 5, "deckId": "1002", "name": "Level 1" },
-  { "id": 6, "deckId": "1002", "name": "Level 2" },
-  { "id": 7, "deckId": "1002", "name": "Level 3" },
-
-  { "id": 8, "deckId": "1003", "name": "Level 1" },
-  { "id": 9, "deckId": "1003", "name": "Level 2" },
-  { "id": 10, "deckId": "1003", "name": "Level 3" },
-  { "id": 11, "deckId": "1003", "name": "Level 4" },
-
-  { "id": 12, "deckId": "1063", "name": "Level 1" },
-
-  { "id": 13, "deckId": "1068", "name": "Level 1" },
-  { "id": 14, "deckId": "1068", "name": "Level 2" },
-
-  { "id": 15, "deckId": "1086", "name": "Level 1" },
-  { "id": 16, "deckId": "1086", "name": "Level 2" },
-
-  { "id": 17, "deckId": "1093", "name": "Level 1" },
-
-  { "id": 18, "deckId": "1100", "name": "Level 1" },
-
-  { "id": 19, "deckId": "1121", "name": "Level 1" },
-  { "id": 20, "deckId": "1121", "name": "Level 2" },
-
-  { "id": 21, "deckId": "1122", "name": "Level 1" }
+  {
+    "id": 1,
+    "deckId": "1001",
+    "name": "Level 1"
+  },
+  {
+    "id": 2,
+    "deckId": "1001",
+    "name": "Level 2"
+  },
+  {
+    "id": 3,
+    "deckId": "1001",
+    "name": "Level 3"
+  },
+  {
+    "id": 4,
+    "deckId": "1001",
+    "name": "Level 4"
+  },
+  {
+    "id": 5,
+    "deckId": "1002",
+    "name": "Level 1"
+  },
+  {
+    "id": 6,
+    "deckId": "1002",
+    "name": "Level 2"
+  },
+  {
+    "id": 7,
+    "deckId": "1002",
+    "name": "Level 3"
+  },
+  {
+    "id": 8,
+    "deckId": "1003",
+    "name": "Level 1"
+  },
+  {
+    "id": 9,
+    "deckId": "1003",
+    "name": "Level 2"
+  },
+  {
+    "id": 10,
+    "deckId": "1003",
+    "name": "Level 3"
+  },
+  {
+    "id": 11,
+    "deckId": "1003",
+    "name": "Level 4"
+  },
+  {
+    "id": 12,
+    "deckId": "1063",
+    "name": "Level 1"
+  },
+  {
+    "id": 13,
+    "deckId": "1068",
+    "name": "Level 1"
+  },
+  {
+    "id": 14,
+    "deckId": "1086",
+    "name": "Level 1"
+  },
+  {
+    "id": 15,
+    "deckId": "1093",
+    "name": "Level 1"
+  },
+  {
+    "id": 16,
+    "deckId": "1100",
+    "name": "Level 1"
+  },
+  {
+    "id": 17,
+    "deckId": "1121",
+    "name": "Level 1"
+  },
+  {
+    "id": 18,
+    "deckId": "1122",
+    "name": "Level 1"
+  }
 ]
