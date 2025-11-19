@@ -71,11 +71,12 @@ export async function toggleSpotOccupancy(spotId) {
 
 // Apply spot session (check-in/check-out via QR)
 export async function applySpotSession(spotId) {
+  const email = localStorage.getItem("userEmail")
   try {
     const response = await fetch(`${API_BASE_URL}/api/spots/${spotId}/check-in`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({})
+      body: JSON.stringify({ email})
     })
     if (!response.ok) throw new Error('Failed to check in')
     const result = await response.json()
@@ -89,11 +90,12 @@ export async function applySpotSession(spotId) {
 
 // Check out of a spot
 export async function checkOutSpot(spotId) {
+  const email = localStorage.getItem("userEmail")
   try {
     const response = await fetch(`${API_BASE_URL}/api/spots/${spotId}/check-out`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({})
+      body: JSON.stringify({ email })
     })
     if (!response.ok) throw new Error('Failed to check out')
     const result = await response.json()
@@ -104,6 +106,22 @@ export async function checkOutSpot(spotId) {
     throw error
   }
 }
+// export async function checkOutSpot(spotId) {
+//   try {
+//     const response = await fetch(`${API_BASE_URL}/api/spots/${spotId}/check-out`, {
+//       method: 'POST',
+//       headers: { 'Content-Type': 'application/json' },
+//       body: JSON.stringify({})
+//     })
+//     if (!response.ok) throw new Error('Failed to check out')
+//     const result = await response.json()
+//     notify()
+//     return result
+//   } catch (error) {
+//     console.error('API error:', error)
+//     throw error
+//   }
+// }
 
 // Report incorrect spot status
 export async function reportSpotStatus(spotId, reportType, notes = '') {

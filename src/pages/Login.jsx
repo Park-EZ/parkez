@@ -25,6 +25,7 @@ export default function Login() {
     setLoading(true)
     try {
       await login(email, password)
+      localStorage.setItem("userEmail", email)
       toast({
         title: "Welcome back!",
         description: "You have been logged in successfully.",

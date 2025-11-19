@@ -14,6 +14,7 @@ import levelRoutes from './routes/levels.js'
 import spotRoutes from './routes/spots.js'
 import authRoutes from './routes/auth.js'
 import reportRoutes from './routes/reports.js'
+import userRoutes from './routes/users.js'
 
 console.log('Starting EZpark Backend Server...')
 console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
@@ -84,6 +85,8 @@ await fastify.register(authRoutes, { prefix: '/api/auth' })
 console.log('   /api/auth')
 await fastify.register(reportRoutes, { prefix: '/api/reports' })
 console.log('   /api/reports')
+fastify.register(userRoutes, { prefix: '/api/users' })
+console.log('   /api/users')
 console.log('All routes registered')
 
 // Health check
