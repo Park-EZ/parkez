@@ -74,7 +74,7 @@ export default function QRScanner() {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 pb-20">
       <div>
         <h1 className="text-3xl font-bold">QR Code Scanner</h1>
         <p className="text-muted-foreground">Scan or enter a QR code to check in/out</p>

@@ -210,8 +210,22 @@ const THEMES = {
 }
 
 export function ThemeProvider({ children }) {
-  const [mode, setMode] = useState("light")
-  const [color, setColor] = useState("blue")
+  // Load theme preferences from localStorage on initialization
+  const [mode, setMode] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem("ezpark_theme_mode")
+      return saved || "light"
+    }
+    return "light"
+  })
+  
+  const [color, setColor] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem("ezpark_theme_color")
+      return saved || "blue"
+    }
+    return "blue"
+  })
 
   const currentTheme = THEMES[mode]?.[color] || THEMES.light.blue
 
@@ -229,9 +243,14 @@ export function ThemeProvider({ children }) {
     applyTheme(initialTheme.colors, mode)
   }, [])
 
-  // Apply theme on mount and when theme changes
+  // Apply theme on mount and when theme changes, and persist to localStorage
   useEffect(() => {
     applyTheme(currentTheme.colors, mode)
+    // Persist theme preferences to localStorage
+    if (typeof window !== 'undefined') {
+      localStorage.setItem("ezpark_theme_mode", mode)
+      localStorage.setItem("ezpark_theme_color", color)
+    }
   }, [mode, color, currentTheme])
 
   const toggleMode = () => {

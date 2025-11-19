@@ -1,6 +1,8 @@
 import { getDB } from '../config/database.js'
 import { ObjectId } from 'mongodb'
 import bcrypt from 'bcryptjs'
+import { generateToken } from '../utils/jwt.js'
+import { authenticate } from '../middleware/auth.js'
 
 export default async function authRoutes(fastify, options) {
   // POST /api/auth/register - Register new user
@@ -34,7 +36,14 @@ export default async function authRoutes(fastify, options) {
 
       // Remove password from response
       const { password: _, ...userResponse } = user
-      return userResponse
+
+      // Generate JWT token
+      const token = generateToken(user)
+
+      return {
+        user: userResponse,
+        token
+      }
     } catch (err) {
       // Handle duplicate key errors explicitly
       if (err && err.code === 11000) {
@@ -70,9 +79,50 @@ export default async function authRoutes(fastify, options) {
       return reply.code(401).send({ error: 'Invalid credentials' })
     }
 
-    // TODO: Generate JWT token
+    // Remove password from response
     const { password: _, ...userResponse } = user
-    return userResponse
+
+    // Generate JWT token
+    const token = generateToken(user)
+
+    return {
+      user: userResponse,
+      token
+    }
+  })
+
+  // GET /api/auth/verify - Verify token and get current user
+  fastify.get('/verify', { preHandler: authenticate }, async (request, reply) => {
+    const db = getDB()
+    
+    try {
+      // Get user from database to ensure they still exist
+      let user
+      try {
+        user = await db.collection('users').findOne({ 
+          _id: new ObjectId(request.user.id) 
+        })
+      } catch (idError) {
+        // If ObjectId conversion fails, try finding by email as fallback
+        user = await db.collection('users').findOne({ 
+          email: request.user.email 
+        })
+      }
+
+      if (!user) {
+        return reply.code(404).send({ error: 'User not found' })
+      }
+
+      // Remove password from response
+      const { password: _, ...userResponse } = user
+
+      return {
+        user: userResponse
+      }
+    } catch (err) {
+      fastify.log.error({ err, route: 'GET /api/auth/verify' }, 'Failed to verify user')
+      return reply.code(500).send({ error: 'Internal server error' })
+    }
   })
 }
 

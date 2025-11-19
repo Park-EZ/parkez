@@ -2,6 +2,7 @@ import { useState, useMemo, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import { useQuery, useQueryClient } from "@tanstack/react-query"
 import { getLevelsByDeck, getSpotsByLevel, getDecks, toggleSpotOccupancy } from "@/api"
+import { useUserPreferences } from "@/contexts/UserPreferencesContext"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -12,6 +13,7 @@ import { Search } from "lucide-react"
 export default function SpotAvailability() {
   const { deckId } = useParams()
   const queryClient = useQueryClient()
+  const { preferADA } = useUserPreferences()
   const [selectedLevelId, setSelectedLevelId] = useState(null)
   const [filterType, setFilterType] = useState("all")
   const [search, setSearch] = useState("")
@@ -48,9 +50,10 @@ export default function SpotAvailability() {
       (s) =>
         s.levelId === selectedLevelId &&
         (filterType === "all" || s.type === filterType) &&
-        s.label.toLowerCase().includes(search.toLowerCase())
+        s.label.toLowerCase().includes(search.toLowerCase()) &&
+        (!preferADA || s.type === 'ADA') // Filter by ADA preference
     )
-  }, [spots, selectedLevelId, filterType, search])
+  }, [spots, selectedLevelId, filterType, search, preferADA])
 
   const { data: allSpots = [] } = useQuery({
     queryKey: ["allSpots", deckId],
@@ -79,7 +82,7 @@ export default function SpotAvailability() {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 pb-20">
       <div>
         <h1 className="text-3xl font-bold">{deck.name}</h1>
         <p className="text-muted-foreground">{deck.address}</p>

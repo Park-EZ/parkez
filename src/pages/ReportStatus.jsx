@@ -4,9 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { getSpotsByLevel, getLevelsByDeck, getDecks } from "@/api"
-
-// API base url (reports route lives under /api/reports/spots/:id)
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000'
+import { apiRequest } from "@/utils/api"
 import { useToast } from "@/hooks/use-toast"
 import { AlertCircle, CheckCircle2 } from "lucide-react"
 
@@ -37,29 +35,28 @@ export default function ReportStatus() {
             found = true
 
             // Submit report to backend reports route
-            try {
-              const res = await fetch(`${API_BASE_URL}/api/reports/spots/${spot._id}`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ reportType, notes }),
-              })
+              try {
+              const res = await apiRequest(`/api/reports/spots/${spot._id}`, {
+                  method: 'POST',
+                  body: JSON.stringify({ reportType, notes }),
+                })
 
-              if (!res.ok) {
-                let msg = `Failed to submit report (${res.status})`
-                try {
-                  const body = await res.json()
-                  msg = body.error || body.message || msg
-                } catch (e) {}
-                throw new Error(msg)
-              }
-            } catch (err) {
-              toast({
-                title: "Report failed",
-                description: err.message || 'Failed to submit report',
-                variant: 'destructive',
-              })
-              setLoading(false)
-              return
+                if (!res.ok) {
+                  let msg = `Failed to submit report (${res.status})`
+                  try {
+                    const body = await res.json()
+                    msg = body.error || body.message || msg
+                  } catch (e) {}
+                  throw new Error(msg)
+                }
+              } catch (err) {
+                toast({
+                  title: "Report failed",
+                  description: err.message || 'Failed to submit report',
+                  variant: 'destructive',
+                })
+                setLoading(false)
+                return
             }
 
             toast({
@@ -93,7 +90,7 @@ export default function ReportStatus() {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 pb-20">
       <div>
         <h1 className="text-3xl font-bold">Report Incorrect Status</h1>
         <p className="text-muted-foreground">Help us improve accuracy by reporting incorrect spot statuses</p>
