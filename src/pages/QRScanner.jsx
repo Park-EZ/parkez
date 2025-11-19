@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
-import { applySpotSession, getSpotsByLevel, getLevelsByDeck, getDecks } from "@/api"
+import { applySpotSession, getSpotsByLevel, checkOutSpot, getLevelsByDeck, getDecks } from "@/api"
 import { useToast } from "@/hooks/use-toast"
 import { QrCode, Camera } from "lucide-react"
 
@@ -29,12 +29,28 @@ export default function QRScanner() {
           const found = spots.find((s) => s.label.toUpperCase() === label)
           
           if (found) {
-            await applySpotSession(found._id)
-            setQrInput("")
-            toast({
-              title: "Spot updated!",
-              description: `Spot ${found.label} has been ${found.status === 'free' ? 'checked in' : 'checked out'}.`,
-            })
+
+            if (found.status === "free") {
+            // CHECK IN
+              await applySpotSession(found._id)
+                toast({
+                  title: "Checked In",
+                  description: `Spot ${found.label} is now occupied.`,
+                })
+              } else {
+                // CHECK OUT
+                await checkOutSpot(found._id)
+                toast({
+                  title: "Checked Out",
+                  description: `Spot ${found.label} is now free.`,
+                })
+              }
+            // await applySpotSession(found._id)
+            // setQrInput("")
+            // toast({
+            //   title: "Spot updated!",
+            //   description: `Spot ${found.label} has been ${found.status === 'free' ? 'checked in' : 'checked out'}.`,
+            // })
             navigate(`/decks/${deck._id}/availability`)
             return
           }
