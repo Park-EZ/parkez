@@ -1,5 +1,4 @@
-// API base URL - from environment variable
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000'
+import { apiRequest } from '@/utils/api'
 
 // Real-time subscription listeners
 const listeners = new Set()
@@ -7,7 +6,7 @@ const listeners = new Set()
 // Initialize/seed data
 export async function seedIfEmpty() {
   try {
-    const response = await fetch(`${API_BASE_URL}/api/seed`, { method: 'POST' })
+    const response = await apiRequest('/api/seed', { method: 'POST' })
     if (!response.ok) throw new Error('Seed failed')
   } catch (error) {
     console.error('Seed failed:', error)
@@ -18,7 +17,7 @@ export async function seedIfEmpty() {
 // Get all decks
 export async function getDecks() {
   try {
-    const response = await fetch(`${API_BASE_URL}/api/decks`)
+    const response = await apiRequest('/api/decks')
     if (!response.ok) throw new Error('Failed to fetch decks')
     return await response.json()
   } catch (error) {
@@ -30,7 +29,7 @@ export async function getDecks() {
 // Get levels by deck ID
 export async function getLevelsByDeck(deckId) {
   try {
-    const response = await fetch(`${API_BASE_URL}/api/decks/${deckId}/levels`)
+    const response = await apiRequest(`/api/decks/${deckId}/levels`)
     if (!response.ok) throw new Error('Failed to fetch levels')
     return await response.json()
   } catch (error) {
@@ -42,7 +41,7 @@ export async function getLevelsByDeck(deckId) {
 // Get spots by level ID
 export async function getSpotsByLevel(levelId) {
   try {
-    const response = await fetch(`${API_BASE_URL}/api/levels/${levelId}/spots`)
+    const response = await apiRequest(`/api/levels/${levelId}/spots`)
     if (!response.ok) throw new Error('Failed to fetch spots')
     return await response.json()
   } catch (error) {
@@ -54,9 +53,8 @@ export async function getSpotsByLevel(levelId) {
 // Toggle spot occupancy (for manual toggle)
 export async function toggleSpotOccupancy(spotId) {
   try {
-    const response = await fetch(`${API_BASE_URL}/api/spots/${spotId}/toggle`, {
+    const response = await apiRequest(`/api/spots/${spotId}/toggle`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({})
     })
     if (!response.ok) throw new Error('Failed to toggle spot')
@@ -73,7 +71,7 @@ export async function toggleSpotOccupancy(spotId) {
 export async function applySpotSession(spotId) {
   const email = localStorage.getItem("userEmail")
   try {
-    const response = await fetch(`${API_BASE_URL}/api/spots/${spotId}/check-in`, {
+    const response = await apiRequest(`/api/spots/${spotId}/check-in`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email})
@@ -92,7 +90,7 @@ export async function applySpotSession(spotId) {
 export async function checkOutSpot(spotId) {
   const email = localStorage.getItem("userEmail")
   try {
-    const response = await fetch(`${API_BASE_URL}/api/spots/${spotId}/check-out`, {
+    const response = await apiRequest(`/api/spots/${spotId}/check-out`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email })
@@ -126,9 +124,8 @@ export async function checkOutSpot(spotId) {
 // Report incorrect spot status
 export async function reportSpotStatus(spotId, reportType, notes = '') {
   try {
-    const response = await fetch(`${API_BASE_URL}/api/spots/${spotId}/report`, {
+    const response = await apiRequest(`/api/spots/${spotId}/report`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ reportType, notes }),
     })
     if (!response.ok) throw new Error('Failed to submit report')
