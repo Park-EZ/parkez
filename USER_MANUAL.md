@@ -125,36 +125,40 @@ Purpose: Record when a driver occupies a spot and when they leave.
 
 1) Store User Email (simple flow)
 - After login, persist email in browser storage (e.g., `localStorage.setItem('userEmail', email)`).
+- Navigate to the QR Code Scanner Page
+Main Page:
+![Main page](img/mainmobile.png)
+
+QR Code Scanner Page:
+![QR page](img/QRscan.png)
 
 2) Check‑In
 - Scan a QR code linked to a specific `spotId`.
 - Frontend sends `POST /api/spots/:spotId/check-in` with `{ email }`.
 - Backend updates the spot to `status: "occupied"` and inserts a session document.
 
-3) Check‑Out
-- Frontend sends `POST /api/spots/:spotId/check-out` with `{ email }`.
-- Backend sets `status: "free"` and stamps `endedAt` on the active session.
-
 4) Visual Confirmation
-- The Availability view updates (occupied → red, free → green).
-
-[Screenshot: QR Check‑In – placeholder]
-[Screenshot: Check‑Out – placeholder]
+- The Availability view updates (occupied by you → blue, occupied → red, free → green).
+Spots page:
+![QR page](img/checkinmobile.png)
+![QR page](img/mainaftercheckin.png)
 
 ## 8. Additional Scenario 2: Reporting Incorrect Status
 Purpose: Let users flag discrepancies (e.g., app shows occupied but physically free).
 
 1) Open Report Interface
 - Navigate to `/report` or open a report action near a spot.
+![Main page](img/mainmobile.png)
 
 2) Submit Report
+- Enter the spot label (for example: L1-001)
 - Choose `reportType` (e.g., Incorrect occupancy, Blocked, Etc.).
 - Add notes (optional) and submit; frontend POSTs to `/api/spots/:spotId/report`.
+![Report page](img/reportmobile.png)
 
 3) Admin Review
-- Admins can review reports and resolve by manual toggling or further checks.
-
-[Screenshot: Report Form – placeholder]
+- Admins can review reports and resolve by manual toggling or further checks (within MongoDB).
+![Mongo page](img/mongoreport.png)
 
 ## 9. Troubleshooting
 - App shows Occupied but DB says Free:
