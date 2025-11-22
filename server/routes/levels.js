@@ -17,7 +17,8 @@ export default async function levelRoutes(fastify, options) {
     
     // Find the level to get its numeric id field
     const level = await findById(db.collection('levels'), levelIdParam)
-    
+    // const numericId = Number(request.params.id)
+    // const level = await db.collection('levels').findOne({ id: numericId })
     if (!level) {
       return reply.code(404).send({ error: 'Level not found' })
     }
@@ -67,6 +68,9 @@ export default async function levelRoutes(fastify, options) {
   fastify.get('/:id', async (request, reply) => {
     const db = getDB()
     const level = await findById(db.collection('levels'), request.params.id)
+
+    // const numericId = Number(request.params.id)
+    // const level = await db.collection('levels').findOne({ id: numericId })
     
     if (!level) {
       return reply.code(404).send({ error: 'Level not found' })
@@ -83,6 +87,8 @@ export default async function levelRoutes(fastify, options) {
     
     // Find the level by _id to get its numeric id field
     const level = await findById(db.collection('levels'), levelIdParam)
+    // const numericId = Number(request.params.id)
+    // const level = await db.collection('levels').findOne({ id: numericId })
     
     if (!level) {
       return reply.code(404).send({ error: 'Level not found' })

@@ -28,7 +28,7 @@ export default function ReportStatus() {
       for (const deck of decks) {
         const levels = await getLevelsByDeck(deck._id)
         for (const level of levels) {
-          const spots = await getSpotsByLevel(level.id)
+          const spots = await getSpotsByLevel(level._id)
           const spot = spots.find((s) => s.label.toUpperCase() === spotLabel.trim().toUpperCase())
           
           if (spot) {
