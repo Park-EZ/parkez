@@ -1,7 +1,6 @@
-import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import { useQuery } from "@tanstack/react-query"
-import { getDecks } from "@/api"
+import { getDecks, getLevelsByDeck, getSpotsByLevel } from "@/api"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { 
@@ -12,8 +11,8 @@ import {
   Phone, 
   Mail, 
   Users,
-  Navigation,
-  Hash
+  Hash,
+  CheckCircle2
 } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 
@@ -22,6 +21,32 @@ export default function DeckSelection() {
   const { data: decks = [], isLoading } = useQuery({
     queryKey: ["decks"],
     queryFn: getDecks,
+  })
+
+  // Fetch availability for all decks
+  const { data: allDeckAvailability = {}, isLoading: availabilityLoading } = useQuery({
+    queryKey: ["allDeckAvailability"],
+    queryFn: async () => {
+      const availabilityMap = {}
+      for (const deck of decks) {
+        try {
+          const levels = await getLevelsByDeck(deck._id)
+          const allSpotsPromises = levels.map(level => getSpotsByLevel(level._id))
+          const allSpotsArrays = await Promise.all(allSpotsPromises)
+          const allSpots = allSpotsArrays.flat()
+          
+          const free = allSpots.filter(s => s.status === 'free').length
+          const total = allSpots.length
+          
+          availabilityMap[deck._id] = { free, total }
+        } catch (error) {
+          console.error(`Error fetching availability for deck ${deck._id}:`, error)
+          availabilityMap[deck._id] = { free: 0, total: 0 }
+        }
+      }
+      return availabilityMap
+    },
+    enabled: decks.length > 0,
   })
 
   if (isLoading) {
@@ -44,21 +69,27 @@ export default function DeckSelection() {
     return van + car
   }
 
+  const getDeckAvailability = (deckId) => {
+    return allDeckAvailability[deckId] || { free: 0, total: 0 }
+  }
+
   return (
     <div className="space-y-6 pb-20">
       <div>
         <h1 className="text-3xl font-bold">Select Parking Deck</h1>
-        <p className="text-muted-foreground">Choose a deck to view available spots</p>
+        <p className="text-muted-foreground">Choose a deck to view levels and spots</p>
       </div>
 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {decks.map((deck) => {
           const totalADA = getTotalADASpaces(deck)
+          const availability = getDeckAvailability(deck._id)
           
           return (
             <Card 
               key={deck._id} 
-              className="flex flex-col hover:shadow-lg transition-shadow"
+              className="flex flex-col hover:shadow-lg transition-shadow cursor-pointer"
+              onClick={() => navigate(`/decks/${deck._id}/levels`)}
             >
               <CardHeader className="pb-3">
                 <div className="flex items-start justify-between gap-2">
@@ -78,17 +109,33 @@ export default function DeckSelection() {
               </CardHeader>
 
               <CardContent className="flex-1 flex flex-col gap-4">
-                {/* Parking Spaces Info */}
+                {/* Availability Info */}
                 <div className="space-y-2">
-                  <div className="flex items-center justify-between p-2 bg-muted/50 rounded-md">
-                    <div className="flex items-center gap-2">
-                      <Car className="h-4 w-4 text-muted-foreground" />
-                      <span className="text-sm font-medium">Total Spaces</span>
-                    </div>
-                    <Badge variant="secondary" className="font-semibold">
-                      {deck['total-spaces'] || 'N/A'}
-                    </Badge>
-                  </div>
+                  {availabilityLoading ? (
+                    <div className="text-sm text-muted-foreground">Loading availability...</div>
+                  ) : (
+                    <>
+                      <div className="flex items-center justify-between p-2 bg-green-50 dark:bg-green-950/20 rounded-md">
+                        <div className="flex items-center gap-2">
+                          <CheckCircle2 className="h-4 w-4 text-green-600 dark:text-green-400" />
+                          <span className="text-sm font-medium">Available</span>
+                        </div>
+                        <Badge variant="outline" className="font-semibold border-green-300 dark:border-green-700 text-green-700 dark:text-green-300">
+                          {availability.free}
+                        </Badge>
+                      </div>
+                      
+                      <div className="flex items-center justify-between p-2 bg-muted/50 rounded-md">
+                        <div className="flex items-center gap-2">
+                          <Car className="h-4 w-4 text-muted-foreground" />
+                          <span className="text-sm font-medium">Total Spaces</span>
+                        </div>
+                        <Badge variant="secondary" className="font-semibold">
+                          {availability.total || deck['total-spaces'] || 'N/A'}
+                        </Badge>
+                      </div>
+                    </>
+                  )}
                   
                   {totalADA > 0 && (
                     <div className="flex items-center justify-between p-2 bg-blue-50 dark:bg-blue-950/20 rounded-md">
@@ -154,10 +201,10 @@ export default function DeckSelection() {
                   className="w-full mt-auto"
                   onClick={(e) => {
                     e.stopPropagation()
-                    navigate(`/decks/${deck._id}/availability`)
+                    navigate(`/decks/${deck._id}/levels`)
                   }}
                 >
-                  View Availability
+                  View Levels
                   <ChevronRight className="h-4 w-4 ml-2" />
                 </Button>
               </CardContent>

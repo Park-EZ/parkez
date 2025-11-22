@@ -67,16 +67,47 @@ export async function toggleSpotOccupancy(spotId) {
   }
 }
 
-// Apply spot session (check-in/check-out via QR)
-export async function applySpotSession(spotId) {
-  const email = localStorage.getItem("userEmail")
+// Check in to a spot
+export async function checkInSpot(spotId) {
   try {
     const response = await apiRequest(`/api/spots/${spotId}/check-in`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email})
+      body: JSON.stringify({ source: 'manual' })
     })
-    if (!response.ok) throw new Error('Failed to check in')
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => ({}))
+      // If 409 Conflict, return the error data so frontend can show confirmation
+      if (response.status === 409) {
+        throw { ...new Error(errorData.error || 'You already have an occupied spot'), conflictData: errorData }
+      }
+      throw new Error(errorData.error || 'Failed to check in')
+    }
+    const result = await response.json()
+    notify()
+    return result
+  } catch (error) {
+    console.error('API error:', error)
+    throw error
+  }
+}
+
+// Apply spot session (check-in/check-out via QR)
+export async function applySpotSession(spotId) {
+  try {
+    const response = await apiRequest(`/api/spots/${spotId}/check-in`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ source: 'qr' })
+    })
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => ({}))
+      // If 409 Conflict, return the error data so frontend can show confirmation
+      if (response.status === 409) {
+        throw { ...new Error(errorData.error || 'You already have an occupied spot'), conflictData: errorData }
+      }
+      throw new Error(errorData.error || 'Failed to check in')
+    }
     const result = await response.json()
     notify()
     return result
@@ -88,18 +119,42 @@ export async function applySpotSession(spotId) {
 
 // Check out of a spot
 export async function checkOutSpot(spotId) {
-  const email = localStorage.getItem("userEmail")
   try {
     const response = await apiRequest(`/api/spots/${spotId}/check-out`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email })
+      body: JSON.stringify({})
     })
-    if (!response.ok) throw new Error('Failed to check out')
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => ({}))
+      throw new Error(errorData.error || 'Failed to check out')
+    }
     const result = await response.json()
     notify()
     return result
   } catch (error) {
+    console.error('API error:', error)
+    throw error
+  }
+}
+
+// Get current user's occupied spot
+export async function getMySpot() {
+  try {
+    const response = await apiRequest('/api/spots/my-spot')
+    if (!response.ok) {
+      if (response.status === 404) {
+        return null // No active spot - this is normal, not an error
+      }
+      const errorData = await response.json().catch(() => ({}))
+      throw new Error(errorData.error || 'Failed to fetch current spot')
+    }
+    return await response.json()
+  } catch (error) {
+    // If it's a 404, return null (no spot is normal)
+    if (error.message?.includes('404') || error.message?.includes('No active spot')) {
+      return null
+    }
     console.error('API error:', error)
     throw error
   }

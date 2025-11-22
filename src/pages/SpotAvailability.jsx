@@ -1,22 +1,38 @@
-import { useState, useMemo, useEffect } from "react"
-import { useParams } from "react-router-dom"
+import { useState, useMemo } from "react"
+import { useParams, useNavigate } from "react-router-dom"
 import { useQuery, useQueryClient } from "@tanstack/react-query"
-import { getLevelsByDeck, getSpotsByLevel, getDecks, toggleSpotOccupancy } from "@/api"
+import { getLevelsByDeck, getSpotsByLevel, getDecks, checkInSpot, checkOutSpot, getMySpot } from "@/api"
 import { useUserPreferences } from "@/contexts/UserPreferencesContext"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { useAuth } from "@/contexts/AuthContext"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog"
 import SpotGrid from "@/components/SpotGrid"
-import { Search } from "lucide-react"
+import { Search, ArrowLeft, Building2 } from "lucide-react"
+import { useToast } from "@/hooks/use-toast"
 
 export default function SpotAvailability() {
-  const { deckId } = useParams()
+  const { deckId, levelId } = useParams()
   const queryClient = useQueryClient()
+  const navigate = useNavigate()
   const { preferADA } = useUserPreferences()
-  const [selectedLevelId, setSelectedLevelId] = useState(null)
+  const { user } = useAuth()
+  const { toast } = useToast()
   const [filterType, setFilterType] = useState("all")
   const [search, setSearch] = useState("")
+  const [showConfirmDialog, setShowConfirmDialog] = useState(false)
+  const [conflictData, setConflictData] = useState(null)
+  const [newSpotId, setNewSpotId] = useState(null)
+  const [showFreeSpotDialog, setShowFreeSpotDialog] = useState(false)
+  const [spotToFree, setSpotToFree] = useState(null)
 
   const { data: deck } = useQuery({
     queryKey: ["deck", deckId],
@@ -27,90 +43,85 @@ export default function SpotAvailability() {
     enabled: !!deckId,
   })
 
-  const { data: levels = [] } = useQuery({
-    queryKey: ["levels", deckId],
-    queryFn: () => getLevelsByDeck(deckId),
-    enabled: !!deckId,
+  const { data: level } = useQuery({
+    queryKey: ["level", levelId],
+    queryFn: async () => {
+      const levels = await getLevelsByDeck(deckId)
+      return levels.find((l) => l._id === levelId)
+    },
+    enabled: !!deckId && !!levelId,
   })
 
-  useEffect(() => {
-    if (levels.length && !selectedLevelId) {
-      setSelectedLevelId(levels[0]._id)
-    }
-  }, [levels, selectedLevelId])
-
-  const { data: spots = [] } = useQuery({
-    queryKey: ["spots", selectedLevelId],
-    queryFn: () => getSpotsByLevel(selectedLevelId),
-    enabled: !!selectedLevelId,
+  const { data: spots = [], isLoading: spotsLoading } = useQuery({
+    queryKey: ["spots", levelId],
+    queryFn: () => getSpotsByLevel(levelId),
+    enabled: !!levelId,
   })
+
 
   const filteredSpots = useMemo(() => {
     return spots.filter(
       (s) =>
-        s.levelId === selectedLevelId &&
         (filterType === "all" || s.type === filterType) &&
         s.label.toLowerCase().includes(search.toLowerCase()) &&
         (!preferADA || s.type === 'ADA') // Filter by ADA preference
     )
-  }, [spots, selectedLevelId, filterType, search, preferADA])
+  }, [spots, filterType, search, preferADA])
 
-  const { data: allSpots = [] } = useQuery({
-    queryKey: ["allSpots", deckId],
-    queryFn: async () => {
-      const allLevels = await getLevelsByDeck(deckId)
-      const spotsPromises = allLevels.map(level => getSpotsByLevel(level._id))
-      const allSpotsArrays = await Promise.all(spotsPromises)
-      return allSpotsArrays.flat()
-    },
-    enabled: !!deckId,
-  })
+  const availability = useMemo(() => {
+    // Filter spots based on ADA preference
+    const relevantSpots = preferADA 
+      ? spots.filter(s => s.type === 'ADA')
+      : spots
+    
+    const free = relevantSpots.filter(s => s.status === 'free').length
+    const total = relevantSpots.length
+    return { free, total }
+  }, [spots, preferADA])
 
-  const deckSummary = useMemo(() => {
-    const byLevel = levels.map((l) => {
-      const levelSpots = allSpots.filter((s) => s.levelId === l._id)
-      const free = levelSpots.filter((v) => v.status === "free").length
-      return { level: l, total: levelSpots.length, free }
-    })
-    const free = byLevel.reduce((a, b) => a + b.free, 0)
-    const total = byLevel.reduce((a, b) => a + b.total, 0)
-    return { byLevel, free, total }
-  }, [levels, allSpots])
-
-  if (!deck) {
-    return <div className="text-center py-8">Deck not found</div>
+  if (!deck || !level) {
+    return (
+      <div className="text-center py-8 pb-20">
+        <p>Deck or level not found</p>
+        <Button variant="outline" className="mt-4" onClick={() => navigate(`/decks/${deckId}/levels`)}>
+          <ArrowLeft className="h-4 w-4 mr-2" />
+          Back to Levels
+        </Button>
+      </div>
+    )
   }
 
   return (
     <div className="space-y-6 pb-20">
-      <div>
-        <h1 className="text-3xl font-bold">{deck.name}</h1>
-        <p className="text-muted-foreground">{deck.address}</p>
+      <div className="flex items-center gap-4">
+        <Button
+          variant="ghost"
+          size="icon"
+          onClick={() => navigate(`/decks/${deckId}/levels`)}
+          className="flex-shrink-0"
+        >
+          <ArrowLeft className="h-4 w-4" />
+        </Button>
+        <div className="flex-1">
+          <h1 className="text-3xl font-bold">{level.name}</h1>
+          <p className="text-muted-foreground">{deck['building-name']}</p>
+        </div>
       </div>
 
+      {/* Availability Summary */}
       <Card>
         <CardHeader>
-          <CardTitle>Deck Summary</CardTitle>
+          <CardTitle className="flex items-center gap-2">
+            <Building2 className="h-5 w-5" />
+            Availability Summary
+          </CardTitle>
           <CardDescription>
-            Total Free: {deckSummary.free} / Total Spots: {deckSummary.total}
+            {spotsLoading ? 'Loading...' : `${availability.free} free out of ${availability.total} total spots`}
           </CardDescription>
         </CardHeader>
-        <CardContent>
-          <div className="flex flex-wrap gap-2">
-            {deckSummary.byLevel.map(({ level, free, total }) => (
-              <Button
-                key={level._id}
-                variant={selectedLevelId === level._id ? "default" : "outline"}
-                size="sm"
-                onClick={() => setSelectedLevelId(level._id)}
-              >
-                {level.name}: {free}/{total} free
-              </Button>
-            ))}
-          </div>
-        </CardContent>
       </Card>
 
+      {/* Search and Filter */}
       <div className="flex flex-col sm:flex-row gap-4">
         <div className="relative flex-1">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
@@ -133,31 +144,178 @@ export default function SpotAvailability() {
         </select>
       </div>
 
-      {selectedLevelId && (
-        <Tabs value={selectedLevelId} onValueChange={setSelectedLevelId}>
-          <TabsList className="grid w-full" style={{ gridTemplateColumns: `repeat(${levels.length}, 1fr)` }}>
-            {levels.map((level) => (
-              <TabsTrigger key={level._id} value={level._id}>
-                {level.name}
-              </TabsTrigger>
-            ))}
-          </TabsList>
-          {levels.map((level) => (
-            <TabsContent key={level._id} value={level._id}>
-              <SpotGrid
-                spots={level._id === selectedLevelId ? filteredSpots : []}
-                onToggle={async (spotId) => {
-                  await toggleSpotOccupancy(spotId)
-                  // Refetch spots to update the UI
-                  queryClient.invalidateQueries({ queryKey: ["spots", selectedLevelId] })
-                  queryClient.invalidateQueries({ queryKey: ["allSpots", deckId] })
+      {/* Spots Grid */}
+      {spotsLoading ? (
+        <div className="text-center py-8 text-muted-foreground">Loading spots...</div>
+      ) : filteredSpots.length === 0 ? (
+        <Card>
+          <CardContent className="py-8 text-center text-muted-foreground">
+            <p>No spots found matching your criteria</p>
+            {(search || filterType !== "all" || preferADA) && (
+              <Button
+                variant="outline"
+                className="mt-4"
+                onClick={() => {
+                  setSearch("")
+                  setFilterType("all")
                 }}
-              />
-            </TabsContent>
-          ))}
-        </Tabs>
+              >
+                Clear Filters
+              </Button>
+            )}
+          </CardContent>
+        </Card>
+      ) : (
+        <>
+          <SpotGrid
+            spots={filteredSpots}
+            currentUserId={user?._id || user?.id || null}
+            onToggle={async (spotId) => {
+              const spot = filteredSpots.find(s => s._id === spotId)
+              if (!spot) return
+
+              const currentUserId = user?._id || user?.id
+              const isMySpot = spot.status === 'occupied' && currentUserId && spot.occupiedBy === currentUserId
+
+              // If clicking on own spot, show free confirmation dialog
+              if (isMySpot) {
+                setSpotToFree(spot)
+                setShowFreeSpotDialog(true)
+                return
+              }
+
+              // Only allow check-in for free spots
+              if (spot.status === 'free') {
+                try {
+                  await checkInSpot(spotId)
+                  toast({
+                    title: "Spot occupied",
+                    description: `Spot ${spot.label} is now occupied.`,
+                  })
+                  queryClient.invalidateQueries({ queryKey: ["spots", levelId] })
+                  queryClient.invalidateQueries({ queryKey: ["levelAvailability", levelId] })
+                  queryClient.invalidateQueries({ queryKey: ["mySpot"] })
+                } catch (error) {
+                  // Check if it's a conflict (user already has a spot)
+                  if (error.conflictData) {
+                    setConflictData(error.conflictData)
+                    setNewSpotId(spotId)
+                    setShowConfirmDialog(true)
+                  } else {
+                    toast({
+                      title: "Error",
+                      description: error.message || "Failed to occupy spot",
+                      variant: "destructive",
+                    })
+                  }
+                }
+              } else {
+                // Spot is occupied by someone else - can't check in
+                toast({
+                  title: "Spot unavailable",
+                  description: `Spot ${spot.label} is already occupied by another user.`,
+                  variant: "destructive",
+                })
+              }
+            }}
+          />
+          
+          {/* Confirmation Dialog for switching spots */}
+          <Dialog open={showConfirmDialog} onOpenChange={setShowConfirmDialog}>
+            <DialogContent>
+              <DialogHeader>
+                <DialogTitle>Switch Parking Spot?</DialogTitle>
+                <DialogDescription>
+                  You are currently occupying spot <strong>{conflictData?.currentSpot?.label}</strong>.
+                  Do you want to free that spot and occupy spot <strong>{filteredSpots.find(s => s._id === newSpotId)?.label}</strong> instead?
+                </DialogDescription>
+              </DialogHeader>
+              <DialogFooter>
+                <Button variant="outline" onClick={() => {
+                  setShowConfirmDialog(false)
+                  setConflictData(null)
+                  setNewSpotId(null)
+                }}>
+                  Cancel
+                </Button>
+                <Button onClick={async () => {
+                  if (!conflictData?.currentSpot?._id || !newSpotId) return
+                  
+                  try {
+                    // Free the current spot
+                    await checkOutSpot(conflictData.currentSpot._id)
+                    // Check in to the new spot
+                    await checkInSpot(newSpotId)
+                    toast({
+                      title: "Spot switched",
+                      description: `You are now occupying spot ${filteredSpots.find(s => s._id === newSpotId)?.label}.`,
+                    })
+                    setShowConfirmDialog(false)
+                    setConflictData(null)
+                    setNewSpotId(null)
+                    queryClient.invalidateQueries({ queryKey: ["spots", levelId] })
+                    queryClient.invalidateQueries({ queryKey: ["levelAvailability", levelId] })
+                    queryClient.invalidateQueries({ queryKey: ["mySpot"] })
+                  } catch (error) {
+                    toast({
+                      title: "Error",
+                      description: error.message || "Failed to switch spots",
+                      variant: "destructive",
+                    })
+                  }
+                }}>
+                  Switch Spot
+                </Button>
+              </DialogFooter>
+            </DialogContent>
+          </Dialog>
+
+          {/* Confirmation Dialog for freeing own spot */}
+          <Dialog open={showFreeSpotDialog} onOpenChange={setShowFreeSpotDialog}>
+            <DialogContent>
+              <DialogHeader>
+                <DialogTitle>Free Parking Spot?</DialogTitle>
+                <DialogDescription>
+                  Are you sure you want to free spot <strong>{spotToFree?.label}</strong>?
+                  This will mark the spot as available for other users.
+                </DialogDescription>
+              </DialogHeader>
+              <DialogFooter>
+                <Button variant="outline" onClick={() => {
+                  setShowFreeSpotDialog(false)
+                  setSpotToFree(null)
+                }}>
+                  Cancel
+                </Button>
+                <Button variant="destructive" onClick={async () => {
+                  if (!spotToFree?._id) return
+                  
+                  try {
+                    await checkOutSpot(spotToFree._id)
+                    toast({
+                      title: "Spot freed",
+                      description: `Spot ${spotToFree.label} is now available.`,
+                    })
+                    setShowFreeSpotDialog(false)
+                    setSpotToFree(null)
+                    queryClient.invalidateQueries({ queryKey: ["spots", levelId] })
+                    queryClient.invalidateQueries({ queryKey: ["levelAvailability", levelId] })
+                    queryClient.invalidateQueries({ queryKey: ["mySpot"] })
+                  } catch (error) {
+                    toast({
+                      title: "Error",
+                      description: error.message || "Failed to free spot",
+                      variant: "destructive",
+                    })
+                  }
+                }}>
+                  Free Spot
+                </Button>
+              </DialogFooter>
+            </DialogContent>
+          </Dialog>
+        </>
       )}
     </div>
   )
 }
-

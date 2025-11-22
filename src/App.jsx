@@ -10,7 +10,9 @@ import Login from "./pages/Login"
 import Register from "./pages/Register"
 import Dashboard from "./pages/Dashboard"
 import DeckSelection from "./pages/DeckSelection"
+import LevelsView from "./pages/LevelsView"
 import SpotAvailability from "./pages/SpotAvailability"
+import DeckRedirect from "./pages/DeckRedirect"
 import QRScanner from "./pages/QRScanner"
 import ReportStatus from "./pages/ReportStatus"
 import Profile from "./pages/Profile"
@@ -54,10 +56,27 @@ const App = () => (
                 }
               />
               <Route
-                path="/decks/:deckId/availability"
+                path="/decks/:deckId/levels"
+                element={
+                  <MainLayout>
+                    <LevelsView />
+                  </MainLayout>
+                }
+              />
+              <Route
+                path="/decks/:deckId/levels/:levelId/spots"
                 element={
                   <MainLayout>
                     <SpotAvailability />
+                  </MainLayout>
+                }
+              />
+              {/* Legacy route redirect */}
+              <Route
+                path="/decks/:deckId/availability"
+                element={
+                  <MainLayout>
+                    <DeckRedirect />
                   </MainLayout>
                 }
               />

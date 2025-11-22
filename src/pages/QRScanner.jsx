@@ -3,13 +3,24 @@ import { useNavigate } from "react-router-dom"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
-import { applySpotSession, getSpotsByLevel, checkOutSpot, getLevelsByDeck, getDecks } from "@/api"
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog"
+import { applySpotSession, getSpotsByLevel, checkOutSpot, checkInSpot, getLevelsByDeck, getDecks } from "@/api"
 import { useToast } from "@/hooks/use-toast"
 import { QrCode, Camera } from "lucide-react"
 
 export default function QRScanner() {
   const [qrInput, setQrInput] = useState("")
   const [loading, setLoading] = useState(false)
+  const [showConfirmDialog, setShowConfirmDialog] = useState(false)
+  const [conflictData, setConflictData] = useState(null)
+  const [newSpotId, setNewSpotId] = useState(null)
   const navigate = useNavigate()
   const { toast } = useToast()
 
@@ -29,29 +40,47 @@ export default function QRScanner() {
           const found = spots.find((s) => s.label.toUpperCase() === label)
           
           if (found) {
-
             if (found.status === "free") {
-            // CHECK IN
-              await applySpotSession(found._id)
+              // CHECK IN
+              try {
+                await applySpotSession(found._id)
                 toast({
                   title: "Checked In",
                   description: `Spot ${found.label} is now occupied.`,
                 })
-              } else {
-                // CHECK OUT
+                navigate(`/decks/${deck._id}/levels/${level._id}/spots`)
+              } catch (error) {
+                // Check if it's a conflict (user already has a spot)
+                if (error.conflictData) {
+                  setConflictData(error.conflictData)
+                  setNewSpotId(found._id)
+                  setShowConfirmDialog(true)
+                } else {
+                  toast({
+                    title: "Error",
+                    description: error.message || "Failed to check in",
+                    variant: "destructive",
+                  })
+                }
+              }
+            } else {
+              // CHECK OUT
+              try {
                 await checkOutSpot(found._id)
                 toast({
                   title: "Checked Out",
                   description: `Spot ${found.label} is now free.`,
                 })
+                navigate(`/decks/${deck._id}/levels/${level._id}/spots`)
+              } catch (error) {
+                toast({
+                  title: "Error",
+                  description: error.message || "Failed to check out",
+                  variant: "destructive",
+                })
               }
-            // await applySpotSession(found._id)
-            // setQrInput("")
-            // toast({
-            //   title: "Spot updated!",
-            //   description: `Spot ${found.label} has been ${found.status === 'free' ? 'checked in' : 'checked out'}.`,
-            // })
-            navigate(`/decks/${deck._id}/availability`)
+            }
+            setQrInput("")
             return
           }
         }
@@ -125,6 +154,67 @@ export default function QRScanner() {
           <p>3. The system will automatically check you in if the spot is free, or check you out if you're already checked in</p>
         </CardContent>
       </Card>
+
+      {/* Confirmation Dialog for switching spots */}
+      <Dialog open={showConfirmDialog} onOpenChange={setShowConfirmDialog}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Switch Parking Spot?</DialogTitle>
+            <DialogDescription>
+              You are currently occupying spot <strong>{conflictData?.currentSpot?.label}</strong>.
+              Do you want to free that spot and occupy the new spot instead?
+            </DialogDescription>
+          </DialogHeader>
+          <DialogFooter>
+            <Button variant="outline" onClick={() => {
+              setShowConfirmDialog(false)
+              setConflictData(null)
+              setNewSpotId(null)
+              setQrInput("")
+            }}>
+              Cancel
+            </Button>
+            <Button onClick={async () => {
+              if (!conflictData?.currentSpot?._id || !newSpotId) return
+              
+              try {
+                // Free the current spot
+                await checkOutSpot(conflictData.currentSpot._id)
+                // Check in to the new spot
+                await checkInSpot(newSpotId)
+                toast({
+                  title: "Spot switched",
+                  description: `You are now occupying the new spot.`,
+                })
+                setShowConfirmDialog(false)
+                setConflictData(null)
+                setNewSpotId(null)
+                setQrInput("")
+                // Navigate to the new spot's location
+                const decks = await getDecks()
+                for (const deck of decks) {
+                  const levels = await getLevelsByDeck(deck._id)
+                  for (const level of levels) {
+                    const spots = await getSpotsByLevel(level._id)
+                    if (spots.find(s => s._id === newSpotId)) {
+                      navigate(`/decks/${deck._id}/levels/${level._id}/spots`)
+                      return
+                    }
+                  }
+                }
+              } catch (error) {
+                toast({
+                  title: "Error",
+                  description: error.message || "Failed to switch spots",
+                  variant: "destructive",
+                })
+              }
+            }}>
+              Switch Spot
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </div>
   )
 }

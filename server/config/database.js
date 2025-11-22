@@ -154,28 +154,35 @@ async function createIndexes(db) {
   console.log('   Creating indexes...')
   
   const indexes = [
-    // Decks collection
-    { collection: 'decks', index: { name: 1 }, options: { unique: true, name: 'name' } },
+    // Decks collection - based on actual data structure
+    { collection: 'decks', index: { 'building-code': 1 }, options: { unique: true, name: 'building-code' } },
+    { collection: 'decks', index: { 'building-name': 1 }, options: { name: 'building-name' } },
     
-    // Levels collection
+    // Levels collection - based on actual data structure
     { collection: 'levels', index: { deckId: 1, index: 1 }, options: { name: 'deckId_index' } },
     { collection: 'levels', index: { deckId: 1 }, options: { name: 'deckId' } },
+    { collection: 'levels', index: { _id: 1 }, options: { unique: true, name: '_id' } },
     
-    // Spots collection
+    // Spots collection - based on actual data structure
     { collection: 'spots', index: { levelId: 1 }, options: { name: 'levelId' } },
     { collection: 'spots', index: { label: 1, levelId: 1 }, options: { unique: true, name: 'label_levelId' } },
     { collection: 'spots', index: { status: 1 }, options: { name: 'status' } },
+    { collection: 'spots', index: { type: 1 }, options: { name: 'type' } },
+    { collection: 'spots', index: { occupiedBy: 1 }, options: { name: 'occupiedBy', sparse: true } },
+    { collection: 'spots', index: { status: 1, occupiedBy: 1 }, options: { name: 'status_occupiedBy', sparse: true } },
     
     // Spot Sessions collection
     { collection: 'spotSessions', index: { spotId: 1, endedAt: 1 }, options: { name: 'spotId_endedAt' } },
     { collection: 'spotSessions', index: { userId: 1, endedAt: 1 }, options: { name: 'userId_endedAt' } },
     { collection: 'spotSessions', index: { spotId: 1 }, options: { name: 'spotId' } },
+    { collection: 'spotSessions', index: { userId: 1 }, options: { name: 'userId' } },
     { collection: 'spotSessions', index: { endedAt: 1 }, options: { name: 'endedAt' } },
     
     // Spot State History collection
     { collection: 'spotStateHistory', index: { spotId: 1, at: -1 }, options: { name: 'spotId_at' } },
     { collection: 'spotStateHistory', index: { spotId: 1 }, options: { name: 'spotId' } },
     { collection: 'spotStateHistory', index: { at: -1 }, options: { name: 'at' } },
+    { collection: 'spotStateHistory', index: { userId: 1 }, options: { name: 'userId', sparse: true } },
     
     // Users collection
     { collection: 'users', index: { email: 1 }, options: { unique: true, name: 'email' } },
@@ -205,6 +212,7 @@ async function createIndexes(db) {
 
 /**
  * Create collection validators for data integrity (optional but recommended)
+ * Based on actual data structure from JSON files
  */
 async function createValidators(db) {
   console.log('   Setting up validators...')
@@ -215,12 +223,17 @@ async function createValidators(db) {
       validator: {
         $jsonSchema: {
           bsonType: 'object',
-          required: ['name'],
+          required: ['building-code', 'building-name'],
           properties: {
-            name: { bsonType: 'string', description: 'must be a string and is required' },
-            description: { bsonType: 'string' },
-            capacity: { bsonType: 'number' },
-            location: { bsonType: 'string' }
+            'building-code': { bsonType: 'string', description: 'must be a string and is required' },
+            'building-name': { bsonType: 'string', description: 'must be a string and is required' },
+            'total-spaces': { bsonType: ['string', 'number'] },
+            'ada-van': { bsonType: ['string', 'number'] },
+            'ada-car': { bsonType: ['string', 'number'] },
+            latitude: { bsonType: ['string', 'number', 'null'] },
+            longitude: { bsonType: ['string', 'number', 'null'] },
+            aliases: { bsonType: 'array' },
+            contacts: { bsonType: 'array' }
           }
         }
       }
@@ -230,8 +243,9 @@ async function createValidators(db) {
       validator: {
         $jsonSchema: {
           bsonType: 'object',
-          required: ['deckId', 'index', 'name'],
+          required: ['_id', 'deckId', 'index', 'name'],
           properties: {
+            _id: { bsonType: 'string', description: 'must be a string and is required' },
             deckId: { bsonType: 'string', description: 'must be a string and is required' },
             index: { bsonType: 'number', description: 'must be a number and is required' },
             name: { bsonType: 'string', description: 'must be a string and is required' }
@@ -244,13 +258,27 @@ async function createValidators(db) {
       validator: {
         $jsonSchema: {
           bsonType: 'object',
-          required: ['levelId', 'label', 'status'],
+          required: ['_id', 'levelId', 'label', 'status'],
           properties: {
+            _id: { bsonType: 'string', description: 'must be a string and is required' },
             levelId: { bsonType: 'string', description: 'must be a string and is required' },
             label: { bsonType: 'string', description: 'must be a string and is required' },
+            type: { 
+              enum: ['standard', 'ADA', 'EV'],
+              description: 'must be one of: standard, ADA, EV'
+            },
             status: { 
               enum: ['free', 'occupied', 'reserved', 'maintenance'],
               description: 'must be one of: free, occupied, reserved, maintenance'
+            },
+            // Optional fields - only present when spot is occupied
+            occupiedBy: { 
+              bsonType: ['string', 'null'],
+              description: 'userId when spot is occupied, null or absent when free'
+            },
+            occupiedAt: {
+              bsonType: ['date', 'null'],
+              description: 'timestamp when spot was occupied'
             }
           }
         }
@@ -261,11 +289,11 @@ async function createValidators(db) {
       validator: {
         $jsonSchema: {
           bsonType: 'object',
-          required: ['email', 'name'],
+          required: ['email', 'name', 'password'],
           properties: {
             email: { bsonType: 'string', description: 'must be a string and is required' },
             name: { bsonType: 'string', description: 'must be a string and is required' },
-            password: { bsonType: 'string' }
+            password: { bsonType: 'string', description: 'must be a string and is required' }
           }
         }
       }
@@ -274,23 +302,28 @@ async function createValidators(db) {
 
   for (const { collection, validator } of validators) {
     try {
-      // Only set validator if collection is empty or doesn't have one
+      // Check if collection exists and has documents
       const collectionInfo = await db.listCollections({ name: collection }).toArray()
       if (collectionInfo.length > 0) {
-        // Try to update validator (will fail if one exists, which is fine)
-        try {
-          await db.command({
-            collMod: collection,
-              validator: {
-                $jsonSchema: validator.$jsonSchema
-              }
-          })
-          console.log(`   Validator set on '${collection}'`)
-        } catch (err) {
-          // Validator might already exist or collection has data - this is acceptable
-          if (err.code === 13 || err.code === 66) {
-            console.log(`   Validator on '${collection}' (already set or has data)`)
+        const count = await db.collection(collection).countDocuments()
+        // Only set validator if collection is empty (to avoid conflicts with existing data)
+        if (count === 0) {
+          try {
+            await db.command({
+              collMod: collection,
+              validator: validator.$jsonSchema
+            })
+            console.log(`   Validator set on '${collection}'`)
+          } catch (err) {
+            // Validator might already exist - this is acceptable
+            if (err.code === 13 || err.code === 66) {
+              console.log(`   Validator on '${collection}' (already set)`)
+            } else {
+              console.log(`   Validator on '${collection}': ${err.message}`)
+            }
           }
+        } else {
+          console.log(`   Validator on '${collection}' (skipped - collection has ${count} documents)`)
         }
       }
     } catch (error) {
