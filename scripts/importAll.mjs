@@ -1,6 +1,6 @@
 // scripts/importAll.mjs
 
-import "dotenv/config";
+import dotenv from "dotenv";
 import fs from "fs";
 import path from "path";
 import { MongoClient } from "mongodb";
@@ -10,25 +10,28 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+// Load .env from project root (parent directory of scripts/)
+const projectRoot = path.resolve(__dirname, "..");
+const envPath = path.join(projectRoot, ".env");
+
+console.log(`📁 Looking for .env file at: ${envPath}`);
+
+if (fs.existsSync(envPath)) {
+  dotenv.config({ path: envPath });
+  console.log("✅ Loaded .env file successfully\n");
+} else {
+  console.error(`❌ .env file not found at: ${envPath}`);
+  console.error("Please create a .env file in the project root with MONGODB_URI\n");
+  process.exit(1);
+}
+
 const uri = process.env.MONGODB_URI;
 const DB_NAME = process.env.DB_NAME || "ezpark";
 
 if (!uri) {
-  console.error("MONGODB_URI is not set in .env");
+  console.error("❌ MONGODB_URI is not set in .env");
+  console.error("Please add: MONGODB_URI=mongodb://localhost:27017/ezpark\n");
   process.exit(1);
-}
-
-// ------------------- UTILITIES -------------------
-
-// Remove duplicates by a key (before inserting)
-function removeDuplicatesByKey(arr, key) {
-  const seen = new Set();
-  return arr.filter((obj) => {
-    const value = obj[key] ?? null; // treat undefined as null
-    if (seen.has(value)) return false;
-    seen.add(value);
-    return true;
-  });
 }
 
 // ------------------- IMPORT LOGIC -------------------
@@ -51,50 +54,18 @@ async function importJsonFile(collectionName, filePath, db) {
   await collection.deleteMany({});
   console.log(`🧹 Cleared existing ${collectionName} collection.`);
 
-  // Fix duplicates and transform where needed
+  // Transform data based on collection type
   let data = jsonData;
-
-  if (collectionName === "decks") {
-    // Ensure no duplicate "building-name"
-    data = removeDuplicatesByKey(jsonData, "building-name");
-
-    // Transform decks to app schema
-    data = data.map((d) => ({
-      _id: d["building-code"],
-      name: d["building-name"] ?? "Unknown Deck",
-      address: `${d.ADDRESS1 ?? ""}, ${d.CITY_ID ?? ""}, ${
-        d.STATE_ID ?? ""
-      } ${d.ZIP ?? ""}`.trim(),
-      geo: {
-        lat: parseFloat(d.latitude) || 0,
-        lng: parseFloat(d.longitude) || 0,
-      },
-      totalSpaces: parseInt(d["total-spaces"] || 0),
-      adaVan: parseInt(d["ada-van"] || 0),
-      adaCar: parseInt(d["ada-car"] || 0),
-      aliases: d.aliases || [],
-      contacts: d.contacts || [],
+  
+  if (collectionName === 'spots') {
+    // Transform spots data to ensure consistency
+    data = jsonData.map(spot => ({
+      ...spot,
+      // Keep original fields: id, levelId, handicap, label, available, user_id
+      // Ensure user_id is properly set (empty string or null means free)
+      user_id: spot.user_id || null
     }));
-  }
-
-  if (collectionName === "levels") {
-    data = jsonData.map((lvl) => ({
-      _id: lvl["_id"] ?? lvl.id ?? `${lvl.deckId}_${lvl.index}`,
-      deckId: lvl.deckId,
-      index: lvl.index,
-      name: lvl.name ?? `Level ${lvl.index}`,
-    }));
-  }
-
-  if (collectionName === "spots") {
-    data = removeDuplicatesByKey(jsonData, "_id");
-    data = data.map((s) => ({
-      _id: s._id,
-      levelId: s.levelId,
-      label: s.label,
-      type: s.type ?? "standard",
-      status: s.status ?? "free",
-    }));
+    console.log(`📊 Transformed ${data.length} spots (using user_id field for occupancy tracking)`);
   }
 
   // Insert documents (continue even if some fail)
@@ -109,6 +80,41 @@ async function importJsonFile(collectionName, filePath, db) {
 }
 
 // ------------------- MAIN -------------------
+
+async function createIndexes(db) {
+  console.log("\n📑 Creating indexes...");
+  
+  const indexes = [
+    // Decks collection
+    { collection: 'decks', index: { 'building-code': 1 }, options: { unique: true, name: 'building-code' } },
+    { collection: 'decks', index: { 'building-name': 1 }, options: { name: 'building-name' } },
+    
+    // Levels collection
+    { collection: 'levels', index: { deckId: 1 }, options: { name: 'deckId' } },
+    { collection: 'levels', index: { id: 1 }, options: { unique: true, name: 'id' } },
+    
+    // Spots collection - optimized for user_id queries
+    { collection: 'spots', index: { levelId: 1 }, options: { name: 'levelId' } },
+    { collection: 'spots', index: { id: 1 }, options: { unique: true, name: 'id' } },
+    { collection: 'spots', index: { label: 1, levelId: 1 }, options: { unique: true, name: 'label_levelId' } },
+    { collection: 'spots', index: { handicap: 1 }, options: { name: 'handicap' } },
+    { collection: 'spots', index: { user_id: 1 }, options: { name: 'user_id', sparse: true } },
+    { collection: 'spots', index: { available: 1 }, options: { name: 'available' } },
+  ];
+
+  for (const { collection, index, options } of indexes) {
+    try {
+      await db.collection(collection).createIndex(index, options);
+      console.log(`   ✅ Created index '${options.name}' on '${collection}'`);
+    } catch (err) {
+      if (err.code === 85 || err.code === 86) {
+        console.log(`   ✓ Index '${options.name}' on '${collection}' already exists`);
+      } else {
+        console.log(`   ⚠️  Index '${options.name}' on '${collection}': ${err.message}`);
+      }
+    }
+  }
+}
 
 async function run() {
   console.log("🔌 Connecting to MongoDB...");
@@ -125,6 +131,9 @@ async function run() {
     await importJsonFile("decks", path.join(mockFolder, "decks.json"), db);
     await importJsonFile("levels", path.join(mockFolder, "levels.json"), db);
     await importJsonFile("spots", path.join(mockFolder, "spots.json"), db);
+
+    // Create indexes after importing data
+    await createIndexes(db);
 
     console.log("\n🎉 All data imported successfully!");
   } catch (err) {

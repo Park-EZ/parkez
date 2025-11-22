@@ -13,37 +13,24 @@ export default async function spotRoutes(fastify, options) {
       return reply.code(401).send({ error: 'Authentication required' })
     }
 
+    // Find spot where user_id matches current user
+    // Note: Only non-null/non-empty user_id values will match
     const spot = await db.collection('spots').findOne({
-      status: 'occupied',
-      occupiedBy: userId
+      user_id: userId
     })
 
     if (!spot) {
       return reply.code(404).send({ error: 'No active spot found' })
     }
 
-    // Get level info
-    const level = await db.collection('levels').findOne({ _id: spot.levelId })
+    // Get level info using the id field from levels collection
+    const level = await db.collection('levels').findOne({ id: spot.levelId })
     
     // Get deck info if level exists
     let deck = null
     if (level && level.deckId) {
-      // Try to find deck by deckId (could be "deckA", "deckB", ObjectId, or building-code)
-      const { getDeckIndexLetter } = await import('../utils/idHelpers.js')
-      const allDecks = await db.collection('decks').find({}).sort({ 'building-code': 1 }).toArray()
-      
-      // Try matching by deckId pattern
-      for (const d of allDecks) {
-        const deckLetter = await getDeckIndexLetter(db, d)
-        if (deckLetter && `deck${deckLetter}` === level.deckId) {
-          deck = d
-          break
-        }
-        if (d._id.toString() === level.deckId || d['building-code'] === level.deckId) {
-          deck = d
-          break
-        }
-      }
+      // Find deck by building-code matching level's deckId
+      deck = await db.collection('decks').findOne({ 'building-code': level.deckId })
     }
 
     return {
@@ -57,27 +44,29 @@ export default async function spotRoutes(fastify, options) {
   // Requires authentication - user can only occupy one spot at a time
   fastify.post('/:id/check-in', { preHandler: authenticate }, async (request, reply) => {
     const db = getDB()
-    const spotId = request.params.id
+    const spotId = parseInt(request.params.id) // Convert to number as per JSON structure
     const userId = request.user?.id || null
     
     if (!userId) {
       return reply.code(401).send({ error: 'Authentication required' })
     }
 
-    const spot = await db.collection('spots').findOne({ _id: spotId })
+    // Find spot by id field (not _id, as per JSON structure)
+    const spot = await db.collection('spots').findOne({ id: spotId })
     
     if (!spot) {
       return reply.code(404).send({ error: 'Spot not found' })
     }
 
-    if (spot.status === 'occupied') {
+    // Check if spot is already occupied (user_id is not empty/null)
+    if (spot.user_id && spot.user_id !== '') {
       return reply.code(400).send({ error: 'Spot is already occupied' })
     }
 
     // Check if user already has an active spot
+    // Query for spots where user_id matches (will only match non-null/non-empty values)
     const existingSpot = await db.collection('spots').findOne({
-      status: 'occupied',
-      occupiedBy: userId
+      user_id: userId
     })
 
     if (existingSpot) {
@@ -86,6 +75,7 @@ export default async function spotRoutes(fastify, options) {
         error: 'You already have an occupied spot',
         currentSpot: {
           _id: existingSpot._id,
+          id: existingSpot.id,
           label: existingSpot.label,
           levelId: existingSpot.levelId
         },
@@ -94,13 +84,13 @@ export default async function spotRoutes(fastify, options) {
       })
     }
 
-    // Update spot status and store userId
+    // Update spot: set user_id and mark as not available
     await db.collection('spots').updateOne(
-      { _id: spotId },
+      { id: spotId },
       { 
         $set: { 
-          status: 'occupied',
-          occupiedBy: userId,
+          user_id: userId,
+          available: false,
           occupiedAt: new Date()
         } 
       }
@@ -126,7 +116,7 @@ export default async function spotRoutes(fastify, options) {
       userId: userId
     })
 
-    const updatedSpot = await db.collection('spots').findOne({ _id: spotId })
+    const updatedSpot = await db.collection('spots').findOne({ id: spotId })
     return { success: true, spot: updatedSpot }
   })
 
@@ -134,26 +124,23 @@ export default async function spotRoutes(fastify, options) {
   // Requires authentication - user can only free their own spot
   fastify.post('/:id/check-out', { preHandler: authenticate }, async (request, reply) => {
     const db = getDB()
-    const spotId = request.params.id
+    const spotId = parseInt(request.params.id) // Convert to number as per JSON structure
     const userId = request.user?.id || null
     
     if (!userId) {
       return reply.code(401).send({ error: 'Authentication required' })
     }
 
-    const spot = await db.collection('spots').findOne({ _id: spotId })
+    // Find spot by id field (not _id)
+    const spot = await db.collection('spots').findOne({ id: spotId })
   
     if (!spot) {
       return reply.code(404).send({ error: 'Spot not found' })
     }
 
     // Verify user owns this spot
-    if (spot.occupiedBy !== userId) {
+    if (!spot.user_id || spot.user_id !== userId) {
       return reply.code(403).send({ error: 'You can only free your own spot' })
-    }
-
-    if (spot.status !== 'occupied') {
-      return reply.code(400).send({ error: 'Spot is not currently occupied' })
     }
 
     // Find active session
@@ -167,12 +154,15 @@ export default async function spotRoutes(fastify, options) {
       return reply.code(400).send({ error: 'No active session found for this spot' })
     }
   
-    // Update spot status and clear userId
+    // Update spot: clear user_id and mark as available
     await db.collection('spots').updateOne(
-      { _id: spotId },
+      { id: spotId },
       { 
-        $set: { status: 'free' },
-        $unset: { occupiedBy: '', occupiedAt: '' }
+        $set: { 
+          user_id: null,
+          available: true
+        },
+        $unset: { occupiedAt: '' }
       }
     )
 
@@ -191,28 +181,29 @@ export default async function spotRoutes(fastify, options) {
       userId: userId
     })
 
-    const updatedSpot = await db.collection('spots').findOne({ _id: spotId })
+    const updatedSpot = await db.collection('spots').findOne({ id: spotId })
     return { success: true, spot: updatedSpot }
   })
 
   // POST /api/spots/:id/toggle - Toggle spot occupancy (admin/manual)
   fastify.post('/:id/toggle', async (request, reply) => {
     const db = getDB()
-    const spotId = request.params.id
+    const spotId = parseInt(request.params.id) // Convert to number as per JSON structure
 
-    const spot = await db.collection('spots').findOne({ _id: spotId })
+    const spot = await db.collection('spots').findOne({ id: spotId })
     
     if (!spot) {
       return reply.code(404).send({ error: 'Spot not found' })
     }
 
-    const newStatus = spot.status === 'free' ? 'occupied' : 'free'
-    const updateQuery = newStatus === 'free' 
-      ? { $set: { status: newStatus }, $unset: { occupiedBy: '', occupiedAt: '' } }
-      : { $set: { status: newStatus } }
+    // Toggle based on user_id presence
+    const isCurrentlyOccupied = spot.user_id && spot.user_id !== ''
+    const updateQuery = isCurrentlyOccupied
+      ? { $set: { user_id: null, available: true }, $unset: { occupiedAt: '' } }
+      : { $set: { user_id: 'admin', available: false, occupiedAt: new Date() } }
     
     await db.collection('spots').updateOne(
-      { _id: spotId },
+      { id: spotId },
       updateQuery
     )
 
@@ -220,11 +211,11 @@ export default async function spotRoutes(fastify, options) {
     await db.collection('spotStateHistory').insertOne({
       spotId: spotId,
       at: new Date(),
-      state: newStatus,
+      state: isCurrentlyOccupied ? 'free' : 'occupied',
       reason: 'manual-toggle'
     })
 
-    const updatedSpot = await db.collection('spots').findOne({ _id: spotId })
+    const updatedSpot = await db.collection('spots').findOne({ id: spotId })
     return { success: true, spot: updatedSpot }
   })
 }

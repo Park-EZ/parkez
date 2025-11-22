@@ -50,6 +50,30 @@ export async function getSpotsByLevel(levelId) {
   }
 }
 
+// Get availability counts for a deck (database aggregation - efficient)
+export async function getDeckAvailability(deckId) {
+  try {
+    const response = await apiRequest(`/api/decks/${deckId}/availability`)
+    if (!response.ok) throw new Error('Failed to fetch deck availability')
+    return await response.json()
+  } catch (error) {
+    console.error('API error:', error)
+    throw error
+  }
+}
+
+// Get availability counts for a level (database aggregation - efficient)
+export async function getLevelAvailability(levelId) {
+  try {
+    const response = await apiRequest(`/api/levels/${levelId}/availability`)
+    if (!response.ok) throw new Error('Failed to fetch level availability')
+    return await response.json()
+  } catch (error) {
+    console.error('API error:', error)
+    throw error
+  }
+}
+
 // Toggle spot occupancy (for manual toggle)
 export async function toggleSpotOccupancy(spotId) {
   try {

@@ -1,7 +1,7 @@
 import { useState, useMemo } from "react"
 import { useParams, useNavigate } from "react-router-dom"
 import { useQuery, useQueryClient } from "@tanstack/react-query"
-import { getLevelsByDeck, getSpotsByLevel, getDecks, checkInSpot, checkOutSpot, getMySpot } from "@/api"
+import { getLevelsByDeck, getSpotsByLevel, getDecks, checkInSpot, checkOutSpot, getMySpot, getLevelAvailability } from "@/api"
 import { useUserPreferences } from "@/contexts/UserPreferencesContext"
 import { useAuth } from "@/contexts/AuthContext"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -61,20 +61,27 @@ export default function SpotAvailability() {
 
   const filteredSpots = useMemo(() => {
     return spots.filter(
-      (s) =>
-        (filterType === "all" || s.type === filterType) &&
-        s.label.toLowerCase().includes(search.toLowerCase()) &&
-        (!preferADA || s.type === 'ADA') // Filter by ADA preference
+      (s) => {
+        // Determine spot type from handicap field (JSON structure)
+        const spotType = s.handicap ? 'ADA' : 'standard'
+        
+        return (
+          (filterType === "all" || spotType === filterType) &&
+          s.label.toLowerCase().includes(search.toLowerCase()) &&
+          (!preferADA || s.handicap === true) // Filter by ADA preference (use handicap field from JSON)
+        )
+      }
     )
   }, [spots, filterType, search, preferADA])
 
   const availability = useMemo(() => {
     // Filter spots based on ADA preference
     const relevantSpots = preferADA 
-      ? spots.filter(s => s.type === 'ADA')
+      ? spots.filter(s => s.handicap === true)
       : spots
     
-    const free = relevantSpots.filter(s => s.status === 'free').length
+    // A spot is free if user_id is null or empty string (database-driven)
+    const free = relevantSpots.filter(s => !s.user_id || s.user_id === '').length
     const total = relevantSpots.length
     return { free, total }
   }, [spots, preferADA])
@@ -171,11 +178,13 @@ export default function SpotAvailability() {
             spots={filteredSpots}
             currentUserId={user?._id || user?.id || null}
             onToggle={async (spotId) => {
-              const spot = filteredSpots.find(s => s._id === spotId)
+              const spot = filteredSpots.find(s => s.id === spotId)
               if (!spot) return
 
               const currentUserId = user?._id || user?.id
-              const isMySpot = spot.status === 'occupied' && currentUserId && spot.occupiedBy === currentUserId
+              // A spot is occupied if user_id has a value (not null or empty string)
+              const isOccupied = spot.user_id && spot.user_id !== ''
+              const isMySpot = isOccupied && currentUserId && spot.user_id === currentUserId
 
               // If clicking on own spot, show free confirmation dialog
               if (isMySpot) {
@@ -184,10 +193,10 @@ export default function SpotAvailability() {
                 return
               }
 
-              // Only allow check-in for free spots
-              if (spot.status === 'free') {
+              // Only allow check-in for free spots (spots where user_id is empty/null)
+              if (!isOccupied) {
                 try {
-                  await checkInSpot(spotId)
+                  await checkInSpot(spot.id)
                   toast({
                     title: "Spot occupied",
                     description: `Spot ${spot.label} is now occupied.`,
@@ -199,7 +208,7 @@ export default function SpotAvailability() {
                   // Check if it's a conflict (user already has a spot)
                   if (error.conflictData) {
                     setConflictData(error.conflictData)
-                    setNewSpotId(spotId)
+                    setNewSpotId(spot.id)
                     setShowConfirmDialog(true)
                   } else {
                     toast({
@@ -239,16 +248,16 @@ export default function SpotAvailability() {
                   Cancel
                 </Button>
                 <Button onClick={async () => {
-                  if (!conflictData?.currentSpot?._id || !newSpotId) return
+                  if (!conflictData?.currentSpot?.id || !newSpotId) return
                   
                   try {
                     // Free the current spot
-                    await checkOutSpot(conflictData.currentSpot._id)
+                    await checkOutSpot(conflictData.currentSpot.id)
                     // Check in to the new spot
                     await checkInSpot(newSpotId)
                     toast({
                       title: "Spot switched",
-                      description: `You are now occupying spot ${filteredSpots.find(s => s._id === newSpotId)?.label}.`,
+                      description: `You are now occupying spot ${filteredSpots.find(s => s.id === newSpotId)?.label}.`,
                     })
                     setShowConfirmDialog(false)
                     setConflictData(null)
@@ -288,10 +297,10 @@ export default function SpotAvailability() {
                   Cancel
                 </Button>
                 <Button variant="destructive" onClick={async () => {
-                  if (!spotToFree?._id) return
+                  if (!spotToFree?.id) return
                   
                   try {
-                    await checkOutSpot(spotToFree._id)
+                    await checkOutSpot(spotToFree.id)
                     toast({
                       title: "Spot freed",
                       description: `Spot ${spotToFree.label} is now available.`,

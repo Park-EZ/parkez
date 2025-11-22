@@ -1,6 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom"
 import { useQuery } from "@tanstack/react-query"
-import { getDecks, getLevelsByDeck, getSpotsByLevel } from "@/api"
+import { getDecks, getLevelsByDeck, getLevelAvailability as fetchLevelAvailability } from "@/api"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Building2, ChevronRight, CheckCircle2, Car, ArrowLeft } from "lucide-react"
@@ -32,10 +32,9 @@ export default function LevelsView() {
       const availabilityMap = {}
       for (const level of levels) {
         try {
-          const spots = await getSpotsByLevel(level._id)
-          const free = spots.filter(s => s.status === 'free').length
-          const total = spots.length
-          availabilityMap[level._id] = { free, total }
+          // Use aggregation endpoint - counts spots in database, doesn't fetch all documents
+          const availability = await fetchLevelAvailability(level._id)
+          availabilityMap[level._id] = availability
         } catch (error) {
           console.error(`Error fetching availability for level ${level._id}:`, error)
           availabilityMap[level._id] = { free: 0, total: 0 }

@@ -6,7 +6,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "node --watch index.js",
-    "start": "node index.js"
+    "start": "node index.js",
+    "import": "node ../scripts/importAll.mjs",
+    "validate": "node ../scripts/validateDatabase.mjs"
   },
   "dependencies": {
     "@fastify/cors": "^9.0.1",

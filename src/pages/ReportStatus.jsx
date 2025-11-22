@@ -28,15 +28,15 @@ export default function ReportStatus() {
       for (const deck of decks) {
         const levels = await getLevelsByDeck(deck._id)
         for (const level of levels) {
-          const spots = await getSpotsByLevel(level._id)
+          const spots = await getSpotsByLevel(level.id)
           const spot = spots.find((s) => s.label.toUpperCase() === spotLabel.trim().toUpperCase())
           
           if (spot) {
             found = true
 
-            // Submit report to backend reports route
+            // Submit report to backend reports route using spot.id (number from JSON)
               try {
-              const res = await apiRequest(`/api/reports/spots/${spot._id}`, {
+              const res = await apiRequest(`/api/reports/spots/${spot.id}`, {
                   method: 'POST',
                   body: JSON.stringify({ reportType, notes }),
                 })

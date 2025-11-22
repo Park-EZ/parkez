@@ -50,7 +50,7 @@ export default function Dashboard() {
     if (!spotToFree) return
 
     try {
-      await checkOutSpot(spotToFree.spot._id)
+      await checkOutSpot(spotToFree.spot.id)
       toast({
         title: "Spot freed",
         description: `Spot ${spotToFree.spot.label} is now available.`,

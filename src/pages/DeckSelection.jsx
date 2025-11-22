@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom"
 import { useQuery } from "@tanstack/react-query"
-import { getDecks, getLevelsByDeck, getSpotsByLevel } from "@/api"
+import { getDecks, getDeckAvailability as fetchDeckAvailability } from "@/api"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { 
@@ -23,31 +23,33 @@ export default function DeckSelection() {
     queryFn: getDecks,
   })
 
-  // Fetch availability for all decks
-  const { data: allDeckAvailability = {}, isLoading: availabilityLoading } = useQuery({
+  // Fetch availability for all decks using database aggregation (efficient)
+  const { data: allDeckAvailability = {}, isLoading: availabilityLoading, error: availabilityError } = useQuery({
     queryKey: ["allDeckAvailability"],
     queryFn: async () => {
+      console.log('Fetching availability for', decks.length, 'decks')
       const availabilityMap = {}
       for (const deck of decks) {
         try {
-          const levels = await getLevelsByDeck(deck._id)
-          const allSpotsPromises = levels.map(level => getSpotsByLevel(level._id))
-          const allSpotsArrays = await Promise.all(allSpotsPromises)
-          const allSpots = allSpotsArrays.flat()
-          
-          const free = allSpots.filter(s => s.status === 'free').length
-          const total = allSpots.length
-          
-          availabilityMap[deck._id] = { free, total }
+          // Use aggregation endpoint - counts spots in database, doesn't fetch all documents
+          const availability = await fetchDeckAvailability(deck._id)
+          console.log(`Deck ${deck['building-name']} (${deck._id}):`, availability)
+          availabilityMap[deck._id] = availability
         } catch (error) {
           console.error(`Error fetching availability for deck ${deck._id}:`, error)
           availabilityMap[deck._id] = { free: 0, total: 0 }
         }
       }
+      console.log('Final availabilityMap:', availabilityMap)
       return availabilityMap
     },
     enabled: decks.length > 0,
   })
+
+  // Debug logging
+  if (availabilityError) {
+    console.error('Availability query error:', availabilityError)
+  }
 
   if (isLoading) {
     return <div className="text-center py-8">Loading decks...</div>

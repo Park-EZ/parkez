@@ -10,8 +10,10 @@ export default function SpotGrid({ spots, onToggle, currentUserId = null }) {
     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
       {spots.map((s) => {
         // Check if this spot is occupied by the current user
-        const isOccupiedByMe = s.status === 'occupied' && currentUserId && s.occupiedBy === currentUserId
-        const isOccupiedByOthers = s.status === 'occupied' && !isOccupiedByMe
+        // A spot is occupied if user_id has a value (not null or empty string)
+        const isOccupied = s.user_id && s.user_id !== ''
+        const isOccupiedByMe = isOccupied && currentUserId && s.user_id === currentUserId
+        const isOccupiedByOthers = isOccupied && !isOccupiedByMe
         
         let spotColor = 'bg-green-500 hover:bg-green-600' // Free
         let spotStatusText = 'Free'
@@ -24,27 +26,31 @@ export default function SpotGrid({ spots, onToggle, currentUserId = null }) {
           spotStatusText = 'Occupied'
         }
         
+        // Determine spot type icon - use handicap field from raw JSON
+        const spotType = s.handicap ? 'ADA' : 'standard'
+        const spotTypeIcon = icons[spotType] || icons.standard
+        
         return (
-          <TooltipProvider key={s._id}>
+          <TooltipProvider key={s.id}>
             <Tooltip>
               <TooltipTrigger asChild>
                 <Button
-                  variant={s.status === 'free' ? 'default' : 'secondary'}
+                  variant={!isOccupied ? 'default' : 'secondary'}
                   className={cn(
                     "h-20 flex flex-col items-center justify-center gap-1",
                     spotColor
                   )}
-                  onClick={() => onToggle?.(s._id)}
+                  onClick={() => onToggle?.(s.id)}
                 >
                   <div className="text-sm font-semibold">{s.label}</div>
                   <div className="flex items-center gap-1 text-xs">
-                    <span>{icons[s.type]}</span>
+                    <span>{spotTypeIcon}</span>
                     <span>{spotStatusText}</span>
                   </div>
                 </Button>
               </TooltipTrigger>
               <TooltipContent>
-                <p>{s.label} • {s.type} • {spotStatusText}</p>
+                <p>{s.label} • {spotType} • {spotStatusText}</p>
               </TooltipContent>
             </Tooltip>
           </TooltipProvider>

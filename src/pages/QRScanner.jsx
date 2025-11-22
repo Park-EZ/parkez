@@ -36,14 +36,17 @@ export default function QRScanner() {
       for (const deck of decks) {
         const levels = await getLevelsByDeck(deck._id)
         for (const level of levels) {
-          const spots = await getSpotsByLevel(level._id)
+          const spots = await getSpotsByLevel(level.id)
           const found = spots.find((s) => s.label.toUpperCase() === label)
           
           if (found) {
-            if (found.status === "free") {
+            // Check if spot is free based on user_id field
+            const isFree = !found.user_id || found.user_id === ''
+            
+            if (isFree) {
               // CHECK IN
               try {
-                await applySpotSession(found._id)
+                await applySpotSession(found.id)
                 toast({
                   title: "Checked In",
                   description: `Spot ${found.label} is now occupied.`,
@@ -53,7 +56,7 @@ export default function QRScanner() {
                 // Check if it's a conflict (user already has a spot)
                 if (error.conflictData) {
                   setConflictData(error.conflictData)
-                  setNewSpotId(found._id)
+                  setNewSpotId(found.id)
                   setShowConfirmDialog(true)
                 } else {
                   toast({
@@ -66,7 +69,7 @@ export default function QRScanner() {
             } else {
               // CHECK OUT
               try {
-                await checkOutSpot(found._id)
+                await checkOutSpot(found.id)
                 toast({
                   title: "Checked Out",
                   description: `Spot ${found.label} is now free.`,
@@ -175,11 +178,11 @@ export default function QRScanner() {
               Cancel
             </Button>
             <Button onClick={async () => {
-              if (!conflictData?.currentSpot?._id || !newSpotId) return
+              if (!conflictData?.currentSpot?.id || !newSpotId) return
               
               try {
                 // Free the current spot
-                await checkOutSpot(conflictData.currentSpot._id)
+                await checkOutSpot(conflictData.currentSpot.id)
                 // Check in to the new spot
                 await checkInSpot(newSpotId)
                 toast({
@@ -195,8 +198,8 @@ export default function QRScanner() {
                 for (const deck of decks) {
                   const levels = await getLevelsByDeck(deck._id)
                   for (const level of levels) {
-                    const spots = await getSpotsByLevel(level._id)
-                    if (spots.find(s => s._id === newSpotId)) {
+                    const spots = await getSpotsByLevel(level.id)
+                    if (spots.find(s => s.id === newSpotId)) {
                       navigate(`/decks/${deck._id}/levels/${level._id}/spots`)
                       return
                     }

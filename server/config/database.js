@@ -98,14 +98,45 @@ async function initializeSchema(db) {
     // Create all collections if they don't exist
     await createCollections(db)
     
+    // Remove any existing validators
+    await removeAllValidators(db)
+    
     // Create all indexes
     await createIndexes(db)
     
-    // Create validators (optional, for data validation)
+    // Create validators (optional, for data validation - currently disabled)
     await createValidators(db)
   } catch (error) {
     console.error('   Error initializing schema:', error.message)
     throw error
+  }
+}
+
+/**
+ * Remove all validators from collections to allow flexible data imports
+ */
+async function removeAllValidators(db) {
+  console.log('   Removing existing validators...')
+  
+  const collections = ['decks', 'levels', 'spots', 'users', 'spotSessions', 'spotStateHistory', 'spotReports']
+  
+  for (const collectionName of collections) {
+    try {
+      const collectionInfo = await db.listCollections({ name: collectionName }).toArray()
+      if (collectionInfo.length > 0) {
+        // Remove validator by setting empty validator
+        await db.command({
+          collMod: collectionName,
+          validator: {}
+        })
+        console.log(`   Removed validator from '${collectionName}'`)
+      }
+    } catch (error) {
+      // Collection might not exist or have no validator - that's fine
+      if (error.code !== 26) { // 26 = NamespaceNotFound
+        // Silently continue - validator might not exist
+      }
+    }
   }
 }
 
@@ -163,13 +194,12 @@ async function createIndexes(db) {
     { collection: 'levels', index: { deckId: 1 }, options: { name: 'deckId' } },
     { collection: 'levels', index: { _id: 1 }, options: { unique: true, name: '_id' } },
     
-    // Spots collection - based on actual data structure
+    // Spots collection - based on actual data structure from JSON files
     { collection: 'spots', index: { levelId: 1 }, options: { name: 'levelId' } },
     { collection: 'spots', index: { label: 1, levelId: 1 }, options: { unique: true, name: 'label_levelId' } },
-    { collection: 'spots', index: { status: 1 }, options: { name: 'status' } },
-    { collection: 'spots', index: { type: 1 }, options: { name: 'type' } },
-    { collection: 'spots', index: { occupiedBy: 1 }, options: { name: 'occupiedBy', sparse: true } },
-    { collection: 'spots', index: { status: 1, occupiedBy: 1 }, options: { name: 'status_occupiedBy', sparse: true } },
+    { collection: 'spots', index: { handicap: 1 }, options: { name: 'handicap' } },
+    { collection: 'spots', index: { user_id: 1 }, options: { name: 'user_id', sparse: true } },
+    { collection: 'spots', index: { available: 1 }, options: { name: 'available' } },
     
     // Spot Sessions collection
     { collection: 'spotSessions', index: { spotId: 1, endedAt: 1 }, options: { name: 'spotId_endedAt' } },
@@ -213,10 +243,14 @@ async function createIndexes(db) {
 /**
  * Create collection validators for data integrity (optional but recommended)
  * Based on actual data structure from JSON files
+ * 
+ * NOTE: Validators are DISABLED to allow flexible data imports
  */
 async function createValidators(db) {
-  console.log('   Setting up validators...')
+  console.log('   Validators disabled (skipping validator setup)')
+  return
   
+  // Validators are disabled - code below is kept for reference
   const validators = [
     {
       collection: 'decks',
