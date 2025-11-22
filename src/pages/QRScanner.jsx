@@ -1,5 +1,5 @@
 // src/pages/QRScanner.jsx
-import { useState, useEffect, useRef, useCallback } from "react"
+import { useState, useEffect, useRef } from "react"
 import { useNavigate } from "react-router-dom"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -21,8 +21,6 @@ import {
 } from "@/api"
 import { useToast } from "@/hooks/use-toast"
 import { QrCode, Camera } from "lucide-react"
-import { useAuth } from "@/contexts/AuthContext"
-import { BrowserMultiFormatReader } from "@zxing/browser"
 
 export default function QRScanner() {
   const [qrInput, setQrInput] = useState("")
@@ -34,307 +32,229 @@ export default function QRScanner() {
   const [isMobile, setIsMobile] = useState(false)
   const [cameraError, setCameraError] = useState(null)
   const videoRef = useRef(null)
-  const lastScannedRef = useRef(null)
 
   const navigate = useNavigate()
   const { toast } = useToast()
-  const { user } = useAuth()
-  const currentUserId = user?._id
 
-  // Detect mobile to decide whether to show live camera
   useEffect(() => {
     const ua = navigator.userAgent || navigator.vendor || window.opera
     const mobile = /android|iphone|ipad|ipod/i.test(ua)
     setIsMobile(mobile)
+
+    if (!mobile) return
+
+    if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+      setCameraError("Camera not supported in this browser")
+      return
+    }
+
+    let stream
+
+    navigator.mediaDevices
+      .getUserMedia({
+        video: { facingMode: "environment" },
+        audio: false,
+      })
+      .then((mediaStream) => {
+        stream = mediaStream
+        if (videoRef.current) {
+          videoRef.current.srcObject = mediaStream
+          videoRef.current.play().catch(() => {})
+        }
+      })
+      .catch((err) => {
+        setCameraError(err?.message || "Could not access camera")
+      })
+
+    return () => {
+      if (stream) {
+        stream.getTracks().forEach((track) => track.stop())
+      }
+    }
   }, [])
 
-  /**
-   * Core logic to handle a QR string (from camera or manual input)
-   */
-  const handleScan = useCallback(
-    async (rawString) => {
-      const raw = (rawString || "").trim()
-      if (!raw) return
+  // Centralized behavior when a spot has been found
+  // Decides check in vs check out based on availability/status
+  const processSpotAction = async (spot, deck, level) => {
+    // Support both:
+    // - status (Mongo style: "free", "occupied")
+    // - available (boolean)
+    const isFree = spot.status
+      ? spot.status === "free"
+      : spot.available !== false
 
-      // Defaults: plain label
-      let label = raw.toUpperCase()
+    if (isFree) {
+      // Check in
+      try {
+        await applySpotSession(spot._id ?? spot.id)
+        toast({
+          title: "Scan successful",
+          description: `You are checked in to ${spot.label}.`,
+        })
+        navigate("/") // go back home
+      } catch (error) {
+        if (error.conflictData) {
+          setConflictData(error.conflictData)
+          setNewSpotId(spot._id ?? spot.id)
+          setShowConfirmDialog(true)
+        } else {
+          toast({
+            title: "Error",
+            description: error.message || "Failed to check in",
+            variant: "destructive",
+          })
+        }
+      }
+    } else {
+      // Check out
+      try {
+        await checkOutSpot(spot._id ?? spot.id)
+        toast({
+          title: "Scan successful",
+          description: `You are checked out of ${spot.label}.`,
+        })
+        navigate("/") // go back home
+      } catch (error) {
+        toast({
+          title: "Error",
+          description: error.message || "Failed to check out",
+          variant: "destructive",
+        })
+      }
+    }
+  }
+
+  const handleQrSubmit = async (e) => {
+    e.preventDefault()
+    const raw = qrInput.trim()
+    if (!raw) return
+
+    setLoading(true)
+
+    try {
+      const decks = await getDecks()
+
+      // Try to parse JSON payload first
       let qrData = null
-      let buildingName = null
-      let levelName = null
-      let address = null
-      let useStructuredSearch = false
-
-      // Try to parse JSON from QR payload
       try {
         const parsed = JSON.parse(raw)
         if (
           parsed &&
-          typeof parsed === "object" &&
-          typeof parsed["building-name"] === "string" &&
-          typeof parsed["level-name"] === "string" &&
-          typeof parsed["spot-label"] === "string"
+          Object.prototype.hasOwnProperty.call(parsed, "deck-id") &&
+          Object.prototype.hasOwnProperty.call(parsed, "level-id") &&
+          Object.prototype.hasOwnProperty.call(parsed, "spot-id")
         ) {
           qrData = parsed
-          buildingName = parsed["building-name"].trim().toUpperCase()
-          levelName = parsed["level-name"].trim().toUpperCase()
-          address =
-            typeof parsed.address === "string"
-              ? parsed.address.trim().toUpperCase()
-              : null
-          label = parsed["spot-label"].trim().toUpperCase()
-          useStructuredSearch = true
         }
-      } catch {
-        // Not JSON, treat as simple label like "L1-001"
+      } catch (_) {
+        // Not JSON, fall back to label mode
       }
 
-      setLoading(true)
-      try {
-        const decks = await getDecks()
+      if (qrData) {
+        // New QR format: {"deck-id":"1001","level-id":1,"spot-id":1}
+        const deckCode = String(qrData["deck-id"])
+        const levelNumericId = Number(qrData["level-id"])
+        const spotNumericId = Number(qrData["spot-id"])
 
-        // If QR has building info, narrow decks
-        let decksToSearch = decks
-        if (useStructuredSearch) {
-          const filtered = decks.filter((deck) => {
-            const deckBuildingName = (deck["building-name"] || deck.name || "")
-              .trim()
-              .toUpperCase()
-            const deckAddress = (deck.address || "").trim().toUpperCase()
-
-            const nameMatches = deckBuildingName === buildingName
-            const addressMatches = address ? deckAddress === address : true
-
-            return nameMatches && addressMatches
-          })
-
-          if (filtered.length > 0) {
-            decksToSearch = filtered
-          }
-        }
-
-        for (const deck of decksToSearch) {
-          const levels = await getLevelsByDeck(deck._id)
-
-          // Narrow levels by level-name if present in QR
-          let levelsToSearch = levels
-          if (useStructuredSearch) {
-            const filteredLevels = levels.filter(
-              (lvl) =>
-                typeof lvl.name === "string" &&
-                lvl.name.trim().toUpperCase() === levelName
-            )
-            if (filteredLevels.length > 0) {
-              levelsToSearch = filteredLevels
-            }
-          }
-
-          for (const level of levelsToSearch) {
-            const spots = await getSpotsByLevel(level._id)
-            const found = spots.find(
-              (s) => s.label && s.label.trim().toUpperCase() === label
-            )
-
-            if (found) {
-              // Support both:
-              // - Mongo style: status, occupiedBy
-              // - Mock style: availabe/available, user_id
-              const status = found.status
-              const occupiedBy = found.occupiedBy
-
-              const boolAvailable =
-                typeof found.available === "boolean"
-                  ? found.available
-                  : typeof found.availabe === "boolean"
-                  ? found.availabe
-                  : undefined
-
-              const spotUserId = found.user_id || occupiedBy || null
-
-              // Determine if spot is free
-              const isFree =
-                boolAvailable !== undefined
-                  ? !!boolAvailable && !spotUserId
-                  : status
-                  ? status === "free"
-                  : !spotUserId
-
-              // Determine if current user owns this spot
-              const isMine =
-                !isFree &&
-                currentUserId &&
-                spotUserId &&
-                String(spotUserId) === String(currentUserId)
-
-              const spotId = found._id ?? found.id
-
-              if (isFree) {
-                // Check in
-                try {
-                  await applySpotSession(spotId)
-                  toast({
-                    title: "Checked In",
-                    description: `Spot ${found.label} is now occupied.`,
-                  })
-                  navigate(`/decks/${deck._id}/levels/${level._id}/spots`)
-                } catch (error) {
-                  if (error.conflictData) {
-                    setConflictData(error.conflictData)
-                    setNewSpotId(spotId)
-                    setShowConfirmDialog(true)
-                  } else {
-                    toast({
-                      title: "Error",
-                      description: error.message || "Failed to check in",
-                      variant: "destructive",
-                    })
-                  }
-                }
-              } else if (isMine) {
-                // Spot is occupied by this user, so check out
-                try {
-                  await checkOutSpot(spotId)
-                  toast({
-                    title: "Checked Out",
-                    description: `Spot ${found.label} is now free.`,
-                  })
-                  navigate(`/decks/${deck._id}/levels/${level._id}/spots`)
-                } catch (error) {
-                  toast({
-                    title: "Error",
-                    description: error.message || "Failed to check out",
-                    variant: "destructive",
-                  })
-                }
-              } else {
-                // Occupied by someone else
-                toast({
-                  title: "Spot already occupied",
-                  description:
-                    "This spot is currently occupied by another user.",
-                  variant: "destructive",
-                })
-              }
-
-              setQrInput("")
-              return
-            }
-          }
-        }
-
-        // Spot not found
-        if (useStructuredSearch && qrData) {
-          toast({
-            title: "Spot not found",
-            description: `Spot "${qrData["spot-label"]}" was not found for ${qrData["building-name"]}, ${qrData["level-name"]}.`,
-            variant: "destructive",
-          })
-        } else {
-          toast({
-            title: "Spot not found",
-            description: `Spot "${label}" not found in any deck.`,
-            variant: "destructive",
-          })
-        }
-      } catch (error) {
-        toast({
-          title: "Error",
-          description: error.message || "Failed to process QR code.",
-          variant: "destructive",
-        })
-      } finally {
-        setLoading(false)
-      }
-    },
-    [currentUserId, navigate, toast]
-  )
-
-  /**
-   * Manual submit handler (desktop or manual paste)
-   */
-  const handleQrSubmit = async (e) => {
-    e.preventDefault()
-    if (!qrInput.trim()) return
-    // Avoid re-processing the same thing the scanner just fired
-    lastScannedRef.current = null
-    await handleScan(qrInput.trim())
-  }
-
-  /**
-   * Set up @zxing/browser scanner on mobile to auto-detect QR codes
-   */
-  useEffect(() => {
-    if (!isMobile) return
-
-    const videoElement = videoRef.current
-    if (!videoElement) return
-
-    const codeReader = new BrowserMultiFormatReader()
-    let cancelled = false
-
-    async function startScanner() {
-      try {
-        await codeReader.decodeFromVideoDevice(
-          null, // default camera
-          videoElement,
-          async (result, error, controls) => {
-            if (cancelled) {
-              controls.stop()
-              return
-            }
-            if (result) {
-              const text = result.getText()
-              // Prevent constant spam of the same code
-              if (!text) return
-              if (lastScannedRef.current === text) return
-              if (loading) return
-
-              lastScannedRef.current = text
-              setQrInput(text)
-              await handleScan(text)
-            }
-            // ignore decoding errors (they happen continuously while searching)
-          }
+        const deck = decks.find(
+          (d) =>
+            String(d["building-code"]) === deckCode ||
+            String(d._id) === deckCode
         )
-      } catch (err) {
-        setCameraError(err?.message || "Could not start camera")
-      }
-    }
 
-    startScanner()
+        if (!deck) {
+          toast({
+            title: "Deck not found",
+            description: `Deck with id "${deckCode}" was not found.`,
+            variant: "destructive",
+          })
+          return
+        }
 
-    return () => {
-      cancelled = true
-      try {
-        codeReader.reset()
-      } catch {
-        // ignore
+        const levels = await getLevelsByDeck(deck._id)
+        const level = levels.find((l) => Number(l.id) === levelNumericId)
+
+        if (!level) {
+          toast({
+            title: "Level not found",
+            description: `Level "${levelNumericId}" not found in deck "${deck["building-name"] || deckCode}".`,
+            variant: "destructive",
+          })
+          return
+        }
+
+        const spots = await getSpotsByLevel(level._id)
+        const spot = spots.find((s) => Number(s.id) === spotNumericId)
+
+        if (!spot) {
+          toast({
+            title: "Spot not found",
+            description: `Spot "${spotNumericId}" not found on level "${level.name}".`,
+            variant: "destructive",
+          })
+          return
+        }
+
+        await processSpotAction(spot, deck, level)
+        setQrInput("")
+        return
       }
+
+      // Fallback: old format, treat input as spot label like "L1-001"
+      const label = raw.toUpperCase()
+
+      for (const deck of decks) {
+        const levels = await getLevelsByDeck(deck._id)
+        for (const level of levels) {
+          const spots = await getSpotsByLevel(level._id)
+          const found = spots.find(
+            (s) => s.label && s.label.toUpperCase() === label
+          )
+
+          if (found) {
+            await processSpotAction(found, deck, level)
+            setQrInput("")
+            return
+          }
+        }
+      }
+
+      toast({
+        title: "Spot not found",
+        description: `Spot "${raw}" not found in any deck.`,
+        variant: "destructive",
+      })
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: error.message || "Failed to process QR code.",
+        variant: "destructive",
+      })
+    } finally {
+      setLoading(false)
     }
-  }, [isMobile, handleScan, loading])
+  }
 
   const handleConfirmSwitchSpot = async () => {
     if (!conflictData?.currentSpot?._id || !newSpotId) return
 
     try {
+      // free current spot
       await checkOutSpot(conflictData.currentSpot._id)
+      // take new one from QR scan
       await applySpotSession(newSpotId)
 
       toast({
-        title: "Spot switched",
-        description: "Your parking spot has been updated.",
+        title: "Scan successful",
+        description: "Your parking spot has been switched.",
       })
 
       setShowConfirmDialog(false)
       setConflictData(null)
       setNewSpotId(null)
 
-      const targetDeckId = conflictData.currentSpot.deckId || conflictData.deckId
-      const targetLevelId =
-        conflictData.currentSpot.levelId || conflictData.levelId
-
-      if (targetDeckId && targetLevelId) {
-        navigate(`/decks/${targetDeckId}/levels/${targetLevelId}/spots`)
-      }
+      // After switching, send user to home
+      navigate("/")
     } catch (error) {
       toast({
         title: "Error",
@@ -346,7 +266,7 @@ export default function QRScanner() {
 
   return (
     <div className="space-y-4 p-4">
-      {/* Mobile camera section with live auto-scan */}
+      {/* Mobile camera section, only shows on phones */}
       {isMobile && (
         <Card className="mb-2">
           <CardHeader>
@@ -354,26 +274,19 @@ export default function QRScanner() {
               <Camera className="h-5 w-5" />
               Live Camera
             </CardTitle>
-            <CardDescription>
-              Point your phone at the QR code. It will auto-detect when readable.
-            </CardDescription>
+            <CardDescription>Point your phone at the QR code.</CardDescription>
           </CardHeader>
           <CardContent>
             {cameraError ? (
               <p className="text-sm text-destructive">{cameraError}</p>
             ) : (
-              <video
-                ref={videoRef}
-                className="w-full rounded-md"
-                playsInline
-                muted
-              />
+              <video ref={videoRef} className="w-full rounded-md" playsInline />
             )}
           </CardContent>
         </Card>
       )}
 
-      {/* Manual QR / label input (works everywhere) */}
+      {/* QR input flow, works on all devices */}
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
@@ -381,13 +294,15 @@ export default function QRScanner() {
             Check In / Check Out
           </CardTitle>
           <CardDescription>
-            Paste the QR contents or enter the spot label to check in or out.
+            Scan a QR code like{" "}
+            <code>{"{\"deck-id\":\"1001\",\"level-id\":1,\"spot-id\":1}"}</code>{" "}
+            or enter a spot label (for example, L1-001).
           </CardDescription>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleQrSubmit} className="space-y-4">
             <Input
-              placeholder='Example: L1-001 or {"building-name":"Cone Deck 1",...}'
+              placeholder='{"deck-id":"1001","level-id":1,"spot-id":1} or L1-001'
               value={qrInput}
               onChange={(e) => setQrInput(e.target.value)}
               disabled={loading}
@@ -404,58 +319,22 @@ export default function QRScanner() {
         <DialogContent>
           <DialogHeader>
             <DialogTitle>Switch Parking Spot?</DialogTitle>
-            <DialogDescription>
+          <DialogDescription>
               You are currently occupying spot{" "}
               <strong>{conflictData?.currentSpot?.label}</strong>. Do you want
               to free that spot and occupy the new one instead?
             </DialogDescription>
           </DialogHeader>
           <DialogFooter>
-            <Button variant="outline" onClick={() => {
-              setShowConfirmDialog(false)
-              setConflictData(null)
-              setNewSpotId(null)
-              setQrInput("")
-            }}>
-              Cancel
-            </Button>
-            <Button onClick={async () => {
-              if (!conflictData?.currentSpot?._id || !newSpotId) return
-              
-              try {
-                // Free the current spot
-                await checkOutSpot(conflictData.currentSpot._id)
-                // Check in to the new spot
-                await checkInSpot(newSpotId)
-                toast({
-                  title: "Spot switched",
-                  description: `You are now occupying the new spot.`,
-                })
+            <Button
+              variant="outline"
+              onClick={() => {
                 setShowConfirmDialog(false)
                 setConflictData(null)
                 setNewSpotId(null)
-                setQrInput("")
-                // Navigate to the new spot's location
-                const decks = await getDecks()
-                for (const deck of decks) {
-                  const levels = await getLevelsByDeck(deck._id)
-                  for (const level of levels) {
-                    const spots = await getSpotsByLevel(level._id)
-                    if (spots.find(s => s._id === newSpotId)) {
-                      navigate(`/decks/${deck._id}/levels/${level._id}/spots`)
-                      return
-                    }
-                  }
-                }
-              } catch (error) {
-                toast({
-                  title: "Error",
-                  description: error.message || "Failed to switch spots",
-                  variant: "destructive",
-                })
-              }
-            }}>
-              Switch Spot
+              }}
+            >
+              Cancel
             </Button>
             <Button onClick={handleConfirmSwitchSpot}>Confirm</Button>
           </DialogFooter>
