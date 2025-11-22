@@ -66,7 +66,8 @@ export default function QRScanner() {
 
     const init = async () => {
       try {
-        const devices = await reader.listVideoInputDevices()
+        // IMPORTANT: use static method on the class, not the instance
+        const devices = await BrowserMultiFormatReader.listVideoInputDevices()
         if (!devices || devices.length === 0) {
           setCameraError("No camera devices found")
           return
@@ -219,7 +220,7 @@ export default function QRScanner() {
     try {
       const decks = await getDecks()
 
-      // Try JSON payload first
+      // Try JSON payload first: {"deck-id":"1001","level-id":1,"spot-id":1}
       let qrData = null
       try {
         const parsed = JSON.parse(text)
