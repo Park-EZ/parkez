@@ -21,7 +21,7 @@ import {
 } from "@/api"
 import { useToast } from "@/hooks/use-toast"
 import { QrCode, Camera } from "lucide-react"
-import { BrowserMultiFormatContinuousReader } from "@zxing/browser"
+import { BrowserMultiFormatReader } from "@zxing/browser"
 
 export default function QRScanner() {
   const [qrInput, setQrInput] = useState("")
@@ -61,7 +61,7 @@ export default function QRScanner() {
       return
     }
 
-    const reader = new BrowserMultiFormatContinuousReader()
+    const reader = new BrowserMultiFormatReader()
     readerRef.current = reader
 
     const init = async () => {
@@ -97,7 +97,6 @@ export default function QRScanner() {
     const device = videoDevices[cameraFacingIndex]
     if (!device) return
 
-    // stop previous scanning
     if (scannerControlsRef.current) {
       scannerControlsRef.current.stop()
       scannerControlsRef.current = null
@@ -108,32 +107,38 @@ export default function QRScanner() {
     setNoQrHint(false)
 
     readerRef.current
-      .decodeFromVideoDevice(device.deviceId, videoRef.current, (result, err, controls) => {
-        if (controls && !scannerControlsRef.current) {
-          scannerControlsRef.current = controls
-        }
-
-        if (result) {
-          const text = typeof result.getText === "function" ? result.getText() : result.text
-          if (!text) return
-
-          const now = Date.now()
-
-          // Ignore if already processing or repeated in the last 3 seconds
-          if (
-            loadingRef.current ||
-            (lastTextRef.current === text && now - lastScanRef.current < 3000)
-          ) {
-            return
+      .decodeFromVideoDevice(
+        device.deviceId,
+        videoRef.current,
+        (result, err, controls) => {
+          if (controls && !scannerControlsRef.current) {
+            scannerControlsRef.current = controls
           }
 
-          lastScanRef.current = now
-          lastTextRef.current = text
-          setNoQrHint(false)
-          setQrInput(text)
-          processQrString(text)
+          if (result) {
+            const text =
+              typeof result.getText === "function"
+                ? result.getText()
+                : result.text
+            if (!text) return
+
+            const now = Date.now()
+
+            if (
+              loadingRef.current ||
+              (lastTextRef.current === text && now - lastScanRef.current < 3000)
+            ) {
+              return
+            }
+
+            lastScanRef.current = now
+            lastTextRef.current = text
+            setNoQrHint(false)
+            setQrInput(text)
+            processQrString(text)
+          }
         }
-      })
+      )
       .catch((err) => {
         setCameraError(err?.message || "Could not start camera")
       })
@@ -154,15 +159,13 @@ export default function QRScanner() {
     const interval = setInterval(() => {
       const now = Date.now()
       const diff = now - lastScanRef.current
-      setNoQrHint(diff > 5000) // 5 seconds without a scan
+      setNoQrHint(diff > 5000)
     }, 2000)
 
     return () => clearInterval(interval)
   }, [isMobile, cameraError, videoDevices.length])
 
-  // Centralized behavior when a spot has been found
   const processSpotAction = async (spot, deck, level) => {
-    // status-style (Mongo) OR available-style (mock)
     const isFree = spot.status
       ? spot.status === "free"
       : spot.available !== false
@@ -174,7 +177,7 @@ export default function QRScanner() {
           title: "Scan successful",
           description: `You are checked in to ${spot.label}.`,
         })
-        navigate("/") // back to home
+        navigate("/")
       } catch (error) {
         if (error.conflictData) {
           setConflictData(error.conflictData)
@@ -195,7 +198,7 @@ export default function QRScanner() {
           title: "Scan successful",
           description: `You are checked out of ${spot.label}.`,
         })
-        navigate("/") // back to home
+        navigate("/")
       } catch (error) {
         toast({
           title: "Error",
@@ -206,7 +209,6 @@ export default function QRScanner() {
     }
   }
 
-  // Core QR processing logic (shared by camera + manual submit)
   const processQrString = async (raw) => {
     const text = raw.trim()
     if (!text) return
@@ -217,7 +219,7 @@ export default function QRScanner() {
     try {
       const decks = await getDecks()
 
-      // Try JSON payload: {"deck-id":"1001","level-id":1,"spot-id":1}
+      // Try JSON payload first
       let qrData = null
       try {
         const parsed = JSON.parse(text)
@@ -230,7 +232,7 @@ export default function QRScanner() {
           qrData = parsed
         }
       } catch {
-        // not JSON, ignore
+        // not JSON
       }
 
       if (qrData) {
@@ -281,7 +283,7 @@ export default function QRScanner() {
         return
       }
 
-      // Fallback: treat as label like "L1-001"
+      // Fallback: label mode (L1-001)
       const label = text.toUpperCase()
 
       for (const deck of decks) {
@@ -338,7 +340,7 @@ export default function QRScanner() {
       setConflictData(null)
       setNewSpotId(null)
 
-      navigate("/") // after switching, back to home
+      navigate("/")
     } catch (error) {
       toast({
         title: "Error",
@@ -355,7 +357,6 @@ export default function QRScanner() {
 
   return (
     <div className="space-y-4 p-4">
-      {/* Mobile camera section with front/back toggle */}
       {isMobile && (
         <Card className="mb-2">
           <CardHeader className="flex flex-row items-center justify-between gap-2">
@@ -400,7 +401,6 @@ export default function QRScanner() {
         </Card>
       )}
 
-      {/* QR input / manual override */}
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
@@ -429,7 +429,6 @@ export default function QRScanner() {
         </CardContent>
       </Card>
 
-      {/* Conflict dialog for switching spots */}
       <Dialog open={showConfirmDialog} onOpenChange={setShowConfirmDialog}>
         <DialogContent>
           <DialogHeader>
