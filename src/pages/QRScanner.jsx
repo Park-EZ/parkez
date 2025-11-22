@@ -13,15 +13,16 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog"
 import {
-  applySpotSession,
   getSpotsByLevel,
-  checkOutSpot,
   getLevelsByDeck,
   getDecks,
+  checkInSpot,
+  checkOutSpot,
 } from "@/api"
 import { useToast } from "@/hooks/use-toast"
 import { QrCode, Camera } from "lucide-react"
 import { BrowserMultiFormatReader } from "@zxing/browser"
+import { useAuth } from "@/contexts/AuthContext"
 
 export default function QRScanner() {
   const [qrInput, setQrInput] = useState("")
@@ -45,6 +46,8 @@ export default function QRScanner() {
 
   const navigate = useNavigate()
   const { toast } = useToast()
+  const { user } = useAuth()
+  const currentUserId = user?._id || user?.id || null
 
   // Detect mobile
   useEffect(() => {
@@ -66,7 +69,6 @@ export default function QRScanner() {
 
     const init = async () => {
       try {
-        // IMPORTANT: use static method on the class, not the instance
         const devices = await BrowserMultiFormatReader.listVideoInputDevices()
         if (!devices || devices.length === 0) {
           setCameraError("No camera devices found")
@@ -166,50 +168,63 @@ export default function QRScanner() {
     return () => clearInterval(interval)
   }, [isMobile, cameraError, videoDevices.length])
 
+  // Spot behavior: mimic SpotAvailability semantics
   const processSpotAction = async (spot, deck, level) => {
-    const isFree = spot.status
-      ? spot.status === "free"
-      : spot.available !== false
+    const isOccupied = spot.user_id && spot.user_id !== ""
+    const isMySpot =
+      isOccupied &&
+      currentUserId &&
+      String(spot.user_id) === String(currentUserId)
 
-    if (isFree) {
+    if (!isOccupied) {
+      // Free spot → check in
       try {
-        await applySpotSession(spot._id ?? spot.id)
+        await checkInSpot(spot.id)
         toast({
           title: "Scan successful",
-          description: `You are checked in to ${spot.label}.`,
+          description: `Spot ${spot.label} is now occupied.`,
         })
         navigate("/")
       } catch (error) {
         if (error.conflictData) {
           setConflictData(error.conflictData)
-          setNewSpotId(spot._id ?? spot.id)
+          setNewSpotId(spot.id)
           setShowConfirmDialog(true)
         } else {
           toast({
             title: "Error",
-            description: error.message || "Failed to check in",
+            description: error.message || "Failed to occupy spot",
             variant: "destructive",
           })
         }
       }
-    } else {
+    } else if (isMySpot) {
+      // Your own spot → free it
       try {
-        await checkOutSpot(spot._id ?? spot.id)
+        await checkOutSpot(spot.id)
         toast({
           title: "Scan successful",
-          description: `You are checked out of ${spot.label}.`,
+          description: `Spot ${spot.label} is now available.`,
         })
         navigate("/")
       } catch (error) {
         toast({
           title: "Error",
-          description: error.message || "Failed to check out",
+          description: error.message || "Failed to free spot",
           variant: "destructive",
         })
       }
+    } else {
+      // Someone else’s spot
+      toast({
+        title: "Spot unavailable",
+        description: `Spot ${spot.label} is already occupied by another user.`,
+        variant: "destructive",
+      })
     }
   }
 
+  // Core QR processing logic (shared by camera + manual submit)
   const processQrString = async (raw) => {
     const text = raw.trim()
     if (!text) return
@@ -269,12 +284,27 @@ export default function QRScanner() {
         }
 
         const spots = await getSpotsByLevel(level._id)
-        const spot = spots.find((s) => Number(s.id) === spotNumericId)
+
+        // First try by label pattern from level-id + spot-id (L1-001)
+        const labelFromQr = `L${levelNumericId}-${String(spotNumericId).padStart(3, "0")}`
+
+        const spot =
+          spots.find((s) => s.label === labelFromQr) ||
+          spots.find((s) => Number(s.id) === spotNumericId)
 
         if (!spot) {
+          console.log("QR debug:", {
+            deckCode,
+            levelNumericId,
+            spotNumericId,
+            labelFromQr,
+            spotIds: spots.map((s) => s.id),
+            spotLabels: spots.map((s) => s.label),
+          })
+
           toast({
             title: "Spot not found",
-            description: `Spot "${spotNumericId}" not found on level "${level.name}".`,
+            description: `Spot "${spotNumericId}" (label ${labelFromQr}) not found on level "${level.name}".`,
             variant: "destructive",
           })
           return
@@ -326,11 +356,13 @@ export default function QRScanner() {
   }
 
   const handleConfirmSwitchSpot = async () => {
-    if (!conflictData?.currentSpot?._id || !newSpotId) return
+    if (!conflictData?.currentSpot?.id || !newSpotId) return
 
     try {
-      await checkOutSpot(conflictData.currentSpot._id)
-      await applySpotSession(newSpotId)
+      // Free current spot
+      await checkOutSpot(conflictData.currentSpot.id)
+      // Check in to new spot
+      await checkInSpot(newSpotId)
 
       toast({
         title: "Scan successful",
@@ -358,6 +390,7 @@ export default function QRScanner() {
 
   return (
     <div className="space-y-4 p-4">
+      {/* Mobile camera section with front/back toggle */}
       {isMobile && (
         <Card className="mb-2">
           <CardHeader className="flex flex-row items-center justify-between gap-2">
@@ -402,6 +435,7 @@ export default function QRScanner() {
         </Card>
       )}
 
+      {/* QR input / manual override */}
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
@@ -430,6 +464,7 @@ export default function QRScanner() {
         </CardContent>
       </Card>
 
+      {/* Conflict dialog for switching spots */}
       <Dialog open={showConfirmDialog} onOpenChange={setShowConfirmDialog}>
         <DialogContent>
           <DialogHeader>
