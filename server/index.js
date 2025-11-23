@@ -3,6 +3,7 @@ import { fileURLToPath } from 'url'
 import { dirname, join } from 'path'
 import Fastify from 'fastify'
 import cors from '@fastify/cors'
+import fastifyStatic from '@fastify/static'
 import { connectDB } from './config/database.js'
 
 // Load .env from project root (parent directory)
@@ -94,6 +95,33 @@ fastify.get('/health', async (request, reply) => {
   return { status: 'ok', timestamp: new Date().toISOString() }
 })
 console.log('   /health')
+
+// Serve static files (frontend) in production
+const publicPath = join(__dirname, 'public')
+import { existsSync } from 'fs'
+const publicExists = existsSync(publicPath)
+
+if (publicExists) {
+  console.log('Registering static file serving...')
+  await fastify.register(fastifyStatic, {
+    root: publicPath,
+    prefix: '/', // optional: default '/'
+  })
+  
+  // SPA fallback: serve index.html for all non-API routes
+  fastify.setNotFoundHandler(async (request, reply) => {
+    // Don't handle API routes
+    if (request.url.startsWith('/api/')) {
+      return reply.code(404).send({ error: 'Not found' })
+    }
+    // Serve index.html for SPA routing
+    return reply.sendFile('index.html')
+  })
+  console.log('   Static files: / (serving from public/)')
+  console.log('   SPA routing enabled')
+} else {
+  console.log('   Static files: Not found (development mode - frontend runs separately)')
+}
 
 // Start server
 const start = async () => {

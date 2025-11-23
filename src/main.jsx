@@ -14,9 +14,13 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 )
 
 // Log when frontend is ready
-const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3000'
+const isProduction = import.meta.env.PROD
+const apiUrl = isProduction 
+  ? 'relative (same origin)' 
+  : (import.meta.env.VITE_API_URL || 'http://localhost:3000')
 console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
 console.log('✅ Frontend: Application loaded')
+console.log(`   Environment: ${isProduction ? 'Production' : 'Development'}`)
 console.log(`   API URL: ${apiUrl}`)
 console.log(`   API Mode: Enabled (always using database)`)
 console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')

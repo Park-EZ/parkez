@@ -1,0 +1,62 @@
+# Production Docker Compose
+# Uses cloud MongoDB (MongoDB Atlas or other cloud provider)
+# Do NOT use the local MongoDB from docker-compose.yml
+
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ezpark-app
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      # MongoDB connection - use your cloud MongoDB URI
+      MONGODB_URI: ${MONGODB_URI}
+      DB_NAME: ${DB_NAME:-ezpark}
+      
+      # Server configuration
+      NODE_ENV: production
+      PORT: 3000
+      HOST: 0.0.0.0
+      
+      # CORS - adjust for your domain
+      CORS_ORIGINS: ${CORS_ORIGINS:-*}
+      
+      # JWT Secret - MUST be set in production
+      JWT_SECRET: ${JWT_SECRET}
+      
+      # Frontend API URL (if different from same origin)
+      VITE_API_URL: ${VITE_API_URL:-http://localhost:3000}
+    healthcheck:
+      test: ["CMD", "node", "-e", "require('http').get('http://localhost:3000/health', (r) => {process.exit(r.statusCode === 200 ? 0 : 1)})"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - ezpark-network
+
+networks:
+  ezpark-network:
+    driver: bridge
+
+# To run:
+# 1. Create .env file with:
+#    MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/ezpark
+#    DB_NAME=ezpark
+#    JWT_SECRET=your-secret-key-here
+#    CORS_ORIGINS=https://yourdomain.com,https://www.yourdomain.com
+#
+# 2. Build and run:
+#    docker-compose -f docker-compose.prod.yml up -d
+#
+# 3. Import data (first time only):
+#    docker-compose -f docker-compose.prod.yml exec app node ../scripts/importAll.mjs
+#
+# 4. View logs:
+#    docker-compose -f docker-compose.prod.yml logs -f app
+

@@ -1,6 +1,18 @@
 // API utility functions for making authenticated requests
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000'
+// Use relative URLs when served from same origin (production/Docker)
+// Fall back to VITE_API_URL for development (Vite dev server on different port)
+const getApiBaseUrl = () => {
+  // In production (served from same server), use relative URLs
+  // This automatically works with ngrok, reverse proxies, etc.
+  if (import.meta.env.PROD) {
+    return '' // Relative URL - same origin
+  }
+  // In development, use VITE_API_URL or default to localhost
+  return import.meta.env.VITE_API_URL || 'http://localhost:3000'
+}
+
+const API_BASE_URL = getApiBaseUrl()
 
 export function getToken() {
   return localStorage.getItem('ezpark_token')

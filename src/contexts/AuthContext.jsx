@@ -40,9 +40,9 @@ export function AuthProvider({ children }) {
   const login = async (email, password) => {
     try {
       console.log("Logging in via API...")
-      const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:3000'}/api/auth/login`, {
+      // Use apiRequest helper which handles relative URLs automatically
+      const response = await apiRequest('/api/auth/login', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password })
       })
 
@@ -72,9 +72,9 @@ export function AuthProvider({ children }) {
 
   const register = async (email, password, name) => {
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:3000'}/api/auth/register`, {
+      // Use apiRequest helper which handles relative URLs automatically
+      const response = await apiRequest('/api/auth/register', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password, name })
       })
 
