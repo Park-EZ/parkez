@@ -25,18 +25,15 @@ export default function LevelsView() {
     enabled: !!deckId,
   })
 
-  // Fetch availability for all levels
   const { data: allLevelAvailability = {}, isLoading: availabilityLoading } = useQuery({
     queryKey: ["allLevelAvailability", deckId],
     queryFn: async () => {
       const availabilityMap = {}
       for (const level of levels) {
         try {
-          // Use aggregation endpoint - counts spots in database, doesn't fetch all documents
           const availability = await fetchLevelAvailability(level._id)
           availabilityMap[level._id] = availability
         } catch (error) {
-          console.error(`Error fetching availability for level ${level._id}:`, error)
           availabilityMap[level._id] = { free: 0, total: 0 }
         }
       }
@@ -103,7 +100,6 @@ export default function LevelsView() {
                     <Building2 className="h-5 w-5 text-primary" />
                     {level.name}
                   </CardTitle>
-                  <CardDescription>Level {level.index + 1}</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   {availabilityLoading ? (

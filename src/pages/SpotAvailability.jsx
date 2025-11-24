@@ -56,6 +56,10 @@ export default function SpotAvailability() {
     queryKey: ["spots", levelId],
     queryFn: () => getSpotsByLevel(levelId),
     enabled: !!levelId,
+    refetchInterval: 1000, // Refetch every 1 second for real-time updates
+    refetchIntervalInBackground: true, // Continue refetching even when tab is not focused
+    refetchOnWindowFocus: true, // Refetch when user returns to tab
+    staleTime: 0, // Always consider data stale
   })
 
 
@@ -196,14 +200,21 @@ export default function SpotAvailability() {
               // Only allow check-in for free spots (spots where user_id is empty/null)
               if (!isOccupied) {
                 try {
+                  // Immediately refetch to get latest state before attempting check-in
+                  await queryClient.invalidateQueries({ queryKey: ["spots", levelId] })
+                  await new Promise(resolve => setTimeout(resolve, 100)) // Small delay for query to complete
+                  
                   await checkInSpot(spot.id)
                   toast({
                     title: "Spot occupied",
                     description: `Spot ${spot.label} is now occupied.`,
                   })
-                  queryClient.invalidateQueries({ queryKey: ["spots", levelId] })
-                  queryClient.invalidateQueries({ queryKey: ["levelAvailability", levelId] })
-                  queryClient.invalidateQueries({ queryKey: ["mySpot"] })
+                  // Immediately refetch all related data
+                  await Promise.all([
+                    queryClient.invalidateQueries({ queryKey: ["spots", levelId] }),
+                    queryClient.invalidateQueries({ queryKey: ["levelAvailability", levelId] }),
+                    queryClient.invalidateQueries({ queryKey: ["mySpot"] })
+                  ])
                 } catch (error) {
                   // Check if it's a conflict (user already has a spot)
                   if (error.conflictData) {
@@ -211,11 +222,16 @@ export default function SpotAvailability() {
                     setNewSpotId(spot.id)
                     setShowConfirmDialog(true)
                   } else {
+                    // Likely a race condition - spot was taken
                     toast({
-                      title: "Error",
-                      description: error.message || "Failed to occupy spot",
+                      title: "Spot unavailable",
+                      description: error.message?.includes('already occupied') || error.message?.includes('not available')
+                        ? `Someone just took spot ${spot.label}. Please select another spot.`
+                        : error.message || "Failed to occupy spot",
                       variant: "destructive",
                     })
+                    // Immediately refetch to show current state
+                    queryClient.invalidateQueries({ queryKey: ["spots", levelId] })
                   }
                 }
               } else {
@@ -251,6 +267,10 @@ export default function SpotAvailability() {
                   if (!conflictData?.currentSpot?.id || !newSpotId) return
                   
                   try {
+                    // Verify spot is still available before switching
+                    await queryClient.invalidateQueries({ queryKey: ["spots", levelId] })
+                    await new Promise(resolve => setTimeout(resolve, 100))
+                    
                     // Free the current spot
                     await checkOutSpot(conflictData.currentSpot.id)
                     // Check in to the new spot
@@ -262,15 +282,22 @@ export default function SpotAvailability() {
                     setShowConfirmDialog(false)
                     setConflictData(null)
                     setNewSpotId(null)
-                    queryClient.invalidateQueries({ queryKey: ["spots", levelId] })
-                    queryClient.invalidateQueries({ queryKey: ["levelAvailability", levelId] })
-                    queryClient.invalidateQueries({ queryKey: ["mySpot"] })
+                    // Immediately refetch
+                    await Promise.all([
+                      queryClient.invalidateQueries({ queryKey: ["spots", levelId] }),
+                      queryClient.invalidateQueries({ queryKey: ["levelAvailability", levelId] }),
+                      queryClient.invalidateQueries({ queryKey: ["mySpot"] })
+                    ])
                   } catch (error) {
                     toast({
                       title: "Error",
-                      description: error.message || "Failed to switch spots",
+                      description: error.message?.includes('already occupied') || error.message?.includes('not available')
+                        ? "Someone just took that spot. Please select another one."
+                        : error.message || "Failed to switch spots",
                       variant: "destructive",
                     })
+                    // Refetch to show current state
+                    queryClient.invalidateQueries({ queryKey: ["spots", levelId] })
                   }
                 }}>
                   Switch Spot
@@ -307,9 +334,12 @@ export default function SpotAvailability() {
                     })
                     setShowFreeSpotDialog(false)
                     setSpotToFree(null)
-                    queryClient.invalidateQueries({ queryKey: ["spots", levelId] })
-                    queryClient.invalidateQueries({ queryKey: ["levelAvailability", levelId] })
-                    queryClient.invalidateQueries({ queryKey: ["mySpot"] })
+                    // Immediately refetch all related data
+                    await Promise.all([
+                      queryClient.invalidateQueries({ queryKey: ["spots", levelId] }),
+                      queryClient.invalidateQueries({ queryKey: ["levelAvailability", levelId] }),
+                      queryClient.invalidateQueries({ queryKey: ["mySpot"] })
+                    ])
                   } catch (error) {
                     toast({
                       title: "Error",

@@ -1,401 +1,457 @@
-# Park-EZ: Campus Parking Spot Availability App
+# EZpark - Campus Parking Management System
 
-Park-EZ is a campus parking app that shows live deck, level, and spot availability for students, faculty, and staff.  
-It was built by the Scrum & Coke team as a university project to make finding parking faster and less stressful.
-
-This repo now contains a full stack implementation:
-
-- React + Vite frontend (with Tailwind + shadcn-style UI)
-- Fastify + MongoDB backend API
-- MongoDB database (local via Docker, local install, or MongoDB Atlas)
-
-You can run it in two modes:
-
-- API mode (recommended) - real backend and MongoDB
-- Mock mode - frontend only, using localStorage (no backend required)
+A modern web application for real-time campus parking availability at UNC Charlotte. Built with React, Node.js, and MongoDB.
 
 ---
 
-## Features
+## 🚀 Quick Start - Running Locally
 
-- View all parking decks and their free/occupied counts
-- Drill down deck -> level -> individual spots
-- Spot types: Standard, EV, ADA
-- Live-style availability: updates as you interact
-- QR-like check in: type a spot label to reserve / release
-- Incorrect status reporting (user can flag bad spot data)
-- Authentication screens (login/register) wired to the backend API
-- Theming and dark/light mode
+### Prerequisites
+- **Node.js** 18+ (with npm)
+- **MongoDB** 4.4+
+- **Git**
 
----
-
-## Tech Stack
-
-| Layer      | Tech                                               | Purpose                         |
-|-----------|----------------------------------------------------|---------------------------------|
-| Frontend  | React 18, Vite, React Router, React Query          | SPA UI and data fetching        |
-| Styling   | Tailwind CSS, shadcn-style UI components, Radix UI | Modern responsive styling       |
-| Backend   | Fastify, @fastify/cors, dotenv                     | REST API server                 |
-| Database  | MongoDB (Docker, local, or Atlas)                  | Persistent data storage         |
-| Auth      | JWT, bcryptjs                                      | Simple email/password auth      |
-| Tooling   | Vite, ESLint, Tailwind, concurrently               | DX and dev workflows            |
-
----
-
-## Project Structure
-
-High-level layout:
+### 1. Clone and Install
 
 ```bash
-parkez/
-├─ src/                 # Frontend (React + Vite)
-│  ├─ App.jsx
-│  ├─ main.jsx
-│  ├─ index.css
-│  ├─ api.js           # Frontend data layer (API or mock/localStorage)
-│  ├─ mockData.js      # Frontend seed data for mock mode
-│  ├─ components/
-│  │   ├─ layout/      # Header, MainLayout, etc
-│  │   ├─ ui/          # Button, Card, Tabs, Toast, Tooltip, etc
-│  │   ├─ DeckList.jsx
-│  │   ├─ LevelView.jsx
-│  │   └─ SpotGrid.jsx
-│  ├─ pages/           # Login, Register, Dashboard, DeckSelection, etc
-│  └─ contexts/        # AuthContext, ThemeContext
-├─ server/              # Backend (Fastify + MongoDB)
-│  ├─ index.js         # Server entry
-│  ├─ config/
-│  │   └─ database.js  # MongoDB connection helper
-│  └─ routes/
-│      ├─ auth.js
-│      ├─ decks.js
-│      ├─ levels.js
-│      ├─ spots.js
-│      └─ reports.js
-├─ mockData/            # JSON seed data for MongoDB
-│  ├─ decks.json
-│  ├─ levels.json
-│  ├─ spots.json
-│  └─ export-mock-json.mjs
-├─ scripts/
-│  ├─ kill-port.js
-│  └─ kill-port.sh
-├─ docker-compose.yml   # Optional local MongoDB + mongo-express
-├─ .env.example         # Example env vars (frontend + backend)
-├─ ENV_SETUP.md         # Detailed env var docs
-├─ DOCKER.md            # Docker-based MongoDB setup
-├─ vite.config.js
-├─ package.json
-└─ README.md
-````
-
----
-
-## Prerequisites
-
-* Node.js 20+
-* npm
-* Optional: Conda env if you do not control system Node
-* One of:
-
-  * Local MongoDB
-  * Local MongoDB via Docker (docker-compose)
-  * MongoDB Atlas cluster (hosted)
-
----
-
-## 1. Clone the repo
-
-```bash
-git clone https://github.com/Park-EZ/parkez.git
+# Clone repository
+git clone <your-repo-url>
 cd parkez
-```
 
----
-
-## 2. Node environment
-
-Using Conda (no sudo, recommended on shared machines):
-
-```bash
-conda create -n parkez nodejs=20 -c conda-forge -y
-conda activate parkez
-```
-
-Or plain Node:
-
-```bash
-node -v && npm -v   # check versions
-# Install Node LTS (v20+) if missing
-```
-
----
-
-## 3. Environment variables
-
-Create a local env file from the example:
-
-```bash
-cp .env.example .env
-```
-
-Then open `.env` and adjust values to match your setup. The important ones are:
-
-```env
-# Frontend
-VITE_PORT=5173
-VITE_API_URL=http://localhost:3000
-VITE_USE_API=true        # true = use backend API, false = pure mock/localStorage
-
-# Backend
-MONGODB_URI=...          # set to Docker/local/Atlas connection string
-DB_NAME=ezpark
-
-PORT=3000                # backend port
-HOST=localhost           # or 0.0.0.0 if needed
-
-CORS_ORIGINS=            # e.g. http://localhost:5173
-JWT_SECRET=some-secret   # change for real deployments
-```
-
-See `ENV_SETUP.md` for more explanation of each variable and production notes. 
-
----
-
-## 4. MongoDB options
-
-You can run MongoDB in three different ways.
-
-### 4a. Docker (local MongoDB with mongo-express UI)
-
-This is the fastest way to stand up a dev database.
-
-```bash
-docker-compose up -d
-docker-compose ps
-```
-
-This gives you:
-
-* MongoDB at `mongodb://admin:password@localhost:27017/ezpark?authSource=admin`
-* Mongo Express at [http://localhost:8081](http://localhost:8081) (login admin / admin)
-
-Then set in `.env`:
-
-```env
-MONGODB_URI=mongodb://admin:password@localhost:27017/ezpark?authSource=admin
-DB_NAME=ezpark
-```
-
-More details and troubleshooting are in `DOCKER.md`. 
-
----
-
-### 4b. Local MongoDB install
-
-If you installed MongoDB yourself:
-
-1. Start MongoDB (service or `mongod`)
-2. In `.env`, point to it:
-
-```env
-MONGODB_URI=mongodb://localhost:27017
-DB_NAME=ezpark
-```
-
-You can use MongoDB Compass to connect and inspect the database.
-
----
-
-### 4c. MongoDB Atlas (cloud)
-
-If you have a hosted Atlas cluster:
-
-1. Create a database user with read/write access
-2. Add your IP (or `0.0.0.0/0` for testing only) to the Network Access list
-3. Copy the connection string from Atlas, then in `.env`:
-
-```env
-MONGODB_URI=mongodb+srv://USER:PASS@cluster0.xxxxx.mongodb.net/ezpark?retryWrites=true&w=majority
-DB_NAME=ezpark
-```
-
----
-
-## 5. Seed the database with mock data
-
-You have three JSON seed files under `mockData/`:
-
-* `decks.json`
-* `levels.json`
-* `spots.json`
-
-There are two common ways to import:
-
-### Option A - Use MongoDB Compass
-
-1. Connect to your MongoDB
-2. Create or select database `ezpark`
-3. Create collections `decks`, `levels`, `spots`
-4. For each collection:
-
-   * Click "Add Data" -> "Import JSON"
-   * Pick the matching file in `mockData/`
-
-### Option B - Use a Node script (importAll)
-
-If you created `scripts/importAll.mjs` during setup, you can point it at your MongoDB URI and run:
-
-```bash
-node scripts/importAll.mjs
-```
-
-This will insert the contents of `mockData/decks.json`, `mockData/levels.json`, and `mockData/spots.json` into the `ezpark` database, recreating the collections each time.
-
----
-
-## 6. Install dependencies
-
-From the project root:
-
-```bash
+# Install frontend dependencies
 npm install
+
+# Install backend dependencies
 cd server
 npm install
 cd ..
 ```
 
-This installs frontend dependencies and backend dependencies. 
+### 2. Setup MongoDB
 
----
+**Option A: Local MongoDB**
+```bash
+# Install MongoDB (macOS)
+brew install mongodb-community
+brew services start mongodb-community
 
-## 7. Run the app in development
+# Or install MongoDB (Ubuntu/Linux)
+sudo apt-get install mongodb
+sudo systemctl start mongodb
+```
 
-There is a combined dev script that runs backend and frontend together.
+**Option B: Docker MongoDB**
+```bash
+# Start MongoDB with Docker Compose
+docker-compose up -d
+```
 
-From the project root:
+### 3. Configure Environment
+
+Create `.env` file in project root:
+```env
+# Backend API URL
+VITE_API_BASE_URL=http://localhost:3000
+
+# MongoDB Connection
+MONGODB_URI=mongodb://localhost:27017
+DB_NAME=ezpark
+
+# OR for Docker:
+# MONGODB_URI=mongodb://admin:password@localhost:27017/ezpark?authSource=admin
+
+# JWT Secret (change in production)
+JWT_SECRET=your-secret-key-change-in-production
+```
+
+### 4. Seed Database
 
 ```bash
+# Import parking data
+cd server
+npm run import
+cd ..
+```
+
+### 5. Start Development Servers
+
+```bash
+# Start both frontend and backend concurrently
 npm run dev
+
+# Backend: http://localhost:3000
+# Frontend: http://localhost:5173
 ```
 
-This will:
+### 6. Access Application
 
-* Start the backend Fastify server (from `server/`) on port 3000
-* Start the Vite dev server on port 5173
+Open browser to: **http://localhost:5173**
 
-By default the frontend talks to the backend because `.env.example` sets `VITE_API_URL=http://localhost:3000` and `VITE_USE_API=true`. 
+Default test account:
+- Email: `test@uncc.edu`
+- Password: `password123`
 
-Then open in your browser:
-
-```text
-http://localhost:5173/
-```
-
-or, if you are on a remote machine, replace `localhost` with your server IP.
-
-You should see the Park-EZ dashboard and be able to:
-
-* Register / log in
-* Choose a deck and level
-* View spots and their statuses
-* Report incorrect spot information
+Or register a new account.
 
 ---
 
-### Running only the frontend (mock/localStorage mode)
+## 📦 Production Deployment
 
-If you want to ignore the backend completely:
-
-1. In `.env`, set:
-
-   ```env
-   VITE_USE_API=false
-   ```
-
-2. Restart the dev server:
-
-   ```bash
-   npm run dev
-   ```
-
-In this mode:
-
-* No backend or MongoDB is required
-* Data is stored in localStorage through `src/api.js` and `src/mockData.js`
-
----
-
-### Run only one side (if needed)
-
-Frontend only:
+### Using Docker
 
 ```bash
-npm run dev:client
+# Build and run production containers
+docker-compose -f docker-compose.prod.yml up -d
+
+# Application will be available on port 3000
 ```
 
-Backend only:
+### Manual Deployment
 
 ```bash
-npm run dev:server
-```
-
----
-
-## 8. Build for production
-
-To create an optimized frontend build:
-
-```bash
+# Build frontend
 npm run build
+
+# Frontend build output: dist/
+# Serve dist/ folder with any static file server
+
+# Backend
+cd server
+NODE_ENV=production npm start
 ```
 
-This writes the static frontend to `dist/`.
+### Environment Variables for Production
 
-You can preview the production build locally:
+```env
+NODE_ENV=production
+MONGODB_URI=<your-production-mongodb-uri>
+DB_NAME=ezpark
+JWT_SECRET=<strong-secret-key>
+PORT=3000
+```
+
+---
+
+## 🏗️ Project Structure
+
+```
+parkez/
+├── src/                      # Frontend React application
+│   ├── api.js               # API client functions
+│   ├── App.jsx              # Main app component with routing
+│   ├── main.jsx             # React entry point
+│   ├── components/          
+│   │   ├── CampusMap.jsx    # Interactive 3D campus map
+│   │   ├── SpotGrid.jsx     # Parking spot visualization
+│   │   ├── layout/          # Layout components (Header, Nav, etc)
+│   │   └── ui/              # Reusable UI components
+│   ├── contexts/            # React contexts (Auth, Theme, Preferences)
+│   ├── pages/               # Route pages
+│   │   ├── Dashboard.jsx    # Main dashboard with map & current spot
+│   │   ├── DeckSelection.jsx    # List of parking decks
+│   │   ├── LevelsView.jsx       # Levels within a deck
+│   │   ├── SpotAvailability.jsx # Individual parking spots
+│   │   ├── QRScanner.jsx        # QR code scanner
+│   │   ├── Login.jsx & Register.jsx
+│   │   ├── Profile.jsx
+│   │   └── ReportStatus.jsx
+│   ├── hooks/               # Custom React hooks
+│   └── utils/               # Utility functions
+│
+├── server/                   # Backend Node.js API
+│   ├── index.js             # Server entry point
+│   ├── config/
+│   │   └── database.js      # MongoDB connection & schema
+│   ├── middleware/
+│   │   └── auth.js          # JWT authentication
+│   ├── routes/              # API endpoints
+│   │   ├── auth.js          # Login/register/logout
+│   │   ├── decks.js         # Parking decks
+│   │   ├── levels.js        # Deck levels
+│   │   ├── spots.js         # Parking spots & sessions
+│   │   ├── reports.js       # Issue reporting
+│   │   └── users.js         # User management
+│   └── utils/               # Helper functions
+│
+├── mockData/                 # Initial parking data (JSON)
+├── public/                   # Static assets
+│   ├── images/              # Campus and deck images
+│   └── qrcodes/             # QR codes for spots
+├── scripts/                  # Utility scripts
+└── docker-compose.yml        # Docker configuration
+```
+
+---
+
+## 🎯 Key Components Explained
+
+### Frontend Components
+
+#### **CampusMap.jsx**
+Interactive 3D map showing all parking decks on campus.
+- Uses **Maplibre GL** for 3D rendering
+- Clickable markers for each parking deck
+- Navigates to deck levels when clicked
+- Real GPS coordinates for accuracy
+
+#### **SpotGrid.jsx**
+Displays parking spots in realistic deck layout.
+- Vertical columns with central driving lane
+- Color-coded spots:
+  - 🟢 **Green** = Available
+  - 🔵 **Blue** = Your occupied spot
+  - 🔴 **Red** = Occupied by others
+- Real-time updates every second
+- Click to check-in/check-out
+
+#### **Dashboard.jsx**
+Main dashboard showing:
+- Currently occupied spot (if any)
+- Interactive campus map
+- Quick navigation to all features
+
+#### **QRScanner.jsx**
+QR code scanner for quick check-in/check-out.
+- Camera-based scanning
+- Handles spot conflicts
+- Works on mobile devices
+
+### Backend API
+
+#### **Spots API** (`routes/spots.js`)
+Core functionality for parking spot management:
+- **GET `/api/spots/my-spot`** - Get current user's spot
+- **POST `/api/spots/:id/check-in`** - Check in to a spot
+- **POST `/api/spots/:id/check-out`** - Check out of a spot
+- **POST `/api/spots/:id/toggle`** - Toggle spot status
+- **Atomic operations** prevent race conditions
+- Tracks spot sessions and history
+
+#### **Auth API** (`routes/auth.js`)
+User authentication:
+- **POST `/api/auth/register`** - Create new account
+- **POST `/api/auth/login`** - Login with JWT
+- **POST `/api/auth/logout`** - Logout
+- **GET `/api/auth/me`** - Get current user
+- Uses **bcrypt** for password hashing
+- **JWT tokens** for session management
+
+#### **Database** (`config/database.js`)
+MongoDB connection and schema:
+- Auto-creates 7 collections (decks, levels, spots, users, sessions, history, reports)
+- Optimized indexes for fast queries
+- Connection pooling for performance
+
+---
+
+## 🔑 Important Features
+
+### Real-Time Updates
+- Spots page refreshes every 1 second
+- Dashboard refreshes every 30 seconds
+- Prevents race conditions with atomic DB operations
+
+### Race Condition Handling
+- **Atomic `findOneAndUpdate`** prevents double-booking
+- Pre-check validation before check-in
+- Clear error messages when spot is taken
+
+### Mobile Optimization
+- Responsive design for all screen sizes
+- Fixed viewport prevents page zoom
+- Safe area insets for notched devices
+- Bottom nav bar always visible
+- Touch-optimized interactions
+
+### Security
+- JWT authentication on protected routes
+- Password hashing with bcrypt
+- User can only free their own spots
+- Input validation on all endpoints
+
+---
+
+## 📊 Database Schema
+
+### Collections
+
+**decks** - Parking deck buildings
+- `building-code`, `building-name`, `total-spaces`
+- `latitude`, `longitude` for map display
+- `aliases`, `contacts`, `address` info
+
+**levels** - Levels within each deck
+- `_id`, `deckId`, `index`, `name`
+
+**spots** - Individual parking spaces
+- `id`, `levelId`, `label`, `handicap`
+- `user_id` (null = free, userId = occupied)
+- `available`, `occupiedAt`
+
+**users** - App users
+- `email` (unique), `name`, `password` (hashed)
+
+**spotSessions** - Check-in/out sessions
+- `spotId`, `userId`, `startedAt`, `endedAt`
+
+**spotStateHistory** - Audit log of spot changes
+
+**spotReports** - User-reported issues
+
+---
+
+## 🛠️ Available Scripts
 
 ```bash
-npm run preview
+# Development
+npm run dev              # Start frontend + backend
+npm run dev:frontend     # Start frontend only
+npm run dev:backend      # Start backend only
+
+# Production
+npm run build            # Build frontend for production
+npm run preview          # Preview production build
+
+# Utilities
+npm run kill:3000        # Kill process on port 3000
+npm run kill:5173        # Kill process on port 5173
+npm run kill:all         # Kill both ports
+
+# Backend
+cd server
+npm run dev              # Start backend with auto-reload
+npm run start            # Start backend (production)
+npm run import           # Import parking data to MongoDB
 ```
 
-Or serve `dist/` with your own static file server.
+---
 
-For a production deployment you would:
+## 🎨 Tech Stack
 
-* Run the backend (`node server/index.js` or a process manager)
-* Serve the built frontend from `dist/` behind a web server or static host
-* Point `VITE_API_URL` to the reachable backend URL
+### Frontend
+- **React 19** - UI library
+- **React Router 7** - Client-side routing
+- **TanStack Query** - Data fetching & caching
+- **Tailwind CSS** - Utility-first styling
+- **Radix UI** - Accessible components
+- **Maplibre GL** - 3D mapping
+- **ZXing** - QR code scanning
+- **Vite** - Build tool
+
+### Backend
+- **Node.js** - Runtime
+- **Fastify** - Web framework
+- **MongoDB** - Database
+- **JWT** - Authentication
+- **bcryptjs** - Password hashing
 
 ---
 
-## Useful scripts
+## 🌐 API Endpoints
 
-From `package.json`:
+### Authentication
+- `POST /api/auth/register` - Create account
+- `POST /api/auth/login` - Login
+- `POST /api/auth/logout` - Logout
+- `GET /api/auth/me` - Get current user
 
-| Command              | Description                       |
-| -------------------- | --------------------------------- |
-| `npm run dev`        | Run backend and frontend together |
-| `npm run dev:client` | Frontend only (Vite)              |
-| `npm run dev:server` | Backend only (Fastify)            |
-| `npm run build`      | Build frontend for production     |
-| `npm run preview`    | Preview built frontend            |
-| `npm run lint`       | Run ESLint                        |
-| `npm run kill:3000`  | Kill anything on port 3000        |
-| `npm run kill:5173`  | Kill anything on port 5173        |
+### Parking Data
+- `GET /api/decks` - List all decks
+- `GET /api/decks/:id/levels` - Get levels in a deck
+- `GET /api/decks/:id/availability` - Get deck availability
+- `GET /api/levels/:id/spots` - Get spots in a level
+- `GET /api/levels/:id/availability` - Get level availability
+
+### Spot Management
+- `GET /api/spots/my-spot` - Get user's current spot
+- `POST /api/spots/:id/check-in` - Check in to spot
+- `POST /api/spots/:id/check-out` - Check out of spot
+- `POST /api/spots/:id/toggle` - Toggle spot status
+
+### Reporting
+- `POST /api/spots/:id/report` - Report incorrect status
+- `GET /api/reports` - Get user's reports
 
 ---
 
-## Notes for deployment and security
+## 🔐 Authentication Flow
 
-* Change `JWT_SECRET` to a strong random value before any real use
-* Use a secure MongoDB URI with proper credentials
-* Lock down `CORS_ORIGINS` to your real frontend domains
-* Never commit `.env` with real secrets to git
-* For Docker-based MongoDB, change default admin/password if you expose it outside your machine
+1. User registers with email/password
+2. Password is hashed with bcrypt (10 rounds)
+3. Login returns JWT token
+4. Token stored in localStorage
+5. Token sent in Authorization header: `Bearer <token>`
+6. Backend middleware validates token on protected routes
 
 ---
 
-## License
+## 📱 Mobile Features
 
-This project is open-source for educational use.
-You are welcome to fork, adapt, and extend it with attribution.
+- **Viewport locked** - No accidental page zoom
+- **Safe area support** - Works with notched devices
+- **Touch optimized** - Large tap targets
+- **Responsive layout** - Adapts to all screen sizes
+- **Bottom navigation** - Always visible, never clipped
+
+---
+
+## 🎯 User Workflows
+
+### Finding a Parking Spot
+1. Login to dashboard
+2. View interactive 3D campus map
+3. Click on a parking deck marker
+4. Select a level
+5. View available spots (green)
+6. Click spot to check-in
+
+### Using QR Scanner
+1. Go to parking spot
+2. Tap "Scan" in bottom nav
+3. Scan QR code on parking sign
+4. Auto check-in/check-out
+
+### Freeing Your Spot
+1. View dashboard
+2. Click "Free This Spot" on occupied spot card
+3. Confirm action
+4. Spot becomes available to others
+
+---
+
+## 🧪 Testing
+
+### Create Test Data
+```bash
+# Import mock data
+cd server
+npm run import
+```
+
+### Test Accounts
+Register through the app or use:
+- Email: `test@uncc.edu`
+- Password: `password123`
+
+---
+
+## 📝 Notes
+
+- Spots auto-refresh every second for real-time availability
+- Map uses free OpenStreetMap tiles (no API key needed)
+- Race conditions prevented with atomic DB operations
+- All times displayed in user's local timezone
+- Mobile-first responsive design
+
+---
+
+## 🤝 Contributing
+
+Built by **Scrum & Coke** team for ITCS-8112 SSDI course project at UNC Charlotte.
+
+---
+
+## 📄 License
+
+ISC
+

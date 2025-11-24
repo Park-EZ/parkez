@@ -6,7 +6,7 @@ export default function Header() {
   const { user } = useAuth()
 
   return (
-    <header className="border-b bg-card sticky top-0 z-40">
+    <header className="flex-shrink-0 border-b bg-card z-40">
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
         <Link to="/dashboard" className="text-xl sm:text-2xl font-bold text-primary">
           EZpark

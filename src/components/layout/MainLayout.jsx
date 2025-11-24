@@ -19,11 +19,18 @@ export function MainLayout({ children }) {
   }
 
   return (
-    <div className="min-h-screen bg-background pb-20">
+    <div style={{ height: '100vh', height: '100dvh' }} className="flex flex-col bg-background overflow-hidden">
+      {/* Header - Fixed height */}
       <Header />
-      <main className="container mx-auto px-4 py-6">
-        {children}
+      
+      {/* Main Content - Fills remaining space between header and bottom nav */}
+      <main className="flex-1 overflow-y-auto overflow-x-hidden min-h-0">
+        <div className="container mx-auto px-4 py-3 sm:py-4 h-full">
+          {children}
+        </div>
       </main>
+      
+      {/* Bottom Navigation - Part of flex layout, will always be visible */}
       <BottomNav />
     </div>
   )

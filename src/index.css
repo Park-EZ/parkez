@@ -58,20 +58,51 @@
 }
 
 /* Prevent mobile zoom and improve touch interactions */
-html {
+html, body {
   -webkit-text-size-adjust: 100%;
   touch-action: manipulation;
+  height: 100%;
+  height: -webkit-fill-available;
+  overflow: hidden;
+  overscroll-behavior: none;
 }
 
 body {
-  touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
+}
+
+#root {
+  height: 100%;
+  height: -webkit-fill-available;
+}
+
+/* Safe area padding utility for mobile devices with notches/home indicators */
+.safe-bottom {
+  padding-bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
+}
+
+/* Ensure safe area works on all browsers */
+@supports (padding-bottom: constant(safe-area-inset-bottom)) {
+  .safe-bottom {
+    padding-bottom: calc(0.75rem + constant(safe-area-inset-bottom));
+  }
+}
+
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .safe-bottom {
+    padding-bottom: calc(0.75rem + env(safe-area-inset-bottom));
+  }
 }
 
 /* Prevent zoom on input focus for mobile */
 @media screen and (max-width: 768px) {
   input, select, textarea {
     font-size: 16px !important;
+  }
+  
+  /* Ensure content fits in viewport without scrolling */
+  body {
+    overscroll-behavior: none;
   }
 }
 
@@ -123,4 +154,19 @@ body {
 /* Allow map to handle its own touch events */
 .maplibregl-canvas-container {
   touch-action: pan-x pan-y;
+}
+
+/* 3D Parking Spot Perspective */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+/* Parking spot animations */
+@keyframes spot-pulse {
+  0%, 100% {
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  }
+  50% {
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  }
 }

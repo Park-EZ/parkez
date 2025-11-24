@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # Kill process on a specific port
 # Usage: ./scripts/kill-port.sh <port>
 

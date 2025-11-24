@@ -51,25 +51,19 @@ export default async function spotRoutes(fastify, options) {
       return reply.code(401).send({ error: 'Authentication required' })
     }
 
-    // Find spot by id field (not _id, as per JSON structure)
-    const spot = await db.collection('spots').findOne({ id: spotId })
-    
-    if (!spot) {
-      return reply.code(404).send({ error: 'Spot not found' })
-    }
-
-    // Check if spot is already occupied (user_id is not empty/null)
-    if (spot.user_id && spot.user_id !== '') {
-      return reply.code(400).send({ error: 'Spot is already occupied' })
-    }
-
-    // Check if user already has an active spot
+    // Check if user already has an active spot FIRST
     // Query for spots where user_id matches (will only match non-null/non-empty values)
     const existingSpot = await db.collection('spots').findOne({
       user_id: userId
     })
 
     if (existingSpot) {
+      // Get the spot info for the new spot
+      const newSpot = await db.collection('spots').findOne({ id: spotId })
+      if (!newSpot) {
+        return reply.code(404).send({ error: 'Spot not found' })
+      }
+      
       // Return 409 Conflict with current spot info so frontend can show confirmation dialog
       return reply.code(409).send({ 
         error: 'You already have an occupied spot',
@@ -80,21 +74,40 @@ export default async function spotRoutes(fastify, options) {
           levelId: existingSpot.levelId
         },
         newSpotId: spotId,
-        newSpotLabel: spot.label
+        newSpotLabel: newSpot.label
       })
     }
 
-    // Update spot: set user_id and mark as not available
-    await db.collection('spots').updateOne(
-      { id: spotId },
+    // Use atomic findOneAndUpdate to prevent race conditions
+    // Only update if spot is free (user_id is null or empty string)
+    const result = await db.collection('spots').findOneAndUpdate(
+      { 
+        id: spotId,
+        $or: [
+          { user_id: null },
+          { user_id: '' },
+          { user_id: { $exists: false } }
+        ]
+      },
       { 
         $set: { 
           user_id: userId,
           available: false,
           occupiedAt: new Date()
         } 
-      }
+      },
+      { returnDocument: 'after' }
     )
+
+    // If no document was modified, spot was taken by someone else (race condition)
+    if (!result) {
+      return reply.code(409).send({ 
+        error: 'Spot is no longer available',
+        message: 'This spot was just taken by another user. Please select a different spot.'
+      })
+    }
+
+    const spot = result
 
     // Create spot session
     const session = {
@@ -116,8 +129,7 @@ export default async function spotRoutes(fastify, options) {
       userId: userId
     })
 
-    const updatedSpot = await db.collection('spots').findOne({ id: spotId })
-    return { success: true, spot: updatedSpot }
+    return { success: true, spot: spot }
   })
 
   // POST /api/spots/:id/check-out - Check out of a spot

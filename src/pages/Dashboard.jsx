@@ -27,11 +27,8 @@ export default function Dashboard() {
     queryFn: async () => {
       try {
         const result = await getMySpot()
-        console.log('Dashboard: getMySpot result:', result)
         return result
       } catch (err) {
-        console.log('Dashboard: getMySpot error:', err)
-        // Return null if 404 (no spot), throw other errors
         if (err.message?.includes('404') || err.message?.includes('No active spot')) {
           return null
         }
@@ -39,11 +36,9 @@ export default function Dashboard() {
       }
     },
     retry: false,
-    refetchInterval: 30000, // Refetch every 30 seconds
-    refetchOnWindowFocus: true, // Refetch when user returns to tab
+    refetchInterval: 30000,
+    refetchOnWindowFocus: true,
   })
-
-  console.log('Dashboard render - mySpotData:', mySpotData, 'isLoading:', isLoading, 'error:', error)
 
   const handleFreeSpot = async () => {
     if (!spotToFree) return
@@ -75,69 +70,70 @@ export default function Dashboard() {
   }
 
   return (
-    <div className="space-y-6 pb-20">
-      <div>
-        <h1 className="text-3xl font-bold">Dashboard</h1>
-        <p className="text-muted-foreground">Find and manage your parking spots</p>
+    <div className="flex flex-col space-y-3 sm:space-y-4 h-full">
+      <div className="flex-shrink-0">
+        <h1 className="text-xl sm:text-2xl md:text-3xl font-bold">Dashboard</h1>
+        <p className="text-xs sm:text-sm text-muted-foreground">Find and manage your parking spots</p>
       </div>
 
       {/* Current Occupied Spot */}
       {isLoading && (
-        <Card>
-          <CardContent className="py-6">
-            <div className="text-center text-muted-foreground">Loading your spot...</div>
+        <Card className="flex-shrink-0">
+          <CardContent className="py-4 sm:py-6">
+            <div className="text-center text-muted-foreground text-sm">Loading your spot...</div>
           </CardContent>
         </Card>
       )}
 
       {error && (
-        <Card>
-          <CardContent className="py-6">
-            <div className="text-center text-destructive">Error loading spot: {error.message}</div>
+        <Card className="flex-shrink-0">
+          <CardContent className="py-4 sm:py-6">
+            <div className="text-center text-destructive text-sm">Error loading spot: {error.message}</div>
           </CardContent>
         </Card>
       )}
       
       {!isLoading && !error && mySpotData && mySpotData.spot && (
-        <Card className="border-green-200 dark:border-green-800 bg-green-50/50 dark:bg-green-950/20 shadow-lg">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Car className="h-5 w-5 text-green-600 dark:text-green-400" />
+        <Card className="flex-shrink-0 border-green-200 dark:border-green-800 bg-green-50/50 dark:bg-green-950/20 shadow-lg">
+          <CardHeader className="pb-2 sm:pb-4">
+            <CardTitle className="flex items-center gap-2 text-base sm:text-lg">
+              <Car className="h-4 w-4 sm:h-5 sm:w-5 text-green-600 dark:text-green-400" />
               Your Current Spot
             </CardTitle>
-            <CardDescription>You are currently occupying a parking spot</CardDescription>
+            <CardDescription className="text-xs sm:text-sm">You are currently occupying a parking spot</CardDescription>
           </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="flex items-center justify-between">
-              <div className="space-y-1">
-                <div className="font-semibold text-lg">
+          <CardContent className="space-y-2 sm:space-y-4">
+            <div className="flex items-start sm:items-center justify-between gap-2">
+              <div className="space-y-0.5 sm:space-y-1 flex-1 min-w-0">
+                <div className="font-semibold text-base sm:text-lg">
                   Spot {mySpotData.spot.label}
                 </div>
                 {mySpotData.level && (
-                  <div className="text-sm text-muted-foreground flex items-center gap-1">
-                    <MapPin className="h-3 w-3" />
-                    {mySpotData.level.name}
+                  <div className="text-xs sm:text-sm text-muted-foreground flex items-center gap-1">
+                    <MapPin className="h-3 w-3 flex-shrink-0" />
+                    <span className="truncate">{mySpotData.level.name}</span>
                   </div>
                 )}
                 {mySpotData.deck && (
-                  <div className="text-sm text-muted-foreground">
+                  <div className="text-xs sm:text-sm text-muted-foreground truncate">
                     {mySpotData.deck['building-name'] || mySpotData.deck.name}
                   </div>
                 )}
                 {mySpotData.spot.occupiedAt && (
-                  <div className="text-xs text-muted-foreground mt-1">
-                    Occupied since {new Date(mySpotData.spot.occupiedAt).toLocaleString()}
+                  <div className="text-[10px] sm:text-xs text-muted-foreground">
+                    {new Date(mySpotData.spot.occupiedAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                   </div>
                 )}
               </div>
-              <Badge variant="default" className="bg-green-600 text-white">
+              <Badge variant="default" className="bg-green-600 text-white flex-shrink-0 text-xs">
                 <CheckCircle2 className="h-3 w-3 mr-1" />
-                Occupied
+                <span className="hidden sm:inline">Occupied</span>
+                <span className="sm:hidden">✓</span>
               </Badge>
             </div>
             <Button
               variant="destructive"
-              className="w-full"
+              className="w-full text-sm sm:text-base h-8 sm:h-10"
               onClick={handleSpotClick}
             >
               Free This Spot
@@ -146,7 +142,9 @@ export default function Dashboard() {
         </Card>
       )}
 
-      <CampusMap />
+      <div className="flex-1 flex flex-col min-h-0">
+        <CampusMap />
+      </div>
 
       {/* Confirmation Dialog */}
       <Dialog open={showConfirmDialog} onOpenChange={setShowConfirmDialog}>

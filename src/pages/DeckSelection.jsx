@@ -23,33 +23,22 @@ export default function DeckSelection() {
     queryFn: getDecks,
   })
 
-  // Fetch availability for all decks using database aggregation (efficient)
-  const { data: allDeckAvailability = {}, isLoading: availabilityLoading, error: availabilityError } = useQuery({
+  const { data: allDeckAvailability = {}, isLoading: availabilityLoading } = useQuery({
     queryKey: ["allDeckAvailability"],
     queryFn: async () => {
-      console.log('Fetching availability for', decks.length, 'decks')
       const availabilityMap = {}
       for (const deck of decks) {
         try {
-          // Use aggregation endpoint - counts spots in database, doesn't fetch all documents
           const availability = await fetchDeckAvailability(deck._id)
-          console.log(`Deck ${deck['building-name']} (${deck._id}):`, availability)
           availabilityMap[deck._id] = availability
         } catch (error) {
-          console.error(`Error fetching availability for deck ${deck._id}:`, error)
           availabilityMap[deck._id] = { free: 0, total: 0 }
         }
       }
-      console.log('Final availabilityMap:', availabilityMap)
       return availabilityMap
     },
     enabled: decks.length > 0,
   })
-
-  // Debug logging
-  if (availabilityError) {
-    console.error('Availability query error:', availabilityError)
-  }
 
   if (isLoading) {
     return <div className="text-center py-8">Loading decks...</div>

@@ -2,7 +2,7 @@ services:
   mongodb:
     image: mongo:latest
     container_name: ezpark-mongodb
-    restart: unless-stopped
+    # restart: unless-stopped
     ports:
       - "27017:27017"
     environment:
@@ -24,7 +24,7 @@ services:
   mongo-express:
     image: mongo-express:latest
     container_name: ezpark-mongo-express
-    restart: unless-stopped
+    # restart: unless-stopped
     ports:
       - "8081:8081"
     environment:

@@ -293,15 +293,6 @@ export default function QRScanner() {
           spots.find((s) => Number(s.id) === spotNumericId)
 
         if (!spot) {
-          console.log("QR debug:", {
-            deckCode,
-            levelNumericId,
-            spotNumericId,
-            labelFromQr,
-            spotIds: spots.map((s) => s.id),
-            spotLabels: spots.map((s) => s.label),
-          })
-
           toast({
             title: "Spot not found",
             description: `Spot "${spotNumericId}" (label ${labelFromQr}) not found on level "${level.name}".`,
