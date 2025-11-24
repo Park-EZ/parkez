@@ -19,10 +19,12 @@ export function MainLayout({ children }) {
   }
 
   return (
-    <div className="min-h-screen bg-background pb-20">
+    <div className="h-screen flex flex-col bg-background overflow-hidden">
       <Header />
-      <main className="container mx-auto px-4 py-6">
-        {children}
+      <main className="flex-1 overflow-y-auto">
+        <div className="container mx-auto px-4 py-4 sm:py-6 h-full">
+          {children}
+        </div>
       </main>
       <BottomNav />
     </div>

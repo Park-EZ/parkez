@@ -131,18 +131,19 @@ export default function CampusMap() {
   }
 
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle className="flex items-center gap-2">
-          <MapPin className="h-5 w-5" />
-          Interactive 3D Campus Parking Map
+    <Card className="h-full flex flex-col">
+      <CardHeader className="pb-2 sm:pb-3 flex-shrink-0">
+        <CardTitle className="flex items-center gap-2 text-base sm:text-lg">
+          <MapPin className="h-4 w-4 sm:h-5 sm:w-5" />
+          <span className="hidden sm:inline">Interactive 3D Campus Parking Map</span>
+          <span className="sm:hidden">Campus Map</span>
         </CardTitle>
-        <CardDescription>
+        <CardDescription className="text-xs sm:text-sm hidden sm:block">
           Click on any parking deck marker to view details and available spots
         </CardDescription>
       </CardHeader>
-      <CardContent>
-        <div className="w-full h-[600px] rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700">
+      <CardContent className="pb-2 sm:pb-3 flex-1 flex flex-col min-h-0">
+        <div className="w-full flex-1 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700">
           <Map
             ref={mapRef}
             {...viewState}
@@ -227,21 +228,16 @@ export default function CampusMap() {
         </div>
 
         {/* Legend and Instructions */}
-        <div className="mt-4 space-y-2">
-          <div className="flex items-center justify-center gap-4 text-sm text-muted-foreground flex-wrap">
-            <div className="flex items-center gap-2">
-              <div className="bg-blue-600 rounded-full p-1.5">
-                <Building2 className="h-3 w-3 text-white" />
+        <div className="mt-1 sm:mt-2 flex-shrink-0">
+          <div className="flex items-center justify-center gap-2 text-[10px] sm:text-xs text-muted-foreground">
+            <div className="flex items-center gap-1">
+              <div className="bg-blue-600 rounded-full p-0.5 sm:p-1">
+                <Building2 className="h-2 w-2 text-white" />
               </div>
-              <span>Parking Deck</span>
+              <span>Deck</span>
             </div>
-            <span className="text-xs">•</span>
-            <span>Click marker to view details</span>
-            <span className="text-xs">•</span>
-            <span>Drag to pan • Scroll to zoom • Right-drag to rotate</span>
-          </div>
-          <div className="text-xs text-center text-muted-foreground">
-            Showing {validDecks.length} parking locations on campus in 3D
+            <span>•</span>
+            <span>{validDecks.length} locations</span>
           </div>
         </div>
       </CardContent>

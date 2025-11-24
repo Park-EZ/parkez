@@ -58,20 +58,30 @@
 }
 
 /* Prevent mobile zoom and improve touch interactions */
-html {
+html, body {
   -webkit-text-size-adjust: 100%;
   touch-action: manipulation;
+  height: 100%;
+  overflow: hidden;
 }
 
 body {
-  touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
+}
+
+#root {
+  height: 100%;
 }
 
 /* Prevent zoom on input focus for mobile */
 @media screen and (max-width: 768px) {
   input, select, textarea {
     font-size: 16px !important;
+  }
+  
+  /* Ensure content fits in viewport without scrolling */
+  body {
+    overscroll-behavior: none;
   }
 }
 
