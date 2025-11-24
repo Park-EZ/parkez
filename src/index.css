@@ -56,3 +56,71 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Prevent mobile zoom and improve touch interactions */
+html {
+  -webkit-text-size-adjust: 100%;
+  touch-action: manipulation;
+}
+
+body {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Prevent zoom on input focus for mobile */
+@media screen and (max-width: 768px) {
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* MapLibre Popup Styling */
+.maplibregl-popup-content {
+  @apply rounded-lg shadow-xl border border-gray-200;
+  padding: 0 !important;
+  min-width: 200px;
+}
+
+.maplibregl-popup-close-button {
+  @apply text-gray-500 hover:text-gray-700;
+  font-size: 20px;
+  padding: 4px 8px;
+  right: 4px;
+  top: 4px;
+}
+
+.maplibregl-popup-close-button:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.maplibregl-popup-anchor-top .maplibregl-popup-tip {
+  border-bottom-color: white;
+}
+
+.maplibregl-popup-anchor-bottom .maplibregl-popup-tip {
+  border-top-color: white;
+}
+
+/* Map Controls Styling */
+.maplibregl-ctrl-group {
+  @apply rounded-lg shadow-lg;
+}
+
+.maplibregl-ctrl-group button {
+  @apply hover:bg-gray-100;
+}
+
+/* MapLibre Container */
+.maplibregl-map {
+  font-family: inherit;
+}
+
+.maplibregl-canvas {
+  outline: none;
+}
+
+/* Allow map to handle its own touch events */
+.maplibregl-canvas-container {
+  touch-action: pan-x pan-y;
+}

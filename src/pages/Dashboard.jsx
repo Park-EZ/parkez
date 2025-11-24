@@ -1,5 +1,4 @@
 import { useState } from "react"
-import { useNavigate } from "react-router-dom"
 import { useQuery, useQueryClient } from "@tanstack/react-query"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -11,13 +10,13 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog"
-import { MapPin, QrCode, AlertCircle, Car, CheckCircle2 } from "lucide-react"
+import { MapPin, Car, CheckCircle2 } from "lucide-react"
 import { getMySpot, checkOutSpot } from "@/api"
 import { useToast } from "@/hooks/use-toast"
 import { Badge } from "@/components/ui/badge"
+import CampusMap from "@/components/CampusMap"
 
 export default function Dashboard() {
-  const navigate = useNavigate()
   const queryClient = useQueryClient()
   const { toast } = useToast()
   const [showConfirmDialog, setShowConfirmDialog] = useState(false)
@@ -147,46 +146,7 @@ export default function Dashboard() {
         </Card>
       )}
 
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-        <Card className="cursor-pointer hover:shadow-lg transition-shadow" onClick={() => navigate("/decks")}>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <MapPin className="h-5 w-5" />
-              Select Parking Deck
-            </CardTitle>
-            <CardDescription>Choose a deck to view availability</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <Button variant="outline" className="w-full">View Decks</Button>
-          </CardContent>
-        </Card>
-
-        <Card className="cursor-pointer hover:shadow-lg transition-shadow" onClick={() => navigate("/qr-scanner")}>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <QrCode className="h-5 w-5" />
-              QR Code Scanner
-            </CardTitle>
-            <CardDescription>Check in or out of a parking spot</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <Button variant="outline" className="w-full">Scan QR Code</Button>
-          </CardContent>
-        </Card>
-
-        <Card className="cursor-pointer hover:shadow-lg transition-shadow" onClick={() => navigate("/report")}>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <AlertCircle className="h-5 w-5" />
-              Report Issue
-            </CardTitle>
-            <CardDescription>Report incorrect spot status</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <Button variant="outline" className="w-full">Report</Button>
-          </CardContent>
-        </Card>
-      </div>
+      <CampusMap />
 
       {/* Confirmation Dialog */}
       <Dialog open={showConfirmDialog} onOpenChange={setShowConfirmDialog}>
