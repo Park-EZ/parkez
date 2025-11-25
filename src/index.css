@@ -59,6 +59,7 @@
 
 /* Prevent mobile zoom and improve touch interactions */
 html, body {
+html, body {
   -webkit-text-size-adjust: 100%;
   touch-action: manipulation;
   height: 100%;
@@ -98,6 +99,11 @@ body {
 @media screen and (max-width: 768px) {
   input, select, textarea {
     font-size: 16px !important;
+  }
+  
+  /* Ensure content fits in viewport without scrolling */
+  body {
+    overscroll-behavior: none;
   }
   
   /* Ensure content fits in viewport without scrolling */
