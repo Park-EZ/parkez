@@ -4,7 +4,7 @@ A modern web application for real-time campus parking availability at UNC Charlo
 
 ---
 
-## 🚀 Quick Start - Running Locally
+## Quick Start - Running Locally
 
 ### Prerequisites
 - **Node.js** 18+ (with npm)
@@ -95,7 +95,7 @@ Or register a new account.
 
 ---
 
-## 📦 Production Deployment
+## Production Deployment
 
 ### Using Docker
 
@@ -183,7 +183,7 @@ parkez/
 
 ---
 
-## 🎯 Key Components Explained
+## Key Components Explained
 
 ### Frontend Components
 
@@ -199,9 +199,9 @@ Interactive 3D map showing all parking decks on campus.
 Displays parking spots in realistic deck layout.
 - Vertical columns with central driving lane
 - Color-coded spots:
-  - 🟢 **Green** = Available
-  - 🔵 **Blue** = Your occupied spot
-  - 🔴 **Red** = Occupied by others
+  - **Green** = Available
+  - **Blue** = Your occupied spot
+  - **Red** = Occupied by others
 - Real-time updates every second
 - Click to check-in/check-out
 
@@ -245,7 +245,7 @@ MongoDB connection and schema:
 
 ---
 
-## 🔑 Important Features
+## Important Features
 
 ### Real-Time Updates
 - Spots page refreshes every 1 second
@@ -280,7 +280,7 @@ MongoDB connection and schema:
 
 ---
 
-## 📊 Database Schema
+## Database Schema
 
 ### Collections
 
@@ -309,7 +309,7 @@ MongoDB connection and schema:
 
 ---
 
-## 🛠️ Available Scripts
+## Available Scripts
 
 ```bash
 # Development
@@ -335,7 +335,7 @@ npm run import           # Import parking data to MongoDB
 
 ---
 
-## 🎨 Tech Stack
+## Tech Stack
 
 ### Frontend
 - **React 19** - UI library
@@ -356,7 +356,7 @@ npm run import           # Import parking data to MongoDB
 
 ---
 
-## 🌐 API Endpoints
+## API Endpoints
 
 ### Authentication
 - `POST /api/auth/register` - Create account
@@ -383,7 +383,7 @@ npm run import           # Import parking data to MongoDB
 
 ---
 
-## 🔐 Authentication Flow
+## Authentication Flow
 
 1. User registers with email/password
 2. Password is hashed with bcrypt (10 rounds)
@@ -394,7 +394,7 @@ npm run import           # Import parking data to MongoDB
 
 ---
 
-## 📱 Mobile Features
+## Mobile Features
 
 - **Viewport locked** - No accidental page zoom
 - **Safe area support** - Works with notched devices
@@ -404,7 +404,7 @@ npm run import           # Import parking data to MongoDB
 
 ---
 
-## 🎯 User Workflows
+## User Workflows
 
 ### Finding a Parking Spot
 1. Login to dashboard
@@ -430,7 +430,7 @@ npm run import           # Import parking data to MongoDB
 
 ---
 
-## 🧪 Testing
+## Testing
 
 ### Create Test Data
 ```bash
@@ -446,7 +446,7 @@ Register through the app or use:
 
 ---
 
-## 📝 Notes
+## Notes
 
 - Spots auto-refresh every second for real-time availability
 - Map uses free OpenStreetMap tiles (no API key needed)
@@ -456,13 +456,13 @@ Register through the app or use:
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 Built by **Scrum & Coke** team for ITCS-8112 SSDI course project at UNC Charlotte.
 
 ---
 
-## 📄 License
+## License
 
 ISC
 
