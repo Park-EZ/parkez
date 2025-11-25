@@ -191,6 +191,7 @@ parkez/
 Interactive 3D map showing all parking decks on campus.
 - Uses **Maplibre GL** for 3D rendering
 - Clickable markers for each parking deck
+- **Navigate to Deck** button opens device's maps app (Apple Maps on iOS, Google Maps on Android/Desktop)
 - Navigates to deck levels when clicked
 - Real GPS coordinates for accuracy
 
@@ -262,6 +263,14 @@ MongoDB connection and schema:
 - Safe area insets for notched devices
 - Bottom nav bar always visible
 - Touch-optimized interactions
+
+### Navigation Integration
+- **One-click navigation** to parking decks from map
+- Automatically detects device platform (iOS/Android/Desktop)
+- Opens native maps app with turn-by-turn directions
+- iOS: Opens Apple Maps
+- Android: Opens Google Maps via geo URI
+- Desktop: Opens Google Maps in browser
 
 ### Security
 - JWT authentication on protected routes
@@ -401,9 +410,11 @@ npm run import           # Import parking data to MongoDB
 1. Login to dashboard
 2. View interactive 3D campus map
 3. Click on a parking deck marker
-4. Select a level
-5. View available spots (green)
-6. Click spot to check-in
+4. **Optional:** Click "Navigate to Deck" to open directions in your maps app
+5. Click "View Levels & Spots" to see deck details
+6. Select a level
+7. View available spots (green)
+8. Click spot to check-in
 
 ### Using QR Scanner
 1. Go to parking spot

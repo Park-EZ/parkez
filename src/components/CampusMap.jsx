@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom"
 import { useQuery } from "@tanstack/react-query"
 import { getDecks } from "@/api"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { MapPin, Building2 } from "lucide-react"
+import { MapPin, Building2, Navigation } from "lucide-react"
 import Map, { Marker, Popup, NavigationControl } from 'react-map-gl/maplibre'
 import 'maplibre-gl/dist/maplibre-gl.css'
 
@@ -38,6 +38,32 @@ export default function CampusMap() {
   const handleNavigateToDeck = useCallback((deckId) => {
     navigate(`/decks/${deckId}/levels`)
   }, [navigate])
+
+  const handleOpenMaps = useCallback((deck) => {
+    const lat = parseFloat(deck.latitude)
+    const lng = parseFloat(deck.longitude)
+    const deckName = encodeURIComponent(deck['building-name'] || 'Parking Deck')
+    
+    if (!lat || !lng || isNaN(lat) || isNaN(lng)) {
+      return
+    }
+
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera
+    const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream
+    const isAndroid = /android/i.test(userAgent)
+
+    let mapsUrl = ''
+    
+    if (isIOS) {
+      mapsUrl = `maps://maps.apple.com/?daddr=${lat},${lng}&dirflg=d`
+    } else if (isAndroid) {
+      mapsUrl = `geo:${lat},${lng}?q=${lat},${lng}(${deckName})`
+    } else {
+      mapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}&destination_place_id=${deckName}`
+    }
+
+    window.open(mapsUrl, '_blank')
+  }, [])
 
   // Add 3D buildings layer when map loads
   const onMapLoad = useCallback(() => {
@@ -215,12 +241,21 @@ export default function CampusMap() {
                       {selectedDeck.ADDRESS1}
                     </p>
                   )}
-                  <button
-                    onClick={() => handleNavigateToDeck(selectedDeck._id)}
-                    className="w-full bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium py-2 px-3 rounded transition-colors"
-                  >
-                    View Levels & Spots
-                  </button>
+                  <div className="space-y-2">
+                    <button
+                      onClick={() => handleOpenMaps(selectedDeck)}
+                      className="w-full bg-green-600 hover:bg-green-700 text-white text-sm font-medium py-2 px-3 rounded transition-colors flex items-center justify-center gap-2"
+                    >
+                      <Navigation className="h-4 w-4" />
+                      Navigate to Deck
+                    </button>
+                    <button
+                      onClick={() => handleNavigateToDeck(selectedDeck._id)}
+                      className="w-full bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium py-2 px-3 rounded transition-colors"
+                    >
+                      View Levels & Spots
+                    </button>
+                  </div>
                 </div>
               </Popup>
             )}
