@@ -89,16 +89,16 @@ npm run dev
 - Go to `/login` and enter credentials. New users can register at `/register`.
 
 Login Page:
-![Login page](img/loginpage.png)
+![Login page](public/login.png)
 
 Register Page:
-![Register page](img/registerpage.png)
+![Register page](public/register.png)
 
 Once you have created a new user account (or have an existing account), please login using the login page and the Log In button.
 
 2) Navigate to Deck Selection
 Main Screen:
-![Main page](img/mainpage.png)
+![Main page](public/main.png)
 
 - Choose a deck to view details and availability.
 
@@ -106,18 +106,18 @@ Main Screen:
 - Open `/decks/:deckId/availability`.
 - Each deck has a summary that shows overview information
 Deck Selection Page:
-![DS page](img/deck2.png)
+![DS page](public/decks.png)
 
 4) Select Level
 - Choose the level that you would like to view spot availibility for, showing total and available spots
 Level Selection Page:
-![LS page](img/level2.png)
+![LS page](public/levels.png)
 
 5) Spot Availability
 - Green tile = Free; Red tile = Occupied.
 - This is how to view availbility in a chosen deck. The check-in to a spot scenario will be outlined in the next section.
 Spot Viewing Page
-![Spots page](img/spots.png)
+![Spots page](public/spots.png)
 
 
 ## 7. Additional Scenario 1: QR Check‑In
@@ -127,10 +127,10 @@ Purpose: Record when a driver occupies a spot and when they leave.
 - After login, persist email in browser storage (e.g., `localStorage.setItem('userEmail', email)`).
 - Navigate to the QR Code Scanner Page
 Main Page:
-![Main page](img/mainmobile.png)
+![Main page](public/main.png)
 
 QR Code Scanner Page:
-![QR page](img/QRscan.png)
+![QR page](public/qr.png)
 
 2) Check‑In
 - Scan a QR code linked to a specific `spotId`.
@@ -140,21 +140,21 @@ QR Code Scanner Page:
 4) Visual Confirmation
 - The Availability view updates (occupied by you → blue, occupied → red, free → green).
 Spots page:
-![QR page](img/checkinmobile.png)
-![QR page](img/mainaftercheckin.png)
+![QR page](public/checkin.png)
+![QR page](public/mainaftercheckin.png)
 
 ## 8. Additional Scenario 2: Reporting Incorrect Status
 Purpose: Let users flag discrepancies (e.g., app shows occupied but physically free).
 
 1) Open Report Interface
 - Navigate to `/report` or open a report action near a spot.
-![Main page](img/mainmobile.png)
+![Main page](img/checkin.png)
 
 2) Submit Report
 - Enter the spot label (for example: L1-001)
 - Choose `reportType` (e.g., Incorrect occupancy, Blocked, Etc.).
 - Add notes (optional) and submit; frontend POSTs to `/api/spots/:spotId/report`.
-![Report page](img/reportmobile.png)
+![Report page](img/report.png)
 
 3) Admin Review
 - Admins can review reports and resolve by manual toggling or further checks (within MongoDB).
