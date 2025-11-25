@@ -59,7 +59,6 @@
 
 /* Prevent mobile zoom and improve touch interactions */
 html, body {
-html, body {
   -webkit-text-size-adjust: 100%;
   touch-action: manipulation;
   height: 100%;
