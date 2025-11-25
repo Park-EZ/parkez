@@ -132,7 +132,7 @@ PORT=3000
 
 ---
 
-## 🏗️ Project Structure
+## Project Structure
 
 ```
 parkez/
